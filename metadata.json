@@ -1,0 +1,5 @@
+{
+  "name": "MedScan Challenge",
+  "description": "A medical imaging diagnosis game inspired by Tuxun.fun. Test your diagnostic skills against a database of medical cases.",
+  "requestFramePermissions": []
+}
