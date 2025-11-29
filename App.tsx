@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { GameState, GameMode, QuestionCase, BattleState, RoundResult } from './types';
 import { fetchRandomCase } from './services/data';
 import { generateOpponent, getBotBehavior, calculateScore } from './services/bot';
+import { getBestRating, getBestStreak, saveBestRating, saveBestStreak } from './services/storage';
 import { Button } from './components/Button';
 import { Matchmaking } from './components/Matchmaking';
 import { LoadingScreen } from './components/LoadingScreen';
@@ -29,6 +30,12 @@ const App: React.FC = () => {
   const [opponentAnswered, setOpponentAnswered] = useState(false);
   const [opponentResult, setOpponentResult] = useState<RoundResult | null>(null);
 
+  // Records
+  const [bestStreak, setBestStreak] = useState<number>(0);
+  const [bestRating, setBestRating] = useState<number>(0);
+  const [recordMessage, setRecordMessage] = useState<string | null>(null);
+  const [sessionStats, setSessionStats] = useState<{ accuracy: number; avgTime: number } | null>(null);
+
   // Timers
   const timerRef = useRef<number | null>(null);
   const botTimerRef = useRef<number | null>(null);
@@ -37,6 +44,8 @@ const App: React.FC = () => {
 
   const startSolo = () => {
     setGameMode(GameMode.SOLO_STREAK);
+    setRecordMessage(null);
+    setSessionStats(null);
     setBattleState({
       round: 1,
       totalRounds: 999, // Infinite
@@ -50,6 +59,8 @@ const App: React.FC = () => {
 
   const startPvP = () => {
     setGameMode(GameMode.PVP_BATTLE);
+    setRecordMessage(null);
+    setSessionStats(null);
     const opponent = generateOpponent();
     setBattleState({
       round: 1,
@@ -61,6 +72,16 @@ const App: React.FC = () => {
     });
     setGameState(GameState.MATCHMAKING);
   };
+
+  useEffect(() => {
+    setBestStreak(getBestStreak());
+    setBestRating(getBestRating());
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      if (botTimerRef.current) clearTimeout(botTimerRef.current);
+    };
+  }, []);
 
   const onMatchFound = () => {
     loadRound();
@@ -199,13 +220,54 @@ const App: React.FC = () => {
     if (!battleState) return;
 
     if (gameMode === GameMode.PVP_BATTLE && battleState.round >= battleState.totalRounds) {
-      setGameState(GameState.GAME_OVER);
+      finalizeSession(battleState);
     } else if (gameMode === GameMode.SOLO_STREAK && battleState.history[battleState.history.length - 1].player.correct === false) {
-      setGameState(GameState.GAME_OVER); // Streak ends
+      finalizeSession(battleState); // Streak ends
     } else {
       setBattleState(prev => prev ? ({ ...prev, round: prev.round + 1 }) : null);
       loadRound();
     }
+  };
+
+  const getSoloStreakLength = (history: BattleState['history']) => {
+    const firstFailure = history.findIndex(round => !round.player.correct);
+    return firstFailure === -1 ? history.length : firstFailure;
+  };
+
+  const finalizeSession = (finalState: BattleState) => {
+    const roundsPlayed = finalState.history.length;
+    const correctRounds = finalState.history.filter(r => r.player.correct).length;
+    const totalTime = finalState.history.reduce((acc, r) => acc + r.player.timeTaken, 0);
+    const avgTime = roundsPlayed ? totalTime / roundsPlayed : 0;
+    setSessionStats({
+      accuracy: roundsPlayed ? Math.round((correctRounds / roundsPlayed) * 100) : 0,
+      avgTime: Number(avgTime.toFixed(1))
+    });
+
+    if (gameMode === GameMode.SOLO_STREAK) {
+      const streak = getSoloStreakLength(finalState.history);
+      const previousBest = bestStreak;
+      const updatedBest = Math.max(previousBest, streak);
+      if (updatedBest !== previousBest) {
+        setRecordMessage(`New personal best streak: ${updatedBest}`);
+        saveBestStreak(updatedBest);
+        setBestStreak(updatedBest);
+      } else {
+        setRecordMessage(null);
+      }
+    } else {
+      const previousBest = bestRating;
+      const updatedBest = Math.max(previousBest, finalState.playerScore);
+      if (updatedBest !== previousBest) {
+        setRecordMessage(`New best battle rating: ${updatedBest}`);
+        saveBestRating(updatedBest);
+        setBestRating(updatedBest);
+      } else {
+        setRecordMessage(null);
+      }
+    }
+
+    setGameState(GameState.GAME_OVER);
   };
 
   // --- Views ---
@@ -228,6 +290,10 @@ const App: React.FC = () => {
         <p className="text-slate-500 text-base md:text-xl max-w-2xl mx-auto font-medium px-2 leading-snug">
           The premier platform for testing medical diagnostic skills.
         </p>
+        <div className="mt-4 flex flex-col md:flex-row gap-3 md:gap-4 items-center justify-center text-xs md:text-sm text-slate-500 font-semibold">
+          <span className="px-3 py-2 bg-white border border-slate-100 rounded-xl shadow-sm">🏅 Best Streak: {bestStreak} cases</span>
+          <span className="px-3 py-2 bg-white border border-slate-100 rounded-xl shadow-sm">🎯 Best Arena Score: {bestRating}</span>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-5xl w-full animate-fade-in relative z-10 px-2 md:px-0" style={{animationDelay: '0.1s'}}>
@@ -461,6 +527,7 @@ const App: React.FC = () => {
     if (!battleState) return null;
     const playerWon = battleState.playerScore > battleState.opponentScore;
     const isPvP = gameMode === GameMode.PVP_BATTLE;
+    const soloStreak = gameMode === GameMode.SOLO_STREAK ? getSoloStreakLength(battleState.history) : null;
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 overflow-y-auto">
@@ -475,6 +542,11 @@ const App: React.FC = () => {
                     <p className="text-slate-500 text-sm md:text-base font-medium">
                         {isPvP ? "Great effort in the arena." : "Good practice run."}
                     </p>
+                    {recordMessage && (
+                      <div className="mt-3 inline-flex items-center px-3 py-2 bg-green-50 text-green-700 rounded-xl border border-green-100 text-xs font-semibold">
+                        <span className="mr-1">✨</span>{recordMessage}
+                      </div>
+                    )}
                 </div>
 
                 <div className="bg-slate-50 rounded-2xl border border-slate-100 p-4 md:p-6 mb-6 md:mb-8">
@@ -482,6 +554,26 @@ const App: React.FC = () => {
                         <span className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wider">Final Score</span>
                         <span className="text-3xl md:text-4xl font-display font-black text-slate-900">{battleState.playerScore}</span>
                     </div>
+                    {gameMode === GameMode.SOLO_STREAK && soloStreak !== null && (
+                      <div className="flex justify-between items-center pt-3 border-t border-slate-200">
+                        <span className="text-xs md:text-sm font-medium text-slate-500 flex items-center">
+                          <span className="mr-2">🔥</span>Longest streak this run
+                        </span>
+                        <span className="text-lg md:text-xl font-bold text-blue-600">{soloStreak} cases</span>
+                      </div>
+                    )}
+                    {sessionStats && (
+                      <div className="grid grid-cols-2 gap-3 mt-4 text-left">
+                        <div className="bg-white border border-slate-100 rounded-xl p-3">
+                          <div className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Accuracy</div>
+                          <div className="text-lg md:text-xl font-display font-black text-slate-800">{sessionStats.accuracy}%</div>
+                        </div>
+                        <div className="bg-white border border-slate-100 rounded-xl p-3">
+                          <div className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Avg Time</div>
+                          <div className="text-lg md:text-xl font-display font-black text-slate-800">{sessionStats.avgTime}s</div>
+                        </div>
+                      </div>
+                    )}
                     {isPvP && (
                         <div className="flex justify-between items-center pt-4 border-t border-slate-200">
                              <span className="text-xs md:text-sm font-medium text-slate-500 flex items-center">
