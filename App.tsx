@@ -42,7 +42,7 @@ const App: React.FC = () => {
       totalRounds: 999, // Infinite
       playerScore: 0,
       opponentScore: 0,
-      opponent: { name: "Training Bot", avatar: "🤖", rating: 0 },
+      opponent: { name: "训练机器人", avatar: "🤖", rating: 0 },
       history: []
     });
     loadRound();
@@ -223,10 +223,10 @@ const App: React.FC = () => {
             <span className="text-3xl md:text-4xl">🩺</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-display font-extrabold tracking-tight text-slate-900 mb-3 break-words leading-tight">
-          MedScan<span className="text-blue-600">Challenge</span>
+          医影<span className="text-blue-600">挑战赛</span>
         </h1>
         <p className="text-slate-500 text-base md:text-xl max-w-2xl mx-auto font-medium px-2 leading-snug">
-          The premier platform for testing medical diagnostic skills.
+          测试医学诊断技能的首选平台。
         </p>
       </div>
 
@@ -242,12 +242,12 @@ const App: React.FC = () => {
            <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4 md:mb-6 text-blue-600 group-hover:scale-110 transition-transform duration-300">
              🧩
            </div>
-           <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-2">Solo Streak</h3>
+           <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-2">单人连胜</h3>
            <p className="text-slate-500 text-sm md:text-base mb-4 md:mb-6 leading-relaxed">
-             Test your endurance in an infinite streak mode. One mistake ends the run. How far can you go?
+             在无限连胜模式中测试您的耐力。一次失误即结束。您能走多远？
            </p>
            <div className="flex items-center text-xs md:text-sm font-semibold text-blue-600 uppercase tracking-wide">
-             Start Solo Session
+             开始单人模式
            </div>
         </div>
 
@@ -262,12 +262,12 @@ const App: React.FC = () => {
            <div className="w-12 h-12 md:w-16 md:h-16 bg-rose-100 rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4 md:mb-6 text-rose-600 group-hover:scale-110 transition-transform duration-300">
              ⚔️
            </div>
-           <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-2">Ranked Battle</h3>
+           <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-2">排位赛</h3>
            <p className="text-slate-500 text-sm md:text-base mb-4 md:mb-6 leading-relaxed">
-             Compete 1v1 against AI opponents in a 5-round speed match. Accuracy and reaction time are key.
+             在 5 轮速度赛中与 AI 对手进行 1v1 竞争。准确性和反应时间是关键。
            </p>
            <div className="flex items-center text-xs md:text-sm font-semibold text-rose-600 uppercase tracking-wide">
-             Enter Arena
+             进入竞技场
            </div>
         </div>
       </div>
@@ -279,11 +279,11 @@ const App: React.FC = () => {
            className="flex items-center space-x-2 px-6 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm text-sm md:text-base mb-8"
          >
            <span>🏆</span>
-           <span>View Global Rankings</span>
+           <span>查看全球排名</span>
          </button>
 
          <footer className="text-slate-400 text-[10px] md:text-sm font-medium text-center px-4 leading-tight">
-            © 2025 MedScan Challenge. Data simulated for educational purposes.
+            © 2025 医影挑战赛。数据模拟仅用于教育目的。
          </footer>
       </div>
     </div>
@@ -302,7 +302,7 @@ const App: React.FC = () => {
             👤
           </div>
           <div>
-            <div className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-wider">Player</div>
+            <div className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-wider">玩家</div>
             <div className="text-lg md:text-xl font-display font-bold text-slate-800 tabular-nums">{battleState!.playerScore}</div>
           </div>
         </div>
@@ -311,13 +311,13 @@ const App: React.FC = () => {
         <div className="flex flex-col items-center bg-slate-50 px-4 py-1.5 md:px-6 md:py-2 rounded-xl border border-slate-200">
             <div className="text-xl md:text-2xl font-display font-black tabular-nums text-slate-800">
               {isResult ? (
-                 <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-slate-400">Round Complete</span>
+                 <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-slate-400">本轮结束</span>
               ) : (
                  <span className={`${timeLeft <= 5 ? 'text-red-500' : 'text-slate-800'}`}>00:{timeLeft.toString().padStart(2, '0')}</span>
               )}
             </div>
             <div className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
-              Round {battleState!.round}{gameMode === GameMode.PVP_BATTLE ? ` / ${battleState!.totalRounds}` : ''}
+              第 {battleState!.round} 轮{gameMode === GameMode.PVP_BATTLE ? ` / ${battleState!.totalRounds}` : ''}
             </div>
         </div>
 
@@ -346,7 +346,7 @@ const App: React.FC = () => {
             {opponentAnswered && !hasAnswered && !isResult && gameMode === GameMode.PVP_BATTLE && (
                 <div className="absolute top-4 right-4 z-50 bg-white text-slate-800 text-xs font-bold py-2 px-4 rounded-full shadow-lg border border-slate-100 animate-bounce flex items-center space-x-2">
                     <span className="w-2 h-2 bg-rose-500 rounded-full"></span>
-                    <span>Opponent Answered!</span>
+                    <span>对手已作答！</span>
                 </div>
             )}
 
@@ -368,7 +368,7 @@ const App: React.FC = () => {
                                 {currentCase.category}
                             </span>
                             <span className={`px-2.5 py-1 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider border ${currentCase.difficulty === 'Hard' ? 'text-red-600 bg-red-50 border-red-100' : currentCase.difficulty === 'Medium' ? 'text-orange-600 bg-orange-50 border-orange-100' : 'text-green-600 bg-green-50 border-green-100'}`}>
-                                {currentCase.difficulty}
+                                {currentCase.difficulty === 'Hard' ? '困难' : currentCase.difficulty === 'Medium' ? '中等' : '简单'}
                             </span>
                         </div>
                         <p className="text-slate-700 text-base md:text-lg font-medium leading-relaxed">{currentCase.description}</p>
@@ -419,7 +419,7 @@ const App: React.FC = () => {
                             <div className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-200 mb-6">
                                 <h4 className="text-slate-900 text-[10px] md:text-xs font-bold uppercase mb-2 flex items-center">
                                     <svg className="w-3 h-3 md:w-4 md:h-4 mr-1 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                    Explanation
+                                    解析
                                 </h4>
                                 <p className="text-xs md:text-sm text-slate-600 leading-relaxed">{currentCase.explanation}</p>
                             </div>
@@ -427,14 +427,14 @@ const App: React.FC = () => {
                             {/* Round Summary Card */}
                             <div className="bg-white p-3 md:p-4 rounded-xl border border-slate-200 shadow-sm flex justify-between items-center">
                                 <div>
-                                    <div className="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold">You Earned</div>
+                                    <div className="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold">你获得</div>
                                     <div className={`font-display font-bold text-xl md:text-2xl ${selectedOption === currentCase.correctAnswer ? 'text-green-600' : 'text-slate-300'}`}>
                                         +{battleState!.history[battleState!.history.length-1].player.score}
                                     </div>
                                 </div>
                                 <div className="h-8 w-px bg-slate-200"></div>
                                 <div className="text-right">
-                                    <div className="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold">Opponent</div>
+                                    <div className="text-[9px] md:text-[10px] text-slate-400 uppercase font-bold">对手</div>
                                     <div className={`font-display font-bold text-xl md:text-2xl ${battleState!.history[battleState!.history.length-1].opponent.score > 0 ? 'text-rose-500' : 'text-slate-300'}`}>
                                         +{battleState!.history[battleState!.history.length-1].opponent.score}
                                     </div>
@@ -447,7 +447,7 @@ const App: React.FC = () => {
                 <div className="p-4 md:p-6 border-t border-slate-100 bg-white shrink-0">
                     {isResult && (
                         <Button onClick={nextRound} className="w-full py-3 md:py-4 text-sm md:text-base shadow-lg shadow-blue-500/20">
-                            Continue to Next Case
+                            继续下一题
                         </Button>
                     )}
                 </div>
@@ -470,16 +470,16 @@ const App: React.FC = () => {
                         {isPvP ? (playerWon ? '🏆' : '📉') : '🏁'}
                     </div>
                     <h2 className="text-2xl md:text-3xl font-display font-extrabold text-slate-900 mb-2">
-                        {isPvP ? (playerWon ? "Victory!" : "Match Lost") : "Session Ended"}
+                        {isPvP ? (playerWon ? "胜利！" : "比赛失败") : "会话结束"}
                     </h2>
                     <p className="text-slate-500 text-sm md:text-base font-medium">
-                        {isPvP ? "Great effort in the arena." : "Good practice run."}
+                        {isPvP ? "在竞技场表现出色。" : "不错的练习。"}
                     </p>
                 </div>
 
                 <div className="bg-slate-50 rounded-2xl border border-slate-100 p-4 md:p-6 mb-6 md:mb-8">
                     <div className="flex justify-between items-end mb-2">
-                        <span className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wider">Final Score</span>
+                        <span className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wider">最终得分</span>
                         <span className="text-3xl md:text-4xl font-display font-black text-slate-900">{battleState.playerScore}</span>
                     </div>
                     {isPvP && (
@@ -494,8 +494,8 @@ const App: React.FC = () => {
                 </div>
 
                 <div className="space-y-3">
-                    <Button onClick={isPvP ? startPvP : startSolo} className="w-full">Play Again</Button>
-                    <Button onClick={() => setGameState(GameState.MENU)} variant="secondary" className="w-full">Back to Menu</Button>
+                    <Button onClick={isPvP ? startPvP : startSolo} className="w-full">再玩一次</Button>
+                    <Button onClick={() => setGameState(GameState.MENU)} variant="secondary" className="w-full">返回菜单</Button>
                 </div>
             </div>
         </div>

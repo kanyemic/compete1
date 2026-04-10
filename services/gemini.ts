@@ -7,17 +7,17 @@ import { QuestionCase } from '../types';
 const CASE_SCHEMA: Schema = {
   type: Type.OBJECT,
   properties: {
-    category: { type: Type.STRING, description: "The medical imaging modality (e.g., MRI T2, Chest X-Ray, H&E Stain)." },
-    description: { type: Type.STRING, description: "A brief clinical presentation (e.g., '50yo male with chronic cough')." },
-    correctAnswer: { type: Type.STRING, description: "The specific diagnosis." },
+    category: { type: Type.STRING, description: "医学成像方式（例如：MRI T2、胸部 X 光、H&E 染色）。" },
+    description: { type: Type.STRING, description: "简短的临床表现（例如：'50岁男性，慢性咳嗽'）。" },
+    correctAnswer: { type: Type.STRING, description: "具体的诊断结果。" },
     options: {
       type: Type.ARRAY,
       items: { type: Type.STRING },
-      description: "An array of 4 distinct possible diagnoses. One must be the correct answer.",
+      description: "包含 4 个不同可能诊断的数组。其中一个必须是正确答案。",
     },
-    explanation: { type: Type.STRING, description: "A purely educational explanation of the findings supporting the diagnosis." },
+    explanation: { type: Type.STRING, description: "支持该诊断的发现的纯教育性解释。" },
     difficulty: { type: Type.STRING, enum: ["Easy", "Medium", "Hard"] },
-    imagePrompt: { type: Type.STRING, description: "A highly detailed visual description of the medical image to be generated, focusing on visual features, contrast, and specific pathology appearance." },
+    imagePrompt: { type: Type.STRING, description: "要生成的医学图像的高度详细视觉描述，重点关注视觉特征、对比度和特定病变外观。" },
   },
   required: ["category", "description", "correctAnswer", "options", "explanation", "difficulty", "imagePrompt"],
 };
@@ -26,13 +26,14 @@ export const generateMedicalCase = async (apiKey: string): Promise<QuestionCase>
   const ai = new GoogleGenAI({ apiKey });
   
   // Randomize the domain slightly to ensure variety
-  const domains = ["Radiology (X-Ray, CT, MRI)", "Pathology (Histology)", "Dermatology", "Ophthalmology (Fundus)"];
+  const domains = ["放射学 (X光, CT, MRI)", "病理学 (组织学)", "皮肤病学", "眼科 (眼底)"];
   const selectedDomain = domains[Math.floor(Math.random() * domains.length)];
 
-  const prompt = `Generate a challenging medical imaging diagnosis case for a game in the domain of: ${selectedDomain}.
-  Ensure the 'imagePrompt' is extremely descriptive so an AI can generate a realistic-looking medical scan or slide from it. 
-  The 'options' must include the 'correctAnswer' and 3 plausible distractors.
-  Do not mention the diagnosis name in the 'description'.`;
+  const prompt = `在以下领域生成一个具有挑战性的医学影像诊断病例：${selectedDomain}。
+  确保 'imagePrompt' 非常详细，以便 AI 可以根据它生成看起来真实的医学扫描图或切片图。
+  'options' 必须包含 'correctAnswer' 和 3 个合理的干扰项。
+  不要在 'description' 中提到诊断名称。
+  所有文本内容必须使用中文。`;
 
   try {
     const response = await ai.models.generateContent({
@@ -41,7 +42,7 @@ export const generateMedicalCase = async (apiKey: string): Promise<QuestionCase>
       config: {
         responseMimeType: "application/json",
         responseSchema: CASE_SCHEMA,
-        systemInstruction: "You are a senior medical educator designing a quiz.",
+        systemInstruction: "你是一位正在设计测验的高级医学教育专家。",
       },
     });
 

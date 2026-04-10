@@ -1,8 +1,8 @@
 import { BotBehavior, PlayerProfile } from "../types";
 
 const BOT_NAMES = [
-  "Dr. House", "NeuroNinja", "RadGod99", "ScanMaster", 
-  "GreyAnatomy", "MedStudent_42", "PathoLogic", "XRayVision"
+  "豪斯医生", "神经忍者", "放射之神99", "扫描大师", 
+  "格蕾医生", "42号医学生", "病理逻辑", "X射线视界"
 ];
 
 const BOT_AVATARS = ["👨‍⚕️", "👩‍⚕️", "🧠", "💀", "🩺", "🔬", "💊", "🧬"];

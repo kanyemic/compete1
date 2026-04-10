@@ -45,7 +45,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                 {/* Header */}
                 <div className="p-8 pb-4 border-b border-slate-100 bg-white z-10">
                     <div className="flex justify-between items-center mb-6">
-                        <h2 className="text-3xl font-display font-extrabold text-slate-900">Global Rankings</h2>
+                        <h2 className="text-3xl font-display font-extrabold text-slate-900">全球排名</h2>
                         <Button variant="ghost" onClick={onClose} className="!p-2">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                         </Button>
@@ -57,13 +57,13 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                             onClick={() => setActiveTab('rating')}
                             className={`flex-1 py-2 px-4 rounded-lg text-sm font-bold transition-all ${activeTab === 'rating' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                         >
-                            🏆 Competitive Rating
+                            🏆 竞技积分
                         </button>
                         <button 
                             onClick={() => setActiveTab('streak')}
                             className={`flex-1 py-2 px-4 rounded-lg text-sm font-bold transition-all ${activeTab === 'streak' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                         >
-                            🔥 Max Streak
+                            🔥 最高连胜
                         </button>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                     {loading ? (
                         <div className="flex flex-col items-center justify-center h-64 space-y-4">
                              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                             <span className="text-slate-400 text-sm font-medium">Fetching Data...</span>
+                             <span className="text-slate-400 text-sm font-medium">正在获取数据...</span>
                         </div>
                     ) : (
                         <div className="space-y-2">
@@ -87,14 +87,14 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                                     </div>
                                     <div className="flex-1">
                                         <div className="font-bold text-slate-900">{entry.name}</div>
-                                        <div className="text-xs text-slate-400 font-medium">Global Elite</div>
+                                        <div className="text-xs text-slate-400 font-medium">全球精英</div>
                                     </div>
                                     <div className="text-right">
                                         <div className="font-display font-black text-xl text-slate-800 tabular-nums">
                                             {activeTab === 'rating' ? entry.score : `${entry.score}`}
                                         </div>
                                         <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                                            {activeTab === 'rating' ? 'MMR' : 'WINS'}
+                                            {activeTab === 'rating' ? '积分' : '胜场'}
                                         </div>
                                     </div>
                                     <div className="w-8 flex justify-center ml-2">
@@ -110,7 +110,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
 
                 {/* Footer */}
                 <div className="p-6 border-t border-slate-100 bg-slate-50 text-center">
-                    <p className="text-xs text-slate-400 font-medium">Rankings update every 24 hours.</p>
+                    <p className="text-xs text-slate-400 font-medium">排名每 24 小时更新一次。</p>
                 </div>
             </div>
         </div>

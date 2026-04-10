@@ -1,5 +1,5 @@
 {
-  "name": "MedScan Challenge",
-  "description": "A medical imaging diagnosis game inspired by Tuxun.fun. Test your diagnostic skills against a database of medical cases.",
+  "name": "医影挑战赛",
+  "description": "一款受 Tuxun.fun 启发的医学影像诊断游戏。在医学病例库中测试您的诊断技能。",
   "requestFramePermissions": []
 }

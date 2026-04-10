@@ -7,13 +7,13 @@ interface MatchmakingProps {
 }
 
 export const Matchmaking: React.FC<MatchmakingProps> = ({ opponent, onMatchFound }) => {
-  const [status, setStatus] = useState("Searching for opponent...");
+  const [status, setStatus] = useState("正在寻找对手...");
   const [found, setFound] = useState(false);
 
   useEffect(() => {
     // Phase 1: Search
     const t1 = setTimeout(() => {
-      setStatus("Opponent Found");
+      setStatus("已找到对手");
       setFound(true);
     }, 2000);
 
@@ -48,8 +48,8 @@ export const Matchmaking: React.FC<MatchmakingProps> = ({ opponent, onMatchFound
             <div className="w-20 h-20 rounded-full bg-blue-50 border-2 border-blue-100 flex items-center justify-center text-3xl mb-4 text-blue-600">
               👤
             </div>
-            <div className="text-lg font-bold text-slate-900">You</div>
-            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1">Rating 1500</div>
+            <div className="text-lg font-bold text-slate-900">你</div>
+            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1">积分 1500</div>
           </div>
 
           <div className="mx-8 bg-slate-900 text-white rounded-full w-12 h-12 flex items-center justify-center font-black italic shadow-lg z-20">
@@ -62,7 +62,7 @@ export const Matchmaking: React.FC<MatchmakingProps> = ({ opponent, onMatchFound
               {opponent.avatar}
             </div>
             <div className="text-lg font-bold text-slate-900">{opponent.name}</div>
-            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1">Rating {opponent.rating}</div>
+            <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1">积分 {opponent.rating}</div>
           </div>
         </div>
       </div>
