@@ -15,6 +15,14 @@ View your app in AI Studio: https://ai.studio/apps/9fee406a-4660-4c63-84b1-46447
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Copy `.env.example` to `.env.local`
+3. Set the `GEMINI_API_KEY` in `.env.local`
+4. Optional: set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to enable real backend data
+5. If using Supabase, run [supabase/schema.sql](/Users/kanyemic/Desktop/medical challenge/compete1/supabase/schema.sql) and [supabase/seed.sql](/Users/kanyemic/Desktop/medical challenge/compete1/supabase/seed.sql) in your database
+6. Run the app:
    `npm run dev`
+
+## Data Sources
+
+- Without Supabase env vars, the app falls back to local mock data.
+- With Supabase configured, `fetchRandomCase` and `fetchLeaderboard` will prefer backend data automatically.

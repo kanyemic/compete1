@@ -57,7 +57,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                             onClick={() => setActiveTab('rating')}
                             className={`flex-1 py-2 px-4 rounded-lg text-sm font-bold transition-all ${activeTab === 'rating' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                         >
-                            🏆 竞技积分
+                            📅 每日挑战
                         </button>
                         <button 
                             onClick={() => setActiveTab('streak')}

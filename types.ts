@@ -2,6 +2,7 @@
 export enum GameMode {
   SOLO_STREAK = 'SOLO_STREAK',
   PVP_BATTLE = 'PVP_BATTLE',
+  DAILY_CHALLENGE = 'DAILY_CHALLENGE',
 }
 
 export enum GameState {
@@ -12,6 +13,8 @@ export enum GameState {
   ROUND_RESULT = 'ROUND_RESULT',
   GAME_OVER = 'GAME_OVER',
   LEADERBOARD = 'LEADERBOARD',
+  WRONG_QUESTIONS = 'WRONG_QUESTIONS',
+  PROFILE = 'PROFILE',
 }
 
 export interface QuestionCase {
@@ -36,6 +39,7 @@ export interface RoundResult {
   correct: boolean;
   timeTaken: number;
   score: number;
+  selectedAnswer?: string | null;
 }
 
 export interface BattleState {
@@ -60,4 +64,42 @@ export interface LeaderboardEntry {
   avatar: string;
   score: number;
   trend: 'up' | 'down' | 'same';
+}
+
+export interface DailyChallengeRecord {
+  date: string;
+  score: number;
+  correctCount: number;
+  totalQuestions: number;
+  completedAt: string;
+}
+
+export interface WrongQuestionEntry {
+  id: string;
+  mode: 'solo_streak' | 'daily_challenge';
+  questionId: string;
+  category: string;
+  description: string;
+  options: string[];
+  correctAnswer: string;
+  selectedAnswer: string | null;
+  explanation: string;
+  difficulty: QuestionCase['difficulty'];
+  imageUrl: string;
+  createdAt: string;
+}
+
+export interface ProfileSummary {
+  displayName: string;
+  avatar: string;
+  bestSoloStreak: number;
+  totalSoloRuns: number;
+  totalQuestionsAnswered: number;
+  totalCorrectAnswers: number;
+  correctRate: number;
+  wrongQuestionCount: number;
+  dailyChallengesCompleted: number;
+  bestDailyChallengeScore: number;
+  latestDailyChallengeScore: number | null;
+  lastPlayedAt: string | null;
 }

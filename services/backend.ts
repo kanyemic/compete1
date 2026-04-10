@@ -1,0 +1,514 @@
+import { LeaderboardEntry, QuestionCase, RoundResult, WrongQuestionEntry } from '../types';
+import { getSupabaseClient } from './supabase';
+import { LocalPlayerIdentity } from './playerIdentity';
+
+type BackendQuestionCaseRow = {
+  id: string;
+  specialty: string;
+  modality: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  description: string;
+  options: string[];
+  correct_answer: string;
+  explanation: string;
+  image_url: string;
+};
+
+type SoloLeaderboardRow = {
+  user_id: string;
+  display_name: string;
+  avatar_url: string | null;
+  best_streak: number;
+};
+
+type DailyLeaderboardRow = {
+  id: string;
+  score: number;
+  user: {
+    display_name: string;
+    avatar_url: string | null;
+  } | null;
+};
+
+type DailyChallengeQuestionRow = {
+  order_index: number;
+  question: BackendQuestionCaseRow | null;
+};
+
+const difficultyLabelMap: Record<BackendQuestionCaseRow['difficulty'], QuestionCase['difficulty']> = {
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
+};
+
+const avatarFromName = (name: string): string => {
+  const symbolBank = ['🩺', '🔬', '🧠', '🧬', '🏥', '💊', '📚', '⚕️'];
+  const code = Array.from(name).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return symbolBank[code % symbolBank.length];
+};
+
+const mapQuestionCase = (row: BackendQuestionCaseRow): QuestionCase => ({
+  id: row.id,
+  category: `${row.specialty} · ${row.modality}`,
+  description: row.description,
+  correctAnswer: row.correct_answer,
+  options: row.options,
+  explanation: row.explanation,
+  difficulty: difficultyLabelMap[row.difficulty],
+  imageUrl: row.image_url,
+});
+
+const sortByDailySeed = (items: BackendQuestionCaseRow[], seed: string): BackendQuestionCaseRow[] => {
+  const seedValue = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return [...items].sort((left, right) => {
+    const leftScore = Array.from(left.id).reduce((sum, char) => sum + char.charCodeAt(0), seedValue);
+    const rightScore = Array.from(right.id).reduce((sum, char) => sum + char.charCodeAt(0), seedValue);
+    return leftScore - rightScore;
+  });
+};
+
+export const fetchRandomCaseFromBackend = async (): Promise<QuestionCase | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('question_cases')
+    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url')
+    .eq('is_active', true)
+    .eq('review_status', 'approved');
+
+  if (error) {
+    console.error('Failed to fetch question cases from Supabase:', error);
+    return null;
+  }
+
+  if (!data || data.length === 0) {
+    return null;
+  }
+
+  const randomIndex = Math.floor(Math.random() * data.length);
+  return mapQuestionCase(data[randomIndex] as BackendQuestionCaseRow);
+};
+
+export const fetchDailyChallengeCasesFromBackend = async (
+  seed: string,
+  count: number
+): Promise<QuestionCase[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data: challengeData, error: challengeError } = await supabase
+    .from('daily_challenges')
+    .select('id')
+    .eq('challenge_date', seed)
+    .eq('status', 'published')
+    .limit(1)
+    .maybeSingle();
+
+  if (challengeError) {
+    console.error('Failed to fetch daily challenge by date:', challengeError);
+  }
+
+  if (challengeData?.id) {
+    const { data: challengeQuestions, error: challengeQuestionsError } = await supabase
+      .from('daily_challenge_questions')
+      .select(`
+        order_index,
+        question:question_cases (
+          id,
+          specialty,
+          modality,
+          difficulty,
+          description,
+          options,
+          correct_answer,
+          explanation,
+          image_url
+        )
+      `)
+      .eq('challenge_id', challengeData.id)
+      .order('order_index', { ascending: true })
+      .limit(count);
+
+    if (challengeQuestionsError) {
+      console.error('Failed to fetch daily challenge question set:', challengeQuestionsError);
+    } else if (challengeQuestions && challengeQuestions.length > 0) {
+      return (challengeQuestions as DailyChallengeQuestionRow[])
+        .map((entry) => entry.question)
+        .filter((entry): entry is BackendQuestionCaseRow => Boolean(entry))
+        .map(mapQuestionCase);
+    }
+  }
+
+  const { data, error } = await supabase
+    .from('question_cases')
+    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url')
+    .eq('is_active', true)
+    .eq('review_status', 'approved');
+
+  if (error) {
+    console.error('Failed to fetch daily challenge cases from Supabase:', error);
+    return null;
+  }
+
+  if (!data || data.length === 0) {
+    return null;
+  }
+
+  return sortByDailySeed(data as BackendQuestionCaseRow[], seed)
+    .slice(0, count)
+    .map(mapQuestionCase);
+};
+
+const fetchLatestDailyChallengeId = async (): Promise<string | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('daily_challenges')
+    .select('id')
+    .eq('status', 'published')
+    .order('challenge_date', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    console.error('Failed to fetch latest daily challenge:', error);
+    return null;
+  }
+
+  return data?.id ?? null;
+};
+
+const fetchDailyChallengeIdByDate = async (dateKey: string): Promise<string | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('daily_challenges')
+    .select('id')
+    .eq('challenge_date', dateKey)
+    .eq('status', 'published')
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    console.error('Failed to fetch daily challenge id by date:', error);
+    return null;
+  }
+
+  return data?.id ?? null;
+};
+
+const fetchDailyLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const challengeId = await fetchLatestDailyChallengeId();
+  if (!challengeId) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('daily_challenge_attempts')
+    .select(`
+      id,
+      score,
+      user:app_users!daily_challenge_attempts_user_id_fkey (
+        display_name,
+        avatar_url
+      )
+    `)
+    .eq('challenge_id', challengeId)
+    .eq('status', 'completed')
+    .order('score', { ascending: false })
+    .order('total_time_ms', { ascending: true })
+    .limit(10);
+
+  if (error) {
+    console.error('Failed to fetch daily leaderboard:', error);
+    return null;
+  }
+
+  return (data as DailyLeaderboardRow[]).map((entry, index) => ({
+    id: entry.id,
+    rank: index + 1,
+    name: entry.user?.display_name ?? `用户 ${index + 1}`,
+    avatar: entry.user?.avatar_url || avatarFromName(entry.user?.display_name ?? `用户 ${index + 1}`),
+    score: entry.score,
+    trend: 'same',
+  }));
+};
+
+const fetchSoloBestLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('v_leaderboard_solo_best')
+    .select('user_id, display_name, avatar_url, best_streak')
+    .order('best_streak', { ascending: false })
+    .limit(10);
+
+  if (error) {
+    console.error('Failed to fetch solo leaderboard:', error);
+    return null;
+  }
+
+  return (data as SoloLeaderboardRow[]).map((entry, index) => ({
+    id: entry.user_id,
+    rank: index + 1,
+    name: entry.display_name,
+    avatar: entry.avatar_url || avatarFromName(entry.display_name),
+    score: entry.best_streak,
+    trend: 'same',
+  }));
+};
+
+export const fetchLeaderboardFromBackend = async (
+  type: 'rating' | 'streak'
+): Promise<LeaderboardEntry[] | null> => {
+  return type === 'rating'
+    ? fetchDailyLeaderboard()
+    : fetchSoloBestLeaderboard();
+};
+
+export const ensureBackendPlayerProfile = async (
+  identity: LocalPlayerIdentity
+): Promise<string | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('app_users')
+    .upsert(
+      [
+        {
+          id: identity.id,
+          display_name: identity.displayName,
+          avatar_url: identity.avatar,
+          is_guest: identity.isGuest,
+          last_seen_at: new Date().toISOString(),
+        },
+      ],
+      { onConflict: 'id' }
+    )
+    .select('id')
+    .single();
+
+  if (error) {
+    console.error('Failed to ensure backend player profile:', error);
+    return null;
+  }
+
+  return data.id;
+};
+
+export const submitDailyChallengeAttemptToBackend = async (payload: {
+  identity: LocalPlayerIdentity;
+  dateKey: string;
+  score: number;
+  correctCount: number;
+  totalQuestions: number;
+  history: RoundResult[];
+  cases: QuestionCase[];
+}): Promise<void> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return;
+  }
+
+  const userId = await ensureBackendPlayerProfile(payload.identity);
+  if (!userId) {
+    return;
+  }
+
+  const challengeId = await fetchDailyChallengeIdByDate(payload.dateKey);
+  if (!challengeId) {
+    return;
+  }
+
+  const totalTimeMs = payload.history.reduce((sum, entry) => sum + Math.round(entry.timeTaken * 1000), 0);
+
+  const { data: attempt, error: attemptError } = await supabase
+    .from('daily_challenge_attempts')
+    .upsert(
+      [
+        {
+          challenge_id: challengeId,
+          user_id: userId,
+          status: 'completed',
+          score: payload.score,
+          correct_count: payload.correctCount,
+          total_questions: payload.totalQuestions,
+          total_time_ms: totalTimeMs,
+          submitted_at: new Date().toISOString(),
+        },
+      ],
+      { onConflict: 'challenge_id,user_id' }
+    )
+    .select('id')
+    .single();
+
+  if (attemptError || !attempt) {
+    console.error('Failed to upsert daily challenge attempt:', attemptError);
+    return;
+  }
+
+  const { error: deleteError } = await supabase
+    .from('daily_challenge_answers')
+    .delete()
+    .eq('attempt_id', attempt.id);
+
+  if (deleteError) {
+    console.error('Failed to clear existing daily challenge answers:', deleteError);
+  }
+
+  const answers = payload.history.map((entry, index) => ({
+    attempt_id: attempt.id,
+    question_id: payload.cases[index]?.id,
+    order_index: index + 1,
+    selected_answer: entry.selectedAnswer ?? null,
+    is_correct: entry.correct,
+    time_taken_ms: Math.round(entry.timeTaken * 1000),
+  })).filter((entry) => entry.question_id);
+
+  if (answers.length === 0) {
+    return;
+  }
+
+  const { error: answersError } = await supabase
+    .from('daily_challenge_answers')
+    .insert(answers);
+
+  if (answersError) {
+    console.error('Failed to insert daily challenge answers:', answersError);
+  }
+};
+
+export const submitSoloRunToBackend = async (payload: {
+  identity: LocalPlayerIdentity;
+  history: RoundResult[];
+  endedReason: 'wrong_answer' | 'timeout' | 'manual_exit' | 'completed';
+}): Promise<void> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return;
+  }
+
+  const userId = await ensureBackendPlayerProfile(payload.identity);
+  if (!userId) {
+    return;
+  }
+
+  const totalAnswered = payload.history.length;
+  const correctCount = payload.history.filter((entry) => entry.correct).length;
+  const totalTimeMs = payload.history.reduce((sum, entry) => sum + Math.round(entry.timeTaken * 1000), 0);
+
+  const { data: run, error } = await supabase
+    .from('solo_runs')
+    .insert([
+      {
+        user_id: userId,
+        status: 'completed',
+        streak_count: correctCount,
+        correct_count: correctCount,
+        total_answered: totalAnswered,
+        total_time_ms: totalTimeMs,
+        ended_reason: payload.endedReason,
+        ended_at: new Date().toISOString(),
+      },
+    ])
+    .select('id')
+    .single();
+
+  if (error || !run) {
+    console.error('Failed to insert solo run:', error);
+    return;
+  }
+
+  const answers = payload.history.map((entry, index) => ({
+    run_id: run.id,
+    question_id: entry.questionId,
+    sequence_no: index + 1,
+    selected_answer: entry.selectedAnswer ?? null,
+    is_correct: entry.correct,
+    time_taken_ms: Math.round(entry.timeTaken * 1000),
+  }));
+
+  const { error: answersError } = await supabase
+    .from('solo_run_answers')
+    .insert(answers);
+
+  if (answersError) {
+    console.error('Failed to insert solo run answers:', answersError);
+  }
+};
+
+export const fetchWrongQuestionsFromBackend = async (
+  identity: LocalPlayerIdentity
+): Promise<WrongQuestionEntry[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const userId = await ensureBackendPlayerProfile(identity);
+  if (!userId) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from('v_wrong_questions')
+    .select(`
+      answer_id,
+      mode,
+      question_id,
+      category: specialty,
+      description,
+      options,
+      correct_answer,
+      selected_answer,
+      explanation,
+      difficulty,
+      image_url,
+      created_at
+    `)
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .limit(50);
+
+  if (error) {
+    console.error('Failed to fetch wrong questions:', error);
+    return null;
+  }
+
+  return (data ?? []).map((entry: any) => ({
+    id: entry.answer_id,
+    mode: entry.mode,
+    questionId: entry.question_id,
+    category: entry.category,
+    description: entry.description,
+    options: entry.options,
+    correctAnswer: entry.correct_answer,
+    selectedAnswer: entry.selected_answer,
+    explanation: entry.explanation,
+    difficulty: entry.difficulty === 'hard' ? 'Hard' : entry.difficulty === 'medium' ? 'Medium' : 'Easy',
+    imageUrl: entry.image_url,
+    createdAt: entry.created_at,
+  }));
+};
