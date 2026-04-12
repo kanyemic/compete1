@@ -5,15 +5,35 @@ import { Button } from './Button';
 interface WrongQuestionsProps {
   entries: WrongQuestionEntry[];
   loading?: boolean;
+  onRetryEntry: (entry: WrongQuestionEntry) => void;
   onClose: () => void;
 }
 
-export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading = false, onClose }) => {
+export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading = false, onRetryEntry, onClose }) => {
   const [selectedEntry, setSelectedEntry] = useState<WrongQuestionEntry | null>(entries[0] ?? null);
+  const [modeFilter, setModeFilter] = useState<'all' | WrongQuestionEntry['mode']>('all');
+  const [difficultyFilter, setDifficultyFilter] = useState<'all' | WrongQuestionEntry['difficulty']>('all');
+  const [categoryQuery, setCategoryQuery] = useState('');
+
+  const filteredEntries = entries.filter((entry) => {
+    const matchesMode = modeFilter === 'all' || entry.mode === modeFilter;
+    const matchesDifficulty = difficultyFilter === 'all' || entry.difficulty === difficultyFilter;
+    const matchesCategory = categoryQuery.trim().length === 0
+      || entry.category.toLowerCase().includes(categoryQuery.trim().toLowerCase());
+
+    return matchesMode && matchesDifficulty && matchesCategory;
+  });
+  const reviewStatusLabel = selectedEntry?.reviewStatus === 'approved'
+    ? '已通过'
+    : selectedEntry?.reviewStatus === 'reviewing'
+      ? '审核中'
+      : selectedEntry?.reviewStatus === 'archived'
+        ? '已归档'
+        : '草稿';
 
   useEffect(() => {
-    setSelectedEntry(entries[0] ?? null);
-  }, [entries]);
+    setSelectedEntry(filteredEntries[0] ?? null);
+  }, [entries, modeFilter, difficultyFilter, categoryQuery]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 p-4 animate-fade-in relative">
@@ -24,7 +44,7 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
 
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[92vh]">
         <div className="p-6 md:p-8 border-b border-slate-100 bg-white">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center gap-4">
             <div>
               <h2 className="text-3xl font-display font-extrabold text-slate-900">错题本</h2>
               <p className="text-sm text-slate-400 font-medium mt-1">优先显示最近的错题，用来快速复盘易错点。</p>
@@ -32,6 +52,35 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
             <Button variant="ghost" onClick={onClose} className="!p-2">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
             </Button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_150px_150px] gap-3 mt-5">
+            <input
+              value={categoryQuery}
+              onChange={(event) => setCategoryQuery(event.target.value)}
+              placeholder="搜索专科或分类，例如 胸片 / 头颅 CT"
+              className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-300 focus:bg-white"
+            />
+            <select
+              value={modeFilter}
+              onChange={(event) => setModeFilter(event.target.value as 'all' | WrongQuestionEntry['mode'])}
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-300 focus:bg-white"
+            >
+              <option value="all">全部模式</option>
+              <option value="solo_streak">单人连胜</option>
+              <option value="daily_challenge">每日挑战</option>
+              <option value="review_practice">错题复练</option>
+            </select>
+            <select
+              value={difficultyFilter}
+              onChange={(event) => setDifficultyFilter(event.target.value as 'all' | WrongQuestionEntry['difficulty'])}
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-300 focus:bg-white"
+            >
+              <option value="all">全部难度</option>
+              <option value="Easy">简单</option>
+              <option value="Medium">中等</option>
+              <option value="Hard">困难</option>
+            </select>
           </div>
         </div>
 
@@ -42,13 +91,19 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                 <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                 <span className="text-slate-400 text-sm font-medium">正在加载错题...</span>
               </div>
-            ) : entries.length === 0 ? (
+            ) : filteredEntries.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-48 text-center px-6">
-                <div className="text-4xl mb-3">🎉</div>
-                <p className="text-slate-500 text-sm font-medium">还没有错题记录，继续保持。</p>
+                <div className="text-4xl mb-3">{entries.length === 0 ? '🎉' : '🔎'}</div>
+                <p className="text-slate-500 text-sm font-medium">
+                  {entries.length === 0 ? '还没有错题记录，继续保持。' : '当前筛选条件下没有匹配的错题。'}
+                </p>
               </div>
             ) : (
-              entries.map((entry) => (
+              <>
+                <div className="px-1 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  共 {filteredEntries.length} 条结果
+                </div>
+                {filteredEntries.map((entry) => (
                 <button
                   key={entry.id}
                   onClick={() => setSelectedEntry(entry)}
@@ -60,7 +115,7 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                 >
                   <div className="flex items-center justify-between gap-3 mb-2">
                     <span className="text-[10px] uppercase tracking-wide font-bold text-slate-400">
-                      {entry.mode === 'daily_challenge' ? '每日挑战' : '单人连胜'}
+                      {entry.mode === 'daily_challenge' ? '每日挑战' : entry.mode === 'review_practice' ? '错题复练' : '单人连胜'}
                     </span>
                     <span className={`px-2 py-1 rounded-md text-[10px] font-bold border ${
                       entry.difficulty === 'Hard' ? 'text-red-600 bg-red-50 border-red-100' :
@@ -73,7 +128,8 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                   <div className="font-bold text-slate-900 text-sm mb-1">{entry.category}</div>
                   <div className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{entry.description}</div>
                 </button>
-              ))
+                ))}
+              </>
             )}
           </div>
 
@@ -144,6 +200,47 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5">
                   <h4 className="text-slate-900 text-xs font-bold uppercase mb-2">解析</h4>
                   <p className="text-sm text-slate-600 leading-relaxed">{selectedEntry.explanation}</p>
+                </div>
+
+                {(selectedEntry.sourceName || selectedEntry.reviewStatus) && (
+                  <div className="bg-white border border-slate-200 rounded-2xl p-5">
+                    <div className="flex items-center justify-between gap-4 mb-3">
+                      <h4 className="text-slate-900 text-xs font-bold uppercase">来源与审核</h4>
+                      <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold border ${
+                        selectedEntry.reviewStatus === 'approved'
+                          ? 'text-emerald-600 bg-emerald-50 border-emerald-100'
+                          : selectedEntry.reviewStatus === 'reviewing'
+                            ? 'text-amber-600 bg-amber-50 border-amber-100'
+                            : 'text-slate-500 bg-slate-50 border-slate-200'
+                      }`}>
+                        {reviewStatusLabel}
+                      </span>
+                    </div>
+                    <div className="space-y-2 text-sm text-slate-600">
+                      <div>来源：{selectedEntry.sourceName ?? '暂未标注'}</div>
+                      <div>审核人：{selectedEntry.reviewerName ?? '待补充'}</div>
+                      <div>更新于：{selectedEntry.updatedAt ? new Date(selectedEntry.updatedAt).toLocaleDateString('zh-CN') : '待补充'}</div>
+                      {selectedEntry.sourceUrl && (
+                        <a
+                          href={selectedEntry.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
+                        >
+                          查看来源链接
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex items-center gap-3">
+                  <Button onClick={() => onRetryEntry(selectedEntry)} className="flex-1">
+                    练这道题
+                  </Button>
+                  <Button onClick={onClose} variant="secondary" className="flex-1">
+                    返回菜单
+                  </Button>
                 </div>
               </div>
             ) : (

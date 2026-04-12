@@ -1,4 +1,4 @@
-import { LeaderboardEntry, QuestionCase, RoundResult, WrongQuestionEntry } from '../types';
+import { LeaderboardData, LeaderboardEntry, LeaderboardType, QuestionCase, ReviewStatus, RoundResult, WrongQuestionEntry } from '../types';
 import { getSupabaseClient } from './supabase';
 import { LocalPlayerIdentity } from './playerIdentity';
 
@@ -12,6 +12,11 @@ type BackendQuestionCaseRow = {
   correct_answer: string;
   explanation: string;
   image_url: string;
+  source_name: string | null;
+  source_url: string | null;
+  review_status: ReviewStatus;
+  reviewer_name: string | null;
+  updated_at: string;
 };
 
 type SoloLeaderboardRow = {
@@ -23,7 +28,9 @@ type SoloLeaderboardRow = {
 
 type DailyLeaderboardRow = {
   id: string;
+  user_id: string;
   score: number;
+  total_time_ms: number | null;
   user: {
     display_name: string;
     avatar_url: string | null;
@@ -50,12 +57,19 @@ const avatarFromName = (name: string): string => {
 const mapQuestionCase = (row: BackendQuestionCaseRow): QuestionCase => ({
   id: row.id,
   category: `${row.specialty} · ${row.modality}`,
+  specialty: row.specialty,
+  modality: row.modality,
   description: row.description,
   correctAnswer: row.correct_answer,
   options: row.options,
   explanation: row.explanation,
   difficulty: difficultyLabelMap[row.difficulty],
   imageUrl: row.image_url,
+  sourceName: row.source_name,
+  sourceUrl: row.source_url,
+  reviewStatus: row.review_status,
+  reviewerName: row.reviewer_name,
+  updatedAt: row.updated_at,
 });
 
 const sortByDailySeed = (items: BackendQuestionCaseRow[], seed: string): BackendQuestionCaseRow[] => {
@@ -75,7 +89,7 @@ export const fetchRandomCaseFromBackend = async (): Promise<QuestionCase | null>
 
   const { data, error } = await supabase
     .from('question_cases')
-    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url')
+    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url, source_name, source_url, review_status, reviewer_name, updated_at')
     .eq('is_active', true)
     .eq('review_status', 'approved');
 
@@ -127,7 +141,12 @@ export const fetchDailyChallengeCasesFromBackend = async (
           options,
           correct_answer,
           explanation,
-          image_url
+          image_url,
+          source_name,
+          source_url,
+          review_status,
+          reviewer_name,
+          updated_at
         )
       `)
       .eq('challenge_id', challengeData.id)
@@ -146,7 +165,7 @@ export const fetchDailyChallengeCasesFromBackend = async (
 
   const { data, error } = await supabase
     .from('question_cases')
-    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url')
+    .select('id, specialty, modality, difficulty, description, options, correct_answer, explanation, image_url, source_name, source_url, review_status, reviewer_name, updated_at')
     .eq('is_active', true)
     .eq('review_status', 'approved');
 
@@ -208,7 +227,29 @@ const fetchDailyChallengeIdByDate = async (dateKey: string): Promise<string | nu
   return data?.id ?? null;
 };
 
-const fetchDailyLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
+const mapDailyLeaderboardEntries = (data: DailyLeaderboardRow[]): LeaderboardEntry[] => (
+  data.map((entry, index) => ({
+    id: entry.user_id || entry.id,
+    rank: index + 1,
+    name: entry.user?.display_name ?? `用户 ${index + 1}`,
+    avatar: entry.user?.avatar_url || avatarFromName(entry.user?.display_name ?? `用户 ${index + 1}`),
+    score: entry.score,
+    trend: 'same',
+  }))
+);
+
+const mapSoloLeaderboardEntries = (data: SoloLeaderboardRow[]): LeaderboardEntry[] => (
+  data.map((entry, index) => ({
+    id: entry.user_id,
+    rank: index + 1,
+    name: entry.display_name,
+    avatar: entry.avatar_url || avatarFromName(entry.display_name),
+    score: entry.best_streak,
+    trend: 'same',
+  }))
+);
+
+const fetchDailyLeaderboard = async (): Promise<LeaderboardData | null> => {
   const supabase = getSupabaseClient();
   if (!supabase) {
     return null;
@@ -223,7 +264,9 @@ const fetchDailyLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
     .from('daily_challenge_attempts')
     .select(`
       id,
+      user_id,
       score,
+      total_time_ms,
       user:app_users!daily_challenge_attempts_user_id_fkey (
         display_name,
         avatar_url
@@ -240,17 +283,14 @@ const fetchDailyLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
     return null;
   }
 
-  return (data as DailyLeaderboardRow[]).map((entry, index) => ({
-    id: entry.id,
-    rank: index + 1,
-    name: entry.user?.display_name ?? `用户 ${index + 1}`,
-    avatar: entry.user?.avatar_url || avatarFromName(entry.user?.display_name ?? `用户 ${index + 1}`),
-    score: entry.score,
-    trend: 'same',
-  }));
+  const entries = mapDailyLeaderboardEntries((data as DailyLeaderboardRow[]) ?? []);
+  return {
+    entries: entries.slice(0, 10),
+    currentUserEntry: null,
+  };
 };
 
-const fetchSoloBestLeaderboard = async (): Promise<LeaderboardEntry[] | null> => {
+const fetchSoloBestLeaderboard = async (): Promise<LeaderboardData | null> => {
   const supabase = getSupabaseClient();
   if (!supabase) {
     return null;
@@ -267,22 +307,75 @@ const fetchSoloBestLeaderboard = async (): Promise<LeaderboardEntry[] | null> =>
     return null;
   }
 
-  return (data as SoloLeaderboardRow[]).map((entry, index) => ({
-    id: entry.user_id,
-    rank: index + 1,
-    name: entry.display_name,
-    avatar: entry.avatar_url || avatarFromName(entry.display_name),
-    score: entry.best_streak,
-    trend: 'same',
-  }));
+  const entries = mapSoloLeaderboardEntries((data as SoloLeaderboardRow[]) ?? []);
+  return {
+    entries: entries.slice(0, 10),
+    currentUserEntry: null,
+  };
 };
 
-export const fetchLeaderboardFromBackend = async (
-  type: 'rating' | 'streak'
-): Promise<LeaderboardEntry[] | null> => {
-  return type === 'rating'
-    ? fetchDailyLeaderboard()
-    : fetchSoloBestLeaderboard();
+export const fetchLeaderboardDataFromBackend = async (
+  type: LeaderboardType,
+  identity: LocalPlayerIdentity
+): Promise<LeaderboardData | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    return null;
+  }
+
+  if (type === 'rating') {
+    const challengeId = await fetchLatestDailyChallengeId();
+    if (!challengeId) {
+      return {
+        entries: [],
+        currentUserEntry: null,
+      };
+    }
+
+    const { data, error } = await supabase
+      .from('daily_challenge_attempts')
+      .select(`
+        id,
+        user_id,
+        score,
+        total_time_ms,
+        user:app_users!daily_challenge_attempts_user_id_fkey (
+          display_name,
+          avatar_url
+        )
+      `)
+      .eq('challenge_id', challengeId)
+      .eq('status', 'completed')
+      .order('score', { ascending: false })
+      .order('total_time_ms', { ascending: true });
+
+    if (error) {
+      console.error('Failed to fetch daily leaderboard data:', error);
+      return null;
+    }
+
+    const mappedEntries = mapDailyLeaderboardEntries((data as DailyLeaderboardRow[]) ?? []);
+    return {
+      entries: mappedEntries.slice(0, 10),
+      currentUserEntry: mappedEntries.find((entry) => entry.id === identity.id) ?? null,
+    };
+  }
+
+  const { data, error } = await supabase
+    .from('v_leaderboard_solo_best')
+    .select('user_id, display_name, avatar_url, best_streak')
+    .order('best_streak', { ascending: false });
+
+  if (error) {
+    console.error('Failed to fetch solo leaderboard data:', error);
+    return null;
+  }
+
+  const mappedEntries = mapSoloLeaderboardEntries((data as SoloLeaderboardRow[]) ?? []);
+  return {
+    entries: mappedEntries.slice(0, 10),
+    currentUserEntry: mappedEntries.find((entry) => entry.id === identity.id) ?? null,
+  };
 };
 
 export const ensureBackendPlayerProfile = async (
@@ -299,6 +392,7 @@ export const ensureBackendPlayerProfile = async (
       [
         {
           id: identity.id,
+          auth_user_id: identity.authUserId ?? null,
           display_name: identity.displayName,
           avatar_url: identity.avatar,
           is_guest: identity.isGuest,
@@ -486,6 +580,11 @@ export const fetchWrongQuestionsFromBackend = async (
       explanation,
       difficulty,
       image_url,
+      source_name,
+      source_url,
+      review_status,
+      reviewer_name,
+      updated_at,
       created_at
     `)
     .eq('user_id', userId)
@@ -509,6 +608,11 @@ export const fetchWrongQuestionsFromBackend = async (
     explanation: entry.explanation,
     difficulty: entry.difficulty === 'hard' ? 'Hard' : entry.difficulty === 'medium' ? 'Medium' : 'Easy',
     imageUrl: entry.image_url,
+    sourceName: entry.source_name,
+    sourceUrl: entry.source_url,
+    reviewStatus: entry.review_status,
+    reviewerName: entry.reviewer_name,
+    updatedAt: entry.updated_at,
     createdAt: entry.created_at,
   }));
 };

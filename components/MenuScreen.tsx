@@ -1,9 +1,12 @@
 import React from 'react';
-import { DailyChallengeRecord } from '../types';
+import { DailyChallengeRecord, TrainingHistoryEntry } from '../types';
 
 interface MenuScreenProps {
   bestSoloStreak: number;
   dailyChallengeRecord: DailyChallengeRecord | null;
+  latestTrainingRecord: TrainingHistoryEntry | null;
+  activeDaysThisWeek: number;
+  profileEntryLabel: string;
   onStartSolo: () => void;
   onStartDailyChallenge: () => void;
   onStartPvP: () => void;
@@ -15,6 +18,9 @@ interface MenuScreenProps {
 export const MenuScreen: React.FC<MenuScreenProps> = ({
   bestSoloStreak,
   dailyChallengeRecord,
+  latestTrainingRecord,
+  activeDaysThisWeek,
+  profileEntryLabel,
   onStartSolo,
   onStartDailyChallenge,
   onStartPvP,
@@ -22,6 +28,12 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
   onOpenLeaderboard,
   onOpenWrongQuestions,
 }) => {
+  const recentSummary = latestTrainingRecord
+    ? latestTrainingRecord.mode === 'daily_challenge'
+      ? `最近一次每日挑战拿到 ${latestTrainingRecord.score} 分，答对 ${latestTrainingRecord.correctCount}/${latestTrainingRecord.totalQuestions} 题。`
+      : `最近一次单人连胜完成 ${latestTrainingRecord.score} 连胜，共答 ${latestTrainingRecord.totalQuestions} 题。`
+    : '还没有训练记录，先从一局单人连胜开始热身。';
+
   return (
     <div className="flex flex-col items-center justify-start md:justify-center min-h-screen px-4 py-8 md:py-12 relative overflow-x-hidden w-full">
       <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
@@ -39,6 +51,32 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
         <p className="text-slate-500 text-base md:text-xl max-w-2xl mx-auto font-medium px-2 leading-snug">
           测试医学诊断技能的首选平台。
         </p>
+
+        <div className="mt-6 mx-auto max-w-3xl bg-white/80 backdrop-blur rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/40 p-4 md:p-5 text-left">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.24em] font-bold text-slate-400">今日提示</div>
+              <div className="text-base md:text-lg font-bold text-slate-900 mt-1">
+                {dailyChallengeRecord ? '今日挑战已完成，可以去看看榜单位置。' : '今日挑战还没开始，先把今天这 5 道固定题做完。'}
+              </div>
+              <p className="text-sm text-slate-500 mt-2 leading-relaxed">{recentSummary}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:min-w-[220px]">
+              <div className="bg-slate-50 rounded-2xl border border-slate-200 p-3">
+                <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">本周活跃</div>
+                <div className="text-2xl font-black text-blue-600 mt-1">{activeDaysThisWeek}</div>
+                <div className="text-xs text-slate-500">近 7 天</div>
+              </div>
+              <div className="bg-slate-50 rounded-2xl border border-slate-200 p-3">
+                <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">今日状态</div>
+                <div className="text-sm font-black text-slate-900 mt-2">
+                  {dailyChallengeRecord ? `${dailyChallengeRecord.score} 分` : '待完成'}
+                </div>
+                <div className="text-xs text-slate-500">每日挑战</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl w-full animate-fade-in relative z-10 px-2 md:px-0" style={{ animationDelay: '0.1s' }}>
@@ -123,7 +161,7 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
             className="flex items-center space-x-2 px-6 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm text-sm md:text-base"
           >
             <span>👤</span>
-            <span>查看个人主页</span>
+            <span>{profileEntryLabel}</span>
           </button>
 
           <button

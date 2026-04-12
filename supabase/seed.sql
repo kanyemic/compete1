@@ -9,6 +9,7 @@ insert into public.question_cases (
   image_url,
   source_name,
   source_url,
+  reviewer_name,
   review_status,
   is_active,
   metadata
@@ -25,6 +26,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/a/a1/Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb
@@ -40,6 +42,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/5/5f/MRI_head_side.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/5/5f/MRI_head_side.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb
@@ -55,6 +58,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hepatocellular_carcinoma_histopathology_%282%29.jpg/640px-Hepatocellular_carcinoma_histopathology_%282%29.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hepatocellular_carcinoma_histopathology_%282%29.jpg/640px-Hepatocellular_carcinoma_histopathology_%282%29.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb
@@ -70,6 +74,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Colles_fracture.jpg/600px-Colles_fracture.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Colles_fracture.jpg/600px-Colles_fracture.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb
@@ -85,6 +90,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Diabetic_retinopathy.jpg/600px-Diabetic_retinopathy.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Diabetic_retinopathy.jpg/600px-Diabetic_retinopathy.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb
@@ -100,6 +106,7 @@ values
     'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/MCA_Territory_Infarct.jpg/600px-MCA_Territory_Infarct.jpg',
     'Wikipedia Commons',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/MCA_Territory_Infarct.jpg/600px-MCA_Territory_Infarct.jpg',
+    '内容初审组',
     'approved',
     true,
     '{"seed_tag":"initial_mock_seed"}'::jsonb

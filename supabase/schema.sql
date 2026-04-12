@@ -23,6 +23,7 @@ create table if not exists public.question_cases (
   image_url text not null,
   source_name text,
   source_url text,
+  reviewer_name text,
   review_status text not null default 'approved' check (review_status in ('draft', 'reviewing', 'approved', 'archived')),
   is_active boolean not null default true,
   created_at timestamptz not null default now(),
@@ -30,6 +31,9 @@ create table if not exists public.question_cases (
   reviewed_at timestamptz,
   metadata jsonb not null default '{}'::jsonb
 );
+
+alter table if exists public.question_cases
+add column if not exists reviewer_name text;
 
 create table if not exists public.daily_challenges (
   id uuid primary key default gen_random_uuid(),
@@ -144,6 +148,11 @@ select
   qc.correct_answer,
   qc.explanation,
   qc.image_url,
+  qc.source_name,
+  qc.source_url,
+  qc.review_status,
+  qc.reviewer_name,
+  qc.updated_at,
   sra.selected_answer
 from public.solo_run_answers sra
 join public.solo_runs sr on sr.id = sra.run_id
@@ -166,6 +175,11 @@ select
   qc.correct_answer,
   qc.explanation,
   qc.image_url,
+  qc.source_name,
+  qc.source_url,
+  qc.review_status,
+  qc.reviewer_name,
+  qc.updated_at,
   dca.selected_answer
 from public.daily_challenge_answers dca
 join public.daily_challenge_attempts dct on dct.id = dca.attempt_id

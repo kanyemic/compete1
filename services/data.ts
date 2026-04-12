@@ -1,6 +1,7 @@
-import { QuestionCase, LeaderboardEntry } from '../types';
-import { fetchDailyChallengeCasesFromBackend, fetchLeaderboardFromBackend, fetchRandomCaseFromBackend } from './backend';
-import { buildMockLeaderboard, MOCK_CASE_DATABASE } from './mockData';
+import { DailyChallengeRecord, LeaderboardData, LeaderboardType, QuestionCase } from '../types';
+import { fetchDailyChallengeCasesFromBackend, fetchLeaderboardDataFromBackend, fetchRandomCaseFromBackend } from './backend';
+import { buildMockLeaderboardData, MOCK_CASE_DATABASE } from './mockData';
+import { LocalPlayerIdentity } from './playerIdentity';
 
 // Simulate API call to backend
 export const fetchRandomCase = async (): Promise<QuestionCase> => {
@@ -20,14 +21,19 @@ export const fetchRandomCase = async (): Promise<QuestionCase> => {
   };
 };
 
-export const fetchLeaderboard = async (type: 'rating' | 'streak'): Promise<LeaderboardEntry[]> => {
-    const backendLeaderboard = await fetchLeaderboardFromBackend(type);
+export const fetchLeaderboardData = async (payload: {
+  type: LeaderboardType;
+  identity: LocalPlayerIdentity;
+  bestSoloStreak: number;
+  dailyChallengeRecord: DailyChallengeRecord | null;
+}): Promise<LeaderboardData> => {
+    const backendLeaderboard = await fetchLeaderboardDataFromBackend(payload.type, payload.identity);
     if (backendLeaderboard) {
         return backendLeaderboard;
     }
 
     await new Promise(resolve => setTimeout(resolve, 400));
-    return buildMockLeaderboard(type);
+    return buildMockLeaderboardData(payload);
 };
 
 const sortMockCasesBySeed = (seed: string): Omit<QuestionCase, 'id'>[] => {

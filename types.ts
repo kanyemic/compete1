@@ -3,6 +3,7 @@ export enum GameMode {
   SOLO_STREAK = 'SOLO_STREAK',
   PVP_BATTLE = 'PVP_BATTLE',
   DAILY_CHALLENGE = 'DAILY_CHALLENGE',
+  REVIEW_PRACTICE = 'REVIEW_PRACTICE',
 }
 
 export enum GameState {
@@ -17,15 +18,24 @@ export enum GameState {
   PROFILE = 'PROFILE',
 }
 
+export type ReviewStatus = 'draft' | 'reviewing' | 'approved' | 'archived';
+
 export interface QuestionCase {
   id: string;
   category: string;
+  specialty?: string;
+  modality?: string;
   description: string;
   correctAnswer: string;
   options: string[];
   explanation: string;
   difficulty: 'Easy' | 'Medium' | 'Hard';
   imageUrl: string;
+  sourceName?: string | null;
+  sourceUrl?: string | null;
+  reviewStatus?: ReviewStatus;
+  reviewerName?: string | null;
+  updatedAt?: string | null;
 }
 
 export interface PlayerProfile {
@@ -66,6 +76,13 @@ export interface LeaderboardEntry {
   trend: 'up' | 'down' | 'same';
 }
 
+export type LeaderboardType = 'rating' | 'streak';
+
+export interface LeaderboardData {
+  entries: LeaderboardEntry[];
+  currentUserEntry: LeaderboardEntry | null;
+}
+
 export interface DailyChallengeRecord {
   date: string;
   score: number;
@@ -76,7 +93,7 @@ export interface DailyChallengeRecord {
 
 export interface WrongQuestionEntry {
   id: string;
-  mode: 'solo_streak' | 'daily_challenge';
+  mode: 'solo_streak' | 'daily_challenge' | 'review_practice';
   questionId: string;
   category: string;
   description: string;
@@ -86,7 +103,27 @@ export interface WrongQuestionEntry {
   explanation: string;
   difficulty: QuestionCase['difficulty'];
   imageUrl: string;
+  sourceName?: string | null;
+  sourceUrl?: string | null;
+  reviewStatus?: ReviewStatus;
+  reviewerName?: string | null;
+  updatedAt?: string | null;
   createdAt: string;
+}
+
+export interface TrainingHistoryEntry {
+  id: string;
+  mode: 'solo_streak' | 'daily_challenge';
+  score: number;
+  correctCount: number;
+  totalQuestions: number;
+  completedAt: string;
+}
+
+export interface ActivityDay {
+  dateKey: string;
+  label: string;
+  active: boolean;
 }
 
 export interface ProfileSummary {
@@ -102,4 +139,6 @@ export interface ProfileSummary {
   bestDailyChallengeScore: number;
   latestDailyChallengeScore: number | null;
   lastPlayedAt: string | null;
+  recentRecords: TrainingHistoryEntry[];
+  weeklyActivity: ActivityDay[];
 }

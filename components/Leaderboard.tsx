@@ -1,27 +1,50 @@
 
 import React, { useEffect, useState } from 'react';
-import { LeaderboardEntry } from '../types';
-import { fetchLeaderboard } from '../services/data';
+import { DailyChallengeRecord, LeaderboardData, LeaderboardType } from '../types';
+import { fetchLeaderboardData } from '../services/data';
 import { Button } from './Button';
+import { LocalPlayerIdentity } from '../services/playerIdentity';
 
 interface LeaderboardProps {
-    onClose: () => void;
+  playerIdentity: LocalPlayerIdentity;
+  bestSoloStreak: number;
+  dailyChallengeRecord: DailyChallengeRecord | null;
+  onClose: () => void;
 }
 
-export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
-    const [activeTab, setActiveTab] = useState<'rating' | 'streak'>('rating');
-    const [data, setData] = useState<LeaderboardEntry[]>([]);
+export const Leaderboard: React.FC<LeaderboardProps> = ({
+  playerIdentity,
+  bestSoloStreak,
+  dailyChallengeRecord,
+  onClose,
+}) => {
+    const [activeTab, setActiveTab] = useState<LeaderboardType>('rating');
+    const [leaderboardData, setLeaderboardData] = useState<LeaderboardData>({
+      entries: [],
+      currentUserEntry: null,
+    });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const loadData = async () => {
             setLoading(true);
-            const res = await fetchLeaderboard(activeTab);
-            setData(res);
+            const res = await fetchLeaderboardData({
+              type: activeTab,
+              identity: playerIdentity,
+              bestSoloStreak,
+              dailyChallengeRecord,
+            });
+            setLeaderboardData(res);
             setLoading(false);
         };
-        loadData();
-    }, [activeTab]);
+        void loadData();
+    }, [activeTab, bestSoloStreak, dailyChallengeRecord, playerIdentity]);
+
+    const data = leaderboardData.entries;
+    const currentUserEntry = leaderboardData.currentUserEntry;
+    const playerHasScore = activeTab === 'rating'
+      ? Boolean(dailyChallengeRecord && dailyChallengeRecord.score > 0)
+      : bestSoloStreak > 0;
 
     const renderMedal = (rank: number) => {
         switch(rank) {
@@ -68,6 +91,34 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                     </div>
                 </div>
 
+                <div className="px-8 pb-6">
+                    <div className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 flex items-center justify-between gap-4">
+                        <div>
+                            <div className="text-[10px] uppercase tracking-[0.24em] font-bold text-blue-400">我的名次</div>
+                            <div className="text-lg font-bold text-slate-900 mt-1">{playerIdentity.displayName}</div>
+                            <div className="text-sm text-slate-500 mt-1">
+                                {playerHasScore
+                                  ? currentUserEntry
+                                    ? `当前排在第 ${currentUserEntry.rank} 名`
+                                    : '成绩已记录，等待进入榜单刷新'
+                                  : activeTab === 'rating'
+                                    ? '先完成今日挑战，才能进入今日榜。'
+                                    : '先打出历史最佳连胜，才能进入连胜榜。'}
+                            </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                            <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">
+                                {activeTab === 'rating' ? '我的今日分数' : '我的最佳连胜'}
+                            </div>
+                            <div className="text-3xl font-display font-black text-slate-900 mt-1">
+                                {activeTab === 'rating'
+                                  ? dailyChallengeRecord?.score ?? '--'
+                                  : bestSoloStreak > 0 ? bestSoloStreak : '--'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* List */}
                 <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
                     {loading ? (
@@ -75,10 +126,21 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
                              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                              <span className="text-slate-400 text-sm font-medium">正在获取数据...</span>
                         </div>
+                    ) : data.length === 0 ? (
+                        <div className="flex flex-col items-center justify-center h-64 space-y-4 text-center">
+                             <div className="text-5xl">📭</div>
+                             <span className="text-slate-500 text-sm font-medium">
+                               {activeTab === 'rating' ? '今天的每日挑战榜还没有成绩。' : '当前还没有连胜榜数据。'}
+                             </span>
+                        </div>
                     ) : (
                         <div className="space-y-2">
                             {data.map((entry) => (
-                                <div key={entry.id} className="group flex items-center p-4 bg-white border border-slate-100 rounded-2xl hover:border-blue-200 hover:shadow-md transition-all">
+                                <div key={entry.id} className={`group flex items-center p-4 bg-white border rounded-2xl transition-all ${
+                                  entry.id === playerIdentity.id
+                                    ? 'border-blue-300 shadow-md shadow-blue-100/60'
+                                    : 'border-slate-100 hover:border-blue-200 hover:shadow-md'
+                                }`}>
                                     <div className="w-12 flex justify-center items-center mr-4">
                                         {renderMedal(entry.rank)}
                                     </div>
@@ -110,7 +172,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ onClose }) => {
 
                 {/* Footer */}
                 <div className="p-6 border-t border-slate-100 bg-slate-50 text-center">
-                    <p className="text-xs text-slate-400 font-medium">排名每 24 小时更新一次。</p>
+                    <p className="text-xs text-slate-400 font-medium">每日榜单按分数排序，同分时用总耗时更短者优先。</p>
                 </div>
             </div>
         </div>

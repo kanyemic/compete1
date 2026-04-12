@@ -35,6 +35,11 @@ export const saveWrongQuestion = (payload: {
     explanation: payload.question.explanation,
     difficulty: payload.question.difficulty,
     imageUrl: payload.question.imageUrl,
+    sourceName: payload.question.sourceName,
+    sourceUrl: payload.question.sourceUrl,
+    reviewStatus: payload.question.reviewStatus,
+    reviewerName: payload.question.reviewerName,
+    updatedAt: payload.question.updatedAt,
     createdAt: new Date().toISOString(),
   };
 

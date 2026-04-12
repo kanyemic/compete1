@@ -3,6 +3,8 @@ export interface LocalPlayerIdentity {
   displayName: string;
   avatar: string;
   isGuest: boolean;
+  authUserId?: string | null;
+  email?: string | null;
 }
 
 const PLAYER_IDENTITY_STORAGE_KEY = 'medscan.localPlayerIdentity';
@@ -18,7 +20,14 @@ const buildGuestIdentity = (): LocalPlayerIdentity => {
     displayName: `访客${suffix}`,
     avatar,
     isGuest: true,
+    authUserId: null,
+    email: null,
   };
+};
+
+export const saveLocalPlayerIdentity = (identity: LocalPlayerIdentity): LocalPlayerIdentity => {
+  localStorage.setItem(PLAYER_IDENTITY_STORAGE_KEY, JSON.stringify(identity));
+  return identity;
 };
 
 export const getLocalPlayerIdentity = (): LocalPlayerIdentity => {
@@ -26,15 +35,13 @@ export const getLocalPlayerIdentity = (): LocalPlayerIdentity => {
     const raw = localStorage.getItem(PLAYER_IDENTITY_STORAGE_KEY);
     if (!raw) {
       const created = buildGuestIdentity();
-      localStorage.setItem(PLAYER_IDENTITY_STORAGE_KEY, JSON.stringify(created));
-      return created;
+      return saveLocalPlayerIdentity(created);
     }
 
     const parsed = JSON.parse(raw) as Partial<LocalPlayerIdentity>;
     if (!parsed.id || !parsed.displayName || !parsed.avatar) {
       const recreated = buildGuestIdentity();
-      localStorage.setItem(PLAYER_IDENTITY_STORAGE_KEY, JSON.stringify(recreated));
-      return recreated;
+      return saveLocalPlayerIdentity(recreated);
     }
 
     return {
@@ -42,11 +49,41 @@ export const getLocalPlayerIdentity = (): LocalPlayerIdentity => {
       displayName: parsed.displayName,
       avatar: parsed.avatar,
       isGuest: parsed.isGuest ?? true,
+      authUserId: parsed.authUserId ?? null,
+      email: parsed.email ?? null,
     };
   } catch (error) {
     console.error('Failed to read local player identity:', error);
     const fallback = buildGuestIdentity();
-    localStorage.setItem(PLAYER_IDENTITY_STORAGE_KEY, JSON.stringify(fallback));
-    return fallback;
+    return saveLocalPlayerIdentity(fallback);
   }
 };
+
+export const updateLocalPlayerIdentity = (
+  patch: Partial<LocalPlayerIdentity>
+): LocalPlayerIdentity => {
+  const current = getLocalPlayerIdentity();
+  const next: LocalPlayerIdentity = {
+    ...current,
+    ...patch,
+  };
+
+  return saveLocalPlayerIdentity(next);
+};
+
+export const linkLocalIdentityToAccount = (payload: {
+  authUserId: string;
+  email: string | null;
+  displayName?: string;
+}): LocalPlayerIdentity => updateLocalPlayerIdentity({
+  displayName: payload.displayName?.trim() || getLocalPlayerIdentity().displayName,
+  isGuest: false,
+  authUserId: payload.authUserId,
+  email: payload.email,
+});
+
+export const unlinkLocalIdentityFromAccount = (): LocalPlayerIdentity => updateLocalPlayerIdentity({
+  isGuest: true,
+  authUserId: null,
+  email: null,
+});

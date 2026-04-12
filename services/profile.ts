@@ -1,6 +1,7 @@
-import { DailyChallengeRecord, ProfileSummary, WrongQuestionEntry } from '../types';
+import { DailyChallengeRecord, ProfileSummary, TrainingHistoryEntry, WrongQuestionEntry } from '../types';
 import { ensureBackendPlayerProfile } from './backend';
 import { LocalPlayerIdentity } from './playerIdentity';
+import { buildWeeklyActivity } from './playerHistory';
 import { LocalPlayerStats } from './playerStats';
 import { getSupabaseClient } from './supabase';
 
@@ -9,6 +10,7 @@ export const buildLocalProfileSummary = (payload: {
   stats: LocalPlayerStats;
   dailyChallengeRecord: DailyChallengeRecord | null;
   wrongQuestions: WrongQuestionEntry[];
+  trainingHistory: TrainingHistoryEntry[];
 }): ProfileSummary => {
   const correctRate = payload.stats.totalQuestionsAnswered > 0
     ? Math.round((payload.stats.totalCorrectAnswers / payload.stats.totalQuestionsAnswered) * 100)
@@ -27,6 +29,8 @@ export const buildLocalProfileSummary = (payload: {
     bestDailyChallengeScore: payload.dailyChallengeRecord?.score ?? 0,
     latestDailyChallengeScore: payload.dailyChallengeRecord?.score ?? null,
     lastPlayedAt: payload.stats.lastPlayedAt ?? payload.dailyChallengeRecord?.completedAt ?? null,
+    recentRecords: payload.trainingHistory.slice(0, 5),
+    weeklyActivity: buildWeeklyActivity(payload.trainingHistory),
   };
 };
 
@@ -102,5 +106,7 @@ export const fetchProfileSummaryFromBackend = async (
     bestDailyChallengeScore,
     latestDailyChallengeScore: dailyAttempts[0]?.score ?? null,
     lastPlayedAt: soloBestRes.data?.last_played_at ?? dailyAttempts[0]?.submitted_at ?? null,
+    recentRecords: [],
+    weeklyActivity: [],
   };
 };
