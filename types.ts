@@ -16,6 +16,7 @@ export enum GameState {
   LEADERBOARD = 'LEADERBOARD',
   WRONG_QUESTIONS = 'WRONG_QUESTIONS',
   PROFILE = 'PROFILE',
+  ADMIN = 'ADMIN',
 }
 
 export type ReviewStatus = 'draft' | 'reviewing' | 'approved' | 'archived';
@@ -74,6 +75,7 @@ export interface LeaderboardEntry {
   avatar: string;
   score: number;
   trend: 'up' | 'down' | 'same';
+  totalTimeMs?: number | null;
 }
 
 export type LeaderboardType = 'rating' | 'streak';
@@ -89,6 +91,7 @@ export interface DailyChallengeRecord {
   correctCount: number;
   totalQuestions: number;
   completedAt: string;
+  totalTimeMs?: number;
 }
 
 export interface WrongQuestionEntry {
@@ -96,6 +99,8 @@ export interface WrongQuestionEntry {
   mode: 'solo_streak' | 'daily_challenge' | 'review_practice';
   questionId: string;
   category: string;
+  specialty?: string;
+  modality?: string;
   description: string;
   options: string[];
   correctAnswer: string;
@@ -126,6 +131,13 @@ export interface ActivityDay {
   active: boolean;
 }
 
+export interface RankSnapshot {
+  rank: number | null;
+  totalPlayers: number;
+  topScore: number | null;
+  gapToTop: number | null;
+}
+
 export interface ProfileSummary {
   displayName: string;
   avatar: string;
@@ -139,6 +151,59 @@ export interface ProfileSummary {
   bestDailyChallengeScore: number;
   latestDailyChallengeScore: number | null;
   lastPlayedAt: string | null;
+  dailyChallengeRank: RankSnapshot;
+  soloStreakRank: RankSnapshot;
   recentRecords: TrainingHistoryEntry[];
   weeklyActivity: ActivityDay[];
+}
+
+export interface AdminQuestionSummary {
+  id: string;
+  specialty: string;
+  modality: string;
+  difficulty: QuestionCase['difficulty'];
+  reviewStatus: ReviewStatus;
+  sourceName: string | null;
+  reviewerName: string | null;
+  updatedAt: string | null;
+  isActive: boolean;
+}
+
+export interface AdminChallengePreview {
+  dateKey: string;
+  title: string;
+  questionCount: number;
+  cases: Array<Pick<QuestionCase, 'id' | 'category' | 'specialty' | 'modality' | 'difficulty'>>;
+}
+
+export interface AdminAnalyticsSummary {
+  totalEvents: number;
+  syncedEvents: number;
+  latestEventAt: string | null;
+  topEvents: Array<{
+    name: string;
+    count: number;
+  }>;
+  recentEvents: Array<{
+    id: string;
+    name: string;
+    createdAt: string;
+    syncedAt?: string | null;
+  }>;
+}
+
+export interface AdminSnapshot {
+  questionCount: number;
+  activeQuestionCount: number;
+  reviewBreakdown: Array<{
+    status: ReviewStatus;
+    count: number;
+  }>;
+  specialtyBreakdown: Array<{
+    label: string;
+    count: number;
+  }>;
+  recentQuestions: AdminQuestionSummary[];
+  todayChallenge: AdminChallengePreview;
+  analytics: AdminAnalyticsSummary;
 }

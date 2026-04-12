@@ -235,6 +235,7 @@ const mapDailyLeaderboardEntries = (data: DailyLeaderboardRow[]): LeaderboardEnt
     avatar: entry.user?.avatar_url || avatarFromName(entry.user?.display_name ?? `用户 ${index + 1}`),
     score: entry.score,
     trend: 'same',
+    totalTimeMs: entry.total_time_ms ?? null,
   }))
 );
 
@@ -316,7 +317,8 @@ const fetchSoloBestLeaderboard = async (): Promise<LeaderboardData | null> => {
 
 export const fetchLeaderboardDataFromBackend = async (
   type: LeaderboardType,
-  identity: LocalPlayerIdentity
+  identity: LocalPlayerIdentity,
+  dateKey?: string
 ): Promise<LeaderboardData | null> => {
   const supabase = getSupabaseClient();
   if (!supabase) {
@@ -324,7 +326,10 @@ export const fetchLeaderboardDataFromBackend = async (
   }
 
   if (type === 'rating') {
-    const challengeId = await fetchLatestDailyChallengeId();
+    const challengeId = dateKey
+      ? (await fetchDailyChallengeIdByDate(dateKey)) ?? await fetchLatestDailyChallengeId()
+      : await fetchLatestDailyChallengeId();
+
     if (!challengeId) {
       return {
         entries: [],
@@ -600,7 +605,9 @@ export const fetchWrongQuestionsFromBackend = async (
     id: entry.answer_id,
     mode: entry.mode,
     questionId: entry.question_id,
-    category: entry.category,
+    category: `${entry.specialty} · ${entry.modality}`,
+    specialty: entry.specialty,
+    modality: entry.modality,
     description: entry.description,
     options: entry.options,
     correctAnswer: entry.correct_answer,

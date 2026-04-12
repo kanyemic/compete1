@@ -1,6 +1,7 @@
 import React from 'react';
 import { BattleState, GameMode, PlayerProfile, QuestionCase } from '../types';
 import { Button } from './Button';
+import { QuestionMetaPanel } from './QuestionMetaPanel';
 
 interface GameScreenProps {
   currentCase: QuestionCase;
@@ -46,14 +47,6 @@ export const GameScreen: React.FC<GameScreenProps> = ({
     : soloRunEnded
       ? '查看本局结果'
       : '继续下一题';
-  const reviewStatusLabel = currentCase.reviewStatus === 'approved'
-    ? '已通过'
-    : currentCase.reviewStatus === 'reviewing'
-      ? '审核中'
-      : currentCase.reviewStatus === 'archived'
-        ? '已归档'
-        : '草稿';
-
   const ScoreBar = () => (
     <div className="h-16 md:h-20 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-12 shadow-sm relative z-20 shrink-0">
       <div className="flex items-center space-x-2 md:space-x-4">
@@ -234,6 +227,10 @@ export const GameScreen: React.FC<GameScreenProps> = ({
               })}
             </div>
 
+            <div className="mt-6">
+              <QuestionMetaPanel item={currentCase} compact title="病例资料卡" />
+            </div>
+
             {hasAnswered && latestHistoryEntry && (
               <div className="mt-6 md:mt-8 animate-fade-in pb-4">
                 <div className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-200 mb-6">
@@ -243,38 +240,6 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                   </h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">{currentCase.explanation}</p>
                 </div>
-
-                {(currentCase.sourceName || currentCase.reviewStatus) && (
-                  <div className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 mb-6">
-                    <div className="flex items-center justify-between gap-4 mb-3">
-                      <h4 className="text-slate-900 text-[10px] md:text-xs font-bold uppercase">题目来源与审核</h4>
-                      <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold border ${
-                        currentCase.reviewStatus === 'approved'
-                          ? 'text-emerald-600 bg-emerald-50 border-emerald-100'
-                          : currentCase.reviewStatus === 'reviewing'
-                            ? 'text-amber-600 bg-amber-50 border-amber-100'
-                            : 'text-slate-500 bg-slate-50 border-slate-200'
-                      }`}>
-                        {reviewStatusLabel}
-                      </span>
-                    </div>
-                    <div className="space-y-2 text-xs md:text-sm text-slate-600">
-                      <div>来源：{currentCase.sourceName ?? '暂未标注'}</div>
-                      <div>审核人：{currentCase.reviewerName ?? '待补充'}</div>
-                      <div>更新于：{currentCase.updatedAt ? new Date(currentCase.updatedAt).toLocaleDateString('zh-CN') : '待补充'}</div>
-                      {currentCase.sourceUrl && (
-                        <a
-                          href={currentCase.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
-                        >
-                          查看来源链接
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
 
                 <div className="bg-white p-3 md:p-4 rounded-xl border border-slate-200 shadow-sm flex justify-between items-center">
                   <div>

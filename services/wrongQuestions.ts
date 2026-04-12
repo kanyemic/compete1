@@ -28,6 +28,8 @@ export const saveWrongQuestion = (payload: {
     mode: payload.mode,
     questionId: payload.question.id,
     category: payload.question.category,
+    specialty: payload.question.specialty,
+    modality: payload.question.modality,
     description: payload.question.description,
     options: payload.question.options,
     correctAnswer: payload.question.correctAnswer,

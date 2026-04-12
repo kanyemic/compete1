@@ -327,6 +327,8 @@ export const usePlayerProgress = () => {
   };
 
   const recordDailyChallengeCompletion = (payload: DailyChallengeCompletionPayload) => {
+    const totalTimeMs = payload.history.reduce((sum, entry) => sum + Math.round(entry.timeTaken * 1000), 0);
+
     const nextHistory = saveTrainingHistoryEntry({
       mode: 'daily_challenge',
       score: payload.score,
@@ -338,6 +340,7 @@ export const usePlayerProgress = () => {
       correctCount: payload.correctCount,
       totalQuestions: payload.totalQuestions,
       completedAt: new Date().toISOString(),
+      totalTimeMs,
     });
 
     setTrainingHistory(nextHistory);

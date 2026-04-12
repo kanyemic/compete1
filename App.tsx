@@ -10,9 +10,10 @@ import { MenuScreen } from './components/MenuScreen';
 import { GameScreen } from './components/GameScreen';
 import { GameOverScreen } from './components/GameOverScreen';
 import { LoginRequiredModal } from './components/LoginRequiredModal';
+import { AdminDashboard } from './components/AdminDashboard';
 import { useGameSession } from './hooks/useGameSession';
 import { usePlayerProgress } from './hooks/usePlayerProgress';
-import { trackEvent } from './services/analytics';
+import { flushAnalyticsEvents, trackEvent } from './services/analytics';
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.MENU);
@@ -84,6 +85,10 @@ const App: React.FC = () => {
 
     previousGameStateRef.current = gameState;
   }, [gameState]);
+
+  useEffect(() => {
+    void flushAnalyticsEvents();
+  }, [playerIdentity.id, playerIdentity.authUserId]);
 
   const accountStatusLabel = accountSession
     ? '正式账号'
@@ -244,6 +249,9 @@ const App: React.FC = () => {
             return result;
           }}
         />
+      )}
+      {gameState === GameState.ADMIN && (
+        <AdminDashboard onClose={() => setGameState(GameState.MENU)} />
       )}
       {gameState === GameState.MENU && (
         <MenuScreen

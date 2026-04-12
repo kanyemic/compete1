@@ -1,5 +1,6 @@
 import { DailyChallengeRecord, LeaderboardData, LeaderboardType, QuestionCase } from '../types';
 import { fetchDailyChallengeCasesFromBackend, fetchLeaderboardDataFromBackend, fetchRandomCaseFromBackend } from './backend';
+import { getTodayChallengeDateKey } from './dailyChallenge';
 import { buildMockLeaderboardData, MOCK_CASE_DATABASE } from './mockData';
 import { LocalPlayerIdentity } from './playerIdentity';
 
@@ -27,7 +28,11 @@ export const fetchLeaderboardData = async (payload: {
   bestSoloStreak: number;
   dailyChallengeRecord: DailyChallengeRecord | null;
 }): Promise<LeaderboardData> => {
-    const backendLeaderboard = await fetchLeaderboardDataFromBackend(payload.type, payload.identity);
+    const backendLeaderboard = await fetchLeaderboardDataFromBackend(
+      payload.type,
+      payload.identity,
+      payload.dailyChallengeRecord?.date ?? getTodayChallengeDateKey()
+    );
     if (backendLeaderboard) {
         return backendLeaderboard;
     }

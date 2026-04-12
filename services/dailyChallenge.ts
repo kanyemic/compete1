@@ -24,7 +24,10 @@ export const getTodayChallengeRecord = (): DailyChallengeRecord | null => {
       return null;
     }
 
-    return parsed;
+    return {
+      ...parsed,
+      totalTimeMs: parsed.totalTimeMs ?? 0,
+    };
   } catch (error) {
     console.error('Failed to parse daily challenge record:', error);
     return null;
@@ -33,10 +36,13 @@ export const getTodayChallengeRecord = (): DailyChallengeRecord | null => {
 
 export const saveTodayChallengeRecord = (record: Omit<DailyChallengeRecord, 'date'>): DailyChallengeRecord => {
   const current = getTodayChallengeRecord();
+  const nextTimeMs = record.totalTimeMs ?? 0;
+
   if (
     current &&
     (current.score > record.score ||
-      (current.score === record.score && current.correctCount >= record.correctCount))
+      (current.score === record.score &&
+        ((current.totalTimeMs ?? Number.MAX_SAFE_INTEGER) <= nextTimeMs)))
   ) {
     return current;
   }
@@ -44,6 +50,7 @@ export const saveTodayChallengeRecord = (record: Omit<DailyChallengeRecord, 'dat
   const fullRecord: DailyChallengeRecord = {
     date: getTodayDateKey(),
     ...record,
+    totalTimeMs: nextTimeMs,
   };
 
   localStorage.setItem(DAILY_CHALLENGE_STORAGE_KEY, JSON.stringify(fullRecord));

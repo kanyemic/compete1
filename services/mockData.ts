@@ -103,8 +103,22 @@ export const MOCK_CASE_DATABASE: Omit<QuestionCase, 'id'>[] = [
 const MOCK_NAMES = ['豪斯医生', '神经忍者', '扫描大师', '格蕾医生', '病理逻辑', 'X射线视界', '42号医学生', '自愈者', '希波克拉底_AI', '骨骼巫师'];
 const MOCK_AVATARS = ['👨‍⚕️', '👩‍⚕️', '🧠', '💀', '🩺', '🔬', '💊', '🧬', '🏥', '🚑'];
 const MOCK_RATING_SCORES = [980, 960, 935, 910, 890, 860, 845, 820, 790, 760];
+const MOCK_RATING_TIMES_MS = [24100, 25600, 26800, 27400, 28900, 30100, 31500, 32800, 34000, 35600];
 const MOCK_STREAK_SCORES = [28, 24, 21, 19, 17, 15, 13, 11, 10, 9];
 const MOCK_TRENDS: LeaderboardEntry['trend'][] = ['up', 'same', 'up', 'down', 'same', 'up', 'same', 'down', 'same', 'up'];
+
+const compareLeaderboardEntries = (
+  left: Pick<LeaderboardEntry, 'score' | 'totalTimeMs'>,
+  right: Pick<LeaderboardEntry, 'score' | 'totalTimeMs'>
+): number => {
+  if (right.score !== left.score) {
+    return right.score - left.score;
+  }
+
+  const leftTime = left.totalTimeMs ?? Number.MAX_SAFE_INTEGER;
+  const rightTime = right.totalTimeMs ?? Number.MAX_SAFE_INTEGER;
+  return leftTime - rightTime;
+};
 
 export const buildMockLeaderboard = (type: LeaderboardType): LeaderboardEntry[] =>
   Array.from({ length: 10 }).map((_, index) => {
@@ -117,6 +131,7 @@ export const buildMockLeaderboard = (type: LeaderboardType): LeaderboardEntry[] 
       avatar: MOCK_AVATARS[index % MOCK_AVATARS.length],
       score,
       trend: MOCK_TRENDS[index % MOCK_TRENDS.length],
+      totalTimeMs: type === 'rating' ? MOCK_RATING_TIMES_MS[index] : null,
     };
   });
 
@@ -130,6 +145,9 @@ export const buildMockLeaderboardData = (payload: {
   const currentScore = payload.type === 'rating'
     ? payload.dailyChallengeRecord?.score ?? 0
     : payload.bestSoloStreak;
+  const currentTimeMs = payload.type === 'rating'
+    ? payload.dailyChallengeRecord?.totalTimeMs ?? Number.MAX_SAFE_INTEGER
+    : null;
 
   if (currentScore <= 0) {
     return {
@@ -147,9 +165,10 @@ export const buildMockLeaderboardData = (payload: {
       avatar: payload.identity.avatar,
       score: currentScore,
       trend: 'same' as const,
+      totalTimeMs: currentTimeMs,
     },
   ]
-    .sort((left, right) => right.score - left.score)
+    .sort(compareLeaderboardEntries)
     .map((entry, index) => ({
       ...entry,
       rank: index + 1,

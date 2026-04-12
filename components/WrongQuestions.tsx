@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { WrongQuestionEntry } from '../types';
 import { Button } from './Button';
+import { QuestionMetaPanel } from './QuestionMetaPanel';
 
 interface WrongQuestionsProps {
   entries: WrongQuestionEntry[];
@@ -23,14 +24,6 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
 
     return matchesMode && matchesDifficulty && matchesCategory;
   });
-  const reviewStatusLabel = selectedEntry?.reviewStatus === 'approved'
-    ? '已通过'
-    : selectedEntry?.reviewStatus === 'reviewing'
-      ? '审核中'
-      : selectedEntry?.reviewStatus === 'archived'
-        ? '已归档'
-        : '草稿';
-
   useEffect(() => {
     setSelectedEntry(filteredEntries[0] ?? null);
   }, [entries, modeFilter, difficultyFilter, categoryQuery]);
@@ -202,37 +195,7 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                   <p className="text-sm text-slate-600 leading-relaxed">{selectedEntry.explanation}</p>
                 </div>
 
-                {(selectedEntry.sourceName || selectedEntry.reviewStatus) && (
-                  <div className="bg-white border border-slate-200 rounded-2xl p-5">
-                    <div className="flex items-center justify-between gap-4 mb-3">
-                      <h4 className="text-slate-900 text-xs font-bold uppercase">来源与审核</h4>
-                      <span className={`px-2.5 py-1 rounded-md text-[10px] font-bold border ${
-                        selectedEntry.reviewStatus === 'approved'
-                          ? 'text-emerald-600 bg-emerald-50 border-emerald-100'
-                          : selectedEntry.reviewStatus === 'reviewing'
-                            ? 'text-amber-600 bg-amber-50 border-amber-100'
-                            : 'text-slate-500 bg-slate-50 border-slate-200'
-                      }`}>
-                        {reviewStatusLabel}
-                      </span>
-                    </div>
-                    <div className="space-y-2 text-sm text-slate-600">
-                      <div>来源：{selectedEntry.sourceName ?? '暂未标注'}</div>
-                      <div>审核人：{selectedEntry.reviewerName ?? '待补充'}</div>
-                      <div>更新于：{selectedEntry.updatedAt ? new Date(selectedEntry.updatedAt).toLocaleDateString('zh-CN') : '待补充'}</div>
-                      {selectedEntry.sourceUrl && (
-                        <a
-                          href={selectedEntry.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
-                        >
-                          查看来源链接
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
+                <QuestionMetaPanel item={selectedEntry} title="来源与审核" />
 
                 <div className="flex items-center gap-3">
                   <Button onClick={() => onRetryEntry(selectedEntry)} className="flex-1">

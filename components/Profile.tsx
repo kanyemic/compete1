@@ -339,9 +339,9 @@ export const Profile: React.FC<ProfileProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-                    <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6">
-                      <div className="flex items-center justify-between mb-4">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6">
+                  <div className="flex items-center justify-between mb-4">
                         <div>
                           <div className="text-xs uppercase tracking-wide font-bold text-slate-400">每日挑战</div>
                           <div className="text-xl font-display font-black text-slate-900 mt-1">挑战摘要</div>
@@ -378,6 +378,78 @@ export const Profile: React.FC<ProfileProps> = ({
                         <p>如果正确率还不高，优先多刷单人连胜，先把基础病例识别速度拉起来。</p>
                         <p>如果错题数积累明显，建议优先去错题本做复盘，再继续刷新局。</p>
                         <p>如果每日挑战成绩提升缓慢，通常说明你需要更稳定地处理限时高压答题。</p>
+                  </div>
+                </div>
+              </div>
+
+                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                    <div className="bg-white border border-slate-200 rounded-3xl p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <div className="text-xs uppercase tracking-wide font-bold text-slate-400">排行榜联动</div>
+                          <div className="text-xl font-display font-black text-slate-900 mt-1">今日榜位置</div>
+                        </div>
+                        <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl">🏆</div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-3">
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">当前名次</div>
+                          <div className="text-2xl font-black text-slate-900 mt-2">
+                            {summary.dailyChallengeRank.rank ? `#${summary.dailyChallengeRank.rank}` : '--'}
+                          </div>
+                        </div>
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">参与人数</div>
+                          <div className="text-2xl font-black text-slate-900 mt-2">{summary.dailyChallengeRank.totalPlayers || '--'}</div>
+                        </div>
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">距榜首</div>
+                          <div className="text-2xl font-black text-amber-600 mt-2">
+                            {summary.dailyChallengeRank.gapToTop !== null ? summary.dailyChallengeRank.gapToTop : '--'}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 text-sm text-slate-500 leading-relaxed">
+                        {summary.dailyChallengeRank.rank
+                          ? `你当前在今日榜排第 ${summary.dailyChallengeRank.rank} 名，榜首成绩是 ${summary.dailyChallengeRank.topScore ?? '--'} 分。`
+                          : '今天还没有形成有效名次，先完成一局每日挑战后再回来查看位置。'}
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-slate-200 rounded-3xl p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <div className="text-xs uppercase tracking-wide font-bold text-slate-400">排行榜联动</div>
+                          <div className="text-xl font-display font-black text-slate-900 mt-1">连胜榜位置</div>
+                        </div>
+                        <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl">🔥</div>
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-3">
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">当前名次</div>
+                          <div className="text-2xl font-black text-slate-900 mt-2">
+                            {summary.soloStreakRank.rank ? `#${summary.soloStreakRank.rank}` : '--'}
+                          </div>
+                        </div>
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">参与人数</div>
+                          <div className="text-2xl font-black text-slate-900 mt-2">{summary.soloStreakRank.totalPlayers || '--'}</div>
+                        </div>
+                        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                          <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">距榜首</div>
+                          <div className="text-2xl font-black text-blue-600 mt-2">
+                            {summary.soloStreakRank.gapToTop !== null ? summary.soloStreakRank.gapToTop : '--'}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 text-sm text-slate-500 leading-relaxed">
+                        {summary.soloStreakRank.rank
+                          ? `你的历史最佳当前排在第 ${summary.soloStreakRank.rank} 名，榜首连胜是 ${summary.soloStreakRank.topScore ?? '--'}。`
+                          : '你还没有进入连胜榜，先去打出一次有效历史最佳。'}
                       </div>
                     </div>
                   </div>

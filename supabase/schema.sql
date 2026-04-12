@@ -111,6 +111,15 @@ create table if not exists public.solo_run_answers (
   unique (run_id, sequence_no)
 );
 
+create table if not exists public.analytics_events (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references public.app_users(id) on delete set null,
+  event_name text not null,
+  payload jsonb not null default '{}'::jsonb,
+  client_created_at timestamptz not null default now(),
+  created_at timestamptz not null default now()
+);
+
 create index if not exists idx_question_cases_active on public.question_cases (is_active, specialty, modality, difficulty);
 create index if not exists idx_daily_challenges_date on public.daily_challenges (challenge_date desc);
 create index if not exists idx_daily_attempts_challenge on public.daily_challenge_attempts (challenge_id, score desc, total_time_ms asc);
@@ -119,6 +128,8 @@ create index if not exists idx_daily_answers_attempt on public.daily_challenge_a
 create index if not exists idx_solo_runs_user on public.solo_runs (user_id, created_at desc);
 create index if not exists idx_solo_runs_best on public.solo_runs (streak_count desc, total_time_ms asc);
 create index if not exists idx_solo_answers_run on public.solo_run_answers (run_id);
+create index if not exists idx_analytics_events_user on public.analytics_events (user_id, client_created_at desc);
+create index if not exists idx_analytics_events_name on public.analytics_events (event_name, client_created_at desc);
 
 create or replace view public.v_leaderboard_solo_best as
 select
