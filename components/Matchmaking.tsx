@@ -29,7 +29,12 @@ export const Matchmaking: React.FC<MatchmakingProps> = ({ opponent, onMatchFound
   }, [onMatchFound]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full bg-white/90 backdrop-blur-xl z-50 absolute inset-0">
+    <div
+      className="app-safe-screen flex flex-col items-center justify-center h-full w-full bg-white/90 backdrop-blur-xl z-50 absolute inset-0"
+      style={{
+        paddingBottom: 'max(20px, var(--safe-bottom))',
+      }}
+    >
       <div className="text-center w-full max-w-2xl">
         <div className="mb-12">
             <h2 className="text-3xl font-display font-black text-slate-800 uppercase tracking-tight mb-2">

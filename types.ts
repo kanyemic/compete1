@@ -83,6 +83,10 @@ export type LeaderboardType = 'rating' | 'streak';
 export interface LeaderboardData {
   entries: LeaderboardEntry[];
   currentUserEntry: LeaderboardEntry | null;
+  totalPlayers: number;
+  topScore: number | null;
+  chaseMessage: string | null;
+  stabilityMessage: string | null;
 }
 
 export interface DailyChallengeRecord {
@@ -161,9 +165,12 @@ export interface AdminQuestionSummary {
   id: string;
   specialty: string;
   modality: string;
+  category: string;
+  description: string;
   difficulty: QuestionCase['difficulty'];
   reviewStatus: ReviewStatus;
   sourceName: string | null;
+  sourceUrl: string | null;
   reviewerName: string | null;
   updatedAt: string | null;
   isActive: boolean;
@@ -173,13 +180,30 @@ export interface AdminChallengePreview {
   dateKey: string;
   title: string;
   questionCount: number;
+  attemptCount: number;
+  completedCount: number;
+  averageScore: number | null;
+  bestScore: number | null;
   cases: Array<Pick<QuestionCase, 'id' | 'category' | 'specialty' | 'modality' | 'difficulty'>>;
 }
 
 export interface AdminAnalyticsSummary {
+  source: 'local' | 'supabase';
+  windowLabel: string;
   totalEvents: number;
   syncedEvents: number;
+  pendingLocalEvents: number;
+  uniqueUsers: number;
   latestEventAt: string | null;
+  funnel: Array<{
+    label: string;
+    count: number;
+  }>;
+  modeBreakdown: Array<{
+    label: string;
+    started: number;
+    completed: number;
+  }>;
   topEvents: Array<{
     name: string;
     count: number;

@@ -11,15 +11,13 @@ const buildRankSnapshot = (
   leaderboardData: LeaderboardData,
   currentScore: number
 ): RankSnapshot => {
-  const totalPlayers = leaderboardData.currentUserEntry
-    ? Math.max(leaderboardData.entries.length, leaderboardData.currentUserEntry.rank)
-    : leaderboardData.entries.length;
+  const totalPlayers = leaderboardData.totalPlayers;
   const topEntry = leaderboardData.entries[0] ?? leaderboardData.currentUserEntry;
 
   return {
     rank: currentScore > 0 ? leaderboardData.currentUserEntry?.rank ?? null : null,
     totalPlayers,
-    topScore: topEntry?.score ?? null,
+    topScore: leaderboardData.topScore ?? topEntry?.score ?? null,
     gapToTop: currentScore > 0 && topEntry ? Math.max(topEntry.score - currentScore, 0) : null,
   };
 };

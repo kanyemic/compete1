@@ -1,4 +1,5 @@
 import { LeaderboardData, LeaderboardEntry, LeaderboardType, QuestionCase, ReviewStatus, RoundResult, WrongQuestionEntry } from '../types';
+import { buildLeaderboardInsights } from './leaderboard';
 import { getSupabaseClient } from './supabase';
 import { LocalPlayerIdentity } from './playerIdentity';
 
@@ -34,12 +35,15 @@ type DailyLeaderboardRow = {
   user: {
     display_name: string;
     avatar_url: string | null;
-  } | null;
+  } | Array<{
+    display_name: string;
+    avatar_url: string | null;
+  }> | null;
 };
 
 type DailyChallengeQuestionRow = {
   order_index: number;
-  question: BackendQuestionCaseRow | null;
+  question: BackendQuestionCaseRow | BackendQuestionCaseRow[] | null;
 };
 
 const difficultyLabelMap: Record<BackendQuestionCaseRow['difficulty'], QuestionCase['difficulty']> = {
@@ -71,6 +75,14 @@ const mapQuestionCase = (row: BackendQuestionCaseRow): QuestionCase => ({
   reviewerName: row.reviewer_name,
   updatedAt: row.updated_at,
 });
+
+const pickRelationRow = <T,>(value: T | T[] | null | undefined): T | null => {
+  if (Array.isArray(value)) {
+    return value[0] ?? null;
+  }
+
+  return value ?? null;
+};
 
 const sortByDailySeed = (items: BackendQuestionCaseRow[], seed: string): BackendQuestionCaseRow[] => {
   const seedValue = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
@@ -156,8 +168,8 @@ export const fetchDailyChallengeCasesFromBackend = async (
     if (challengeQuestionsError) {
       console.error('Failed to fetch daily challenge question set:', challengeQuestionsError);
     } else if (challengeQuestions && challengeQuestions.length > 0) {
-      return (challengeQuestions as DailyChallengeQuestionRow[])
-        .map((entry) => entry.question)
+      return (challengeQuestions as unknown as DailyChallengeQuestionRow[])
+        .map((entry) => pickRelationRow(entry.question))
         .filter((entry): entry is BackendQuestionCaseRow => Boolean(entry))
         .map(mapQuestionCase);
     }
@@ -228,15 +240,20 @@ const fetchDailyChallengeIdByDate = async (dateKey: string): Promise<string | nu
 };
 
 const mapDailyLeaderboardEntries = (data: DailyLeaderboardRow[]): LeaderboardEntry[] => (
-  data.map((entry, index) => ({
-    id: entry.user_id || entry.id,
-    rank: index + 1,
-    name: entry.user?.display_name ?? `用户 ${index + 1}`,
-    avatar: entry.user?.avatar_url || avatarFromName(entry.user?.display_name ?? `用户 ${index + 1}`),
-    score: entry.score,
-    trend: 'same',
-    totalTimeMs: entry.total_time_ms ?? null,
-  }))
+  data.map((entry, index) => {
+    const user = pickRelationRow(entry.user);
+    const fallbackName = `用户 ${index + 1}`;
+
+    return {
+      id: entry.user_id || entry.id,
+      rank: index + 1,
+      name: user?.display_name ?? fallbackName,
+      avatar: user?.avatar_url || avatarFromName(user?.display_name ?? fallbackName),
+      score: entry.score,
+      trend: 'same',
+      totalTimeMs: entry.total_time_ms ?? null,
+    };
+  })
 );
 
 const mapSoloLeaderboardEntries = (data: SoloLeaderboardRow[]): LeaderboardEntry[] => (
@@ -284,10 +301,14 @@ const fetchDailyLeaderboard = async (): Promise<LeaderboardData | null> => {
     return null;
   }
 
-  const entries = mapDailyLeaderboardEntries((data as DailyLeaderboardRow[]) ?? []);
+  const entries = mapDailyLeaderboardEntries((data as unknown as DailyLeaderboardRow[]) ?? []);
   return {
     entries: entries.slice(0, 10),
     currentUserEntry: null,
+    totalPlayers: entries.length,
+    topScore: entries[0]?.score ?? null,
+    chaseMessage: null,
+    stabilityMessage: null,
   };
 };
 
@@ -312,6 +333,10 @@ const fetchSoloBestLeaderboard = async (): Promise<LeaderboardData | null> => {
   return {
     entries: entries.slice(0, 10),
     currentUserEntry: null,
+    totalPlayers: entries.length,
+    topScore: entries[0]?.score ?? null,
+    chaseMessage: null,
+    stabilityMessage: null,
   };
 };
 
@@ -334,6 +359,10 @@ export const fetchLeaderboardDataFromBackend = async (
       return {
         entries: [],
         currentUserEntry: null,
+        totalPlayers: 0,
+        topScore: null,
+        chaseMessage: null,
+        stabilityMessage: null,
       };
     }
 
@@ -359,10 +388,19 @@ export const fetchLeaderboardDataFromBackend = async (
       return null;
     }
 
-    const mappedEntries = mapDailyLeaderboardEntries((data as DailyLeaderboardRow[]) ?? []);
+    const mappedEntries = mapDailyLeaderboardEntries((data as unknown as DailyLeaderboardRow[]) ?? []);
+    const insights = buildLeaderboardInsights({
+      entries: mappedEntries,
+      currentUserId: identity.id,
+      type,
+    });
     return {
       entries: mappedEntries.slice(0, 10),
-      currentUserEntry: mappedEntries.find((entry) => entry.id === identity.id) ?? null,
+      currentUserEntry: insights.currentUserEntry,
+      totalPlayers: insights.totalPlayers,
+      topScore: insights.topScore,
+      chaseMessage: insights.chaseMessage,
+      stabilityMessage: insights.stabilityMessage,
     };
   }
 
@@ -377,9 +415,18 @@ export const fetchLeaderboardDataFromBackend = async (
   }
 
   const mappedEntries = mapSoloLeaderboardEntries((data as SoloLeaderboardRow[]) ?? []);
+  const insights = buildLeaderboardInsights({
+    entries: mappedEntries,
+    currentUserId: identity.id,
+    type,
+  });
   return {
     entries: mappedEntries.slice(0, 10),
-    currentUserEntry: mappedEntries.find((entry) => entry.id === identity.id) ?? null,
+    currentUserEntry: insights.currentUserEntry,
+    totalPlayers: insights.totalPlayers,
+    topScore: insights.topScore,
+    chaseMessage: insights.chaseMessage,
+    stabilityMessage: insights.stabilityMessage,
   };
 };
 

@@ -14,12 +14,39 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { useGameSession } from './hooks/useGameSession';
 import { usePlayerProgress } from './hooks/usePlayerProgress';
 import { flushAnalyticsEvents, trackEvent } from './services/analytics';
+import { getQuestionBankById, readSelectedQuestionBank, saveSelectedQuestionBank } from './services/questionBanks';
+
+const hasAdminRoute = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const searchParams = new URLSearchParams(window.location.search);
+  return searchParams.get('admin') === '1' || window.location.hash === '#admin';
+};
+
+const clearAdminRoute = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const url = new URL(window.location.href);
+  url.searchParams.delete('admin');
+
+  const search = url.searchParams.toString();
+  const hash = url.hash === '#admin' ? '' : url.hash;
+  const nextUrl = `${url.pathname}${search ? `?${search}` : ''}${hash}`;
+
+  window.history.replaceState({}, '', nextUrl);
+};
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.MENU);
   const previousGameStateRef = useRef<GameState | null>(null);
+  const adminRouteOpenedRef = useRef(false);
   const [loginPrompt, setLoginPrompt] = useState<{ title: string; description: string } | null>(null);
   const [profileAuthTab, setProfileAuthTab] = useState<'signin' | 'signup'>('signin');
+  const [selectedQuestionBankId, setSelectedQuestionBankId] = useState(() => readSelectedQuestionBank());
   const {
     playerStats,
     playerIdentity,
@@ -61,6 +88,7 @@ const App: React.FC = () => {
     submitAnswer,
     nextRound,
   } = useGameSession({
+    selectedQuestionBankId,
     onGameStateChange: setGameState,
     onWrongAnswer: recordWrongAnswer,
     onSessionStarted: (mode) => {
@@ -90,12 +118,46 @@ const App: React.FC = () => {
     void flushAnalyticsEvents();
   }, [playerIdentity.id, playerIdentity.authUserId]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined;
+    }
+
+    const syncAdminRoute = () => {
+      const shouldOpenAdmin = hasAdminRoute();
+
+      if (shouldOpenAdmin) {
+        setGameState((current) => current === GameState.ADMIN ? current : GameState.ADMIN);
+
+        if (!adminRouteOpenedRef.current) {
+          adminRouteOpenedRef.current = true;
+          trackEvent('admin_opened', { source: 'internal_route' });
+        }
+
+        return;
+      }
+
+      adminRouteOpenedRef.current = false;
+      setGameState((current) => current === GameState.ADMIN ? GameState.MENU : current);
+    };
+
+    syncAdminRoute();
+    window.addEventListener('hashchange', syncAdminRoute);
+    window.addEventListener('popstate', syncAdminRoute);
+
+    return () => {
+      window.removeEventListener('hashchange', syncAdminRoute);
+      window.removeEventListener('popstate', syncAdminRoute);
+    };
+  }, []);
+
   const accountStatusLabel = accountSession
     ? '正式账号'
     : playerIdentity.isGuest
       ? '游客模式'
       : '已绑定账号';
-  const profileEntryLabel = playerIdentity.isGuest ? '登录 / 个人主页' : '查看个人主页';
+  const profileEntryLabel = playerIdentity.isGuest ? '登录 / 注册' : '进入个人中心';
+  const selectedQuestionBank = getQuestionBankById(selectedQuestionBankId);
 
   const openProfile = async (initialAuthTab: 'signin' | 'signup' = 'signin') => {
     setProfileAuthTab(initialAuthTab);
@@ -164,6 +226,7 @@ const App: React.FC = () => {
     }
     trackEvent('home_mode_clicked', {
       mode: GameMode.SOLO_STREAK,
+      questionBankId: selectedQuestionBankId,
     });
     startSolo();
   };
@@ -171,6 +234,7 @@ const App: React.FC = () => {
   const startDailyChallengeWithTracking = () => {
     trackEvent('home_mode_clicked', {
       mode: GameMode.DAILY_CHALLENGE,
+      questionBankId: selectedQuestionBankId,
     });
     void startDailyChallenge();
   };
@@ -184,8 +248,15 @@ const App: React.FC = () => {
     }
     trackEvent('home_mode_clicked', {
       mode: GameMode.PVP_BATTLE,
+      questionBankId: selectedQuestionBankId,
     });
     startPvP();
+  };
+
+  const closeAdmin = () => {
+    adminRouteOpenedRef.current = false;
+    clearAdminRoute();
+    setGameState(GameState.MENU);
   };
 
   return (
@@ -217,9 +288,18 @@ const App: React.FC = () => {
           authAvailable={authAvailable}
           authLoading={authLoading}
           accountStatusLabel={accountStatusLabel}
+          selectedQuestionBankId={selectedQuestionBankId}
           initialAuthTab={profileAuthTab}
           loading={profileLoading}
           onClose={() => setGameState(GameState.MENU)}
+          onSelectQuestionBank={(nextBankId) => {
+            setSelectedQuestionBankId(nextBankId);
+            saveSelectedQuestionBank(nextBankId);
+            trackEvent('question_bank_selected', {
+              questionBankId: nextBankId,
+              source: 'profile',
+            });
+          }}
           onUpdateDisplayName={async (displayName) => {
             const result = await updateDisplayName(displayName);
             trackEvent('account_profile_updated', {
@@ -251,7 +331,7 @@ const App: React.FC = () => {
         />
       )}
       {gameState === GameState.ADMIN && (
-        <AdminDashboard onClose={() => setGameState(GameState.MENU)} />
+        <AdminDashboard onClose={closeAdmin} />
       )}
       {gameState === GameState.MENU && (
         <MenuScreen
@@ -278,6 +358,7 @@ const App: React.FC = () => {
           currentCase={currentCase}
           battleState={battleState}
           gameMode={gameMode}
+          selectedQuestionBankLabel={selectedQuestionBank.title}
           playerIdentity={{ name: playerIdentity.displayName, avatar: playerIdentity.avatar, rating: 0 }}
           timeLeft={timeLeft}
           opponentAnswered={opponentAnswered}
@@ -286,6 +367,7 @@ const App: React.FC = () => {
           shuffledOptions={shuffledOptions}
           onSubmitAnswer={submitAnswer}
           onNextRound={nextRound}
+          onExit={() => setGameState(GameState.MENU)}
         />
       )}
       {gameState === GameState.GAME_OVER && battleState && (
@@ -315,7 +397,7 @@ const App: React.FC = () => {
         <LoginRequiredModal
           title={loginPrompt.title}
           description={loginPrompt.description}
-          confirmLabel="去注册 / 登录"
+          confirmLabel="去个人中心解锁"
           onClose={() => setLoginPrompt(null)}
           onGoToProfile={() => {
             setLoginPrompt(null);

@@ -7,6 +7,7 @@ interface GameScreenProps {
   currentCase: QuestionCase;
   battleState: BattleState;
   gameMode: GameMode;
+  selectedQuestionBankLabel: string;
   playerIdentity: Pick<PlayerProfile, 'name' | 'avatar'>;
   timeLeft: number;
   opponentAnswered: boolean;
@@ -15,12 +16,14 @@ interface GameScreenProps {
   shuffledOptions: string[];
   onSubmitAnswer: (option: string | null) => void;
   onNextRound: () => void;
+  onExit: () => void;
 }
 
 export const GameScreen: React.FC<GameScreenProps> = ({
   currentCase,
   battleState,
   gameMode,
+  selectedQuestionBankLabel,
   playerIdentity,
   timeLeft,
   opponentAnswered,
@@ -29,7 +32,9 @@ export const GameScreen: React.FC<GameScreenProps> = ({
   shuffledOptions,
   onSubmitAnswer,
   onNextRound,
+  onExit,
 }) => {
+  const [exitConfirmOpen, setExitConfirmOpen] = React.useState(false);
   const latestHistoryEntry = battleState.history[battleState.history.length - 1];
   const isDaily = gameMode === GameMode.DAILY_CHALLENGE;
   const isReview = gameMode === GameMode.REVIEW_PRACTICE;
@@ -37,6 +42,8 @@ export const GameScreen: React.FC<GameScreenProps> = ({
   const correctCount = battleState.history.filter((entry) => entry.player.correct).length;
   const isLastFixedRound = gameMode !== GameMode.SOLO_STREAK && battleState.round >= battleState.totalRounds;
   const soloRunEnded = gameMode === GameMode.SOLO_STREAK && latestHistoryEntry?.player.correct === false;
+  const isGeneratedPlaceholderImage = currentCase.imageUrl.startsWith('data:image/svg+xml');
+  const hasVisualCase = Boolean(currentCase.imageUrl) && !isGeneratedPlaceholderImage;
   const todayLabel = new Date().toLocaleDateString('zh-CN', {
     month: 'long',
     day: 'numeric',
@@ -48,8 +55,24 @@ export const GameScreen: React.FC<GameScreenProps> = ({
       ? '查看本局结果'
       : '继续下一题';
   const ScoreBar = () => (
-    <div className="h-16 md:h-20 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-12 shadow-sm relative z-20 shrink-0">
+    <div
+      className="bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-12 shadow-sm relative z-20 shrink-0"
+      style={{
+        minHeight: 'max(64px, calc(64px + var(--safe-top)))',
+        paddingTop: 'max(8px, var(--safe-top))',
+      }}
+    >
       <div className="flex items-center space-x-2 md:space-x-4">
+        <button
+          onClick={() => setExitConfirmOpen(true)}
+          className="inline-flex items-center gap-1.5 rounded-full bg-[#e9ebf0] px-3 py-2 text-xs md:text-sm font-semibold text-slate-700 transition hover:bg-[#dfe3ea] hover:text-slate-900"
+          aria-label="退出挑战"
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M15 18l-6-6 6-6" />
+          </svg>
+          <span>退出挑战</span>
+        </button>
         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center text-base md:text-xl shadow-sm text-blue-700">
           {playerIdentity.avatar}
         </div>
@@ -91,6 +114,28 @@ export const GameScreen: React.FC<GameScreenProps> = ({
     <div className="h-screen flex flex-col bg-slate-50 overflow-hidden">
       <ScoreBar />
 
+      {exitConfirmOpen && (
+        <div className="fixed inset-0 z-[140] flex items-center justify-center bg-black/20 backdrop-blur-xl p-4">
+          <div className="w-full max-w-sm rounded-[28px] border border-white/80 bg-white/88 shadow-[0_22px_80px_rgba(15,23,42,0.18)] backdrop-blur-2xl p-6 animate-fade-in">
+            <div className="w-12 h-12 rounded-[18px] bg-[#fff1f2] text-[#ff3b30] flex items-center justify-center text-2xl mb-4">
+              !
+            </div>
+            <h3 className="text-[26px] leading-none font-display font-bold text-slate-900">确认退出挑战？</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+              当前对局进度不会继续保留。确认后将直接返回首页。
+            </p>
+            <div className="mt-6 space-y-3">
+              <Button onClick={onExit} variant="danger" className="w-full">
+                确认退出
+              </Button>
+              <Button onClick={() => setExitConfirmOpen(false)} variant="secondary" className="w-full">
+                继续挑战
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {(isDaily || isReview) && (
         <div className="border-b border-amber-100 bg-[linear-gradient(135deg,rgba(251,191,36,0.10),rgba(245,158,11,0.04))] px-4 md:px-12 py-4">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -126,10 +171,11 @@ export const GameScreen: React.FC<GameScreenProps> = ({
               </div>
             </div>
           </div>
+
         </div>
       )}
 
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative">
+      <div className={`flex-1 flex overflow-hidden relative ${hasVisualCase ? 'flex-col md:flex-row' : 'flex-col'}`}>
         {opponentAnswered && !hasAnswered && gameMode === GameMode.PVP_BATTLE && (
           <div className="absolute top-4 right-4 z-50 bg-white text-slate-800 text-xs font-bold py-2 px-4 rounded-full shadow-lg border border-slate-100 animate-bounce flex items-center space-x-2">
             <span className="w-2 h-2 bg-rose-500 rounded-full"></span>
@@ -137,16 +183,23 @@ export const GameScreen: React.FC<GameScreenProps> = ({
           </div>
         )}
 
-        <div className="h-[35vh] md:h-auto md:flex-1 bg-slate-900 relative flex items-center justify-center overflow-hidden p-4 shrink-0">
-          <img
-            src={currentCase.imageUrl}
-            alt="Case"
-            className="max-w-full max-h-full object-contain rounded shadow-2xl bg-black"
-          />
-        </div>
+        {hasVisualCase ? (
+          <div className="h-[35vh] md:h-auto md:flex-1 bg-slate-900 relative flex items-center justify-center overflow-hidden p-4 shrink-0">
+            <img
+              src={currentCase.imageUrl}
+              alt="Case"
+              className="max-w-full max-h-full object-contain rounded shadow-2xl bg-black"
+            />
+          </div>
+        ) : null}
 
-        <div className="flex-1 md:flex-none w-full md:w-[450px] bg-white border-t md:border-t-0 md:border-l border-slate-200 flex flex-col z-10 shadow-xl overflow-hidden">
-          <div className="p-6 md:p-8 flex-1 overflow-y-auto">
+        <div className={`bg-white flex flex-col z-10 shadow-xl overflow-hidden ${
+          hasVisualCase
+            ? 'flex-1 md:flex-none w-full md:w-[450px] border-t md:border-t-0 md:border-l border-slate-200'
+            : 'flex-1 border-t border-slate-200'
+        }`}>
+          <div className={`flex-1 overflow-y-auto ${hasVisualCase ? 'p-6 md:p-8' : 'px-4 md:px-12 py-6 md:py-8'}`}>
+            <div className={hasVisualCase ? '' : 'max-w-5xl mx-auto'}>
             <div className="mb-6 md:mb-8">
               {(isDaily || isReview) && (
                 <div className="mb-4 rounded-2xl border border-amber-100 bg-amber-50/80 p-4">
@@ -155,6 +208,9 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                       <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-amber-500">Challenge Status</div>
                       <div className="text-sm font-bold text-slate-900 mt-1">
                         {isDaily ? '所有人今天做的是同一套题，速度和稳定性都会影响最终排名。' : '复练模式只聚焦这道错题，优先把题干、答案和解析重新吃透。'}
+                      </div>
+                      <div className="mt-2 inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600 border border-amber-100">
+                        当前题库：{selectedQuestionBankLabel}
                       </div>
                     </div>
                     <div className="shrink-0 text-right">
@@ -167,7 +223,7 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                 </div>
               )}
 
-              <div className="flex items-center gap-2 mb-2 md:mb-3">
+              <div className="flex flex-wrap items-center gap-2 mb-2 md:mb-3">
                 <span className="px-2.5 py-1 bg-slate-100 text-slate-600 border border-slate-200 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider">
                   {currentCase.category}
                 </span>
@@ -176,15 +232,29 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                     ? 'text-red-600 bg-red-50 border-red-100'
                     : currentCase.difficulty === 'Medium'
                       ? 'text-orange-600 bg-orange-50 border-orange-100'
-                      : 'text-green-600 bg-green-50 border-green-100'
+                    : 'text-green-600 bg-green-50 border-green-100'
                 }`}>
                   {currentCase.difficulty === 'Hard' ? '困难' : currentCase.difficulty === 'Medium' ? '中等' : '简单'}
                 </span>
+                {!hasVisualCase && (
+                  <span className="px-2.5 py-1 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider border border-blue-100 bg-blue-50 text-blue-600">
+                    文字题
+                  </span>
+                )}
               </div>
-              <p className="text-slate-700 text-base md:text-lg font-medium leading-relaxed">{currentCase.description}</p>
+              {hasVisualCase ? (
+                <p className="text-slate-700 text-base md:text-lg font-medium leading-relaxed">{currentCase.description}</p>
+              ) : (
+                <div className="rounded-[28px] border border-slate-200 bg-white shadow-[0_10px_28px_rgba(15,23,42,0.04)] p-5 md:p-7">
+                  <div className="text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400">Question Stem</div>
+                  <p className="mt-4 text-xl md:text-[28px] leading-relaxed font-display font-bold text-slate-900">
+                    {currentCase.description}
+                  </p>
+                </div>
+              )}
             </div>
 
-            <div className="space-y-2 md:space-y-3">
+            <div className={`${hasVisualCase ? 'space-y-2 md:space-y-3' : 'grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4'}`}>
               {shuffledOptions.map((opt, idx) => {
                 let statusClass = 'border-slate-200 bg-white hover:border-blue-400 hover:bg-slate-50';
 
@@ -204,17 +274,19 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                   <div
                     key={idx}
                     onClick={() => !hasAnswered && onSubmitAnswer(opt)}
-                    className={`relative p-3 md:p-4 rounded-xl border transition-all duration-200 ${statusClass}`}
+                    className={`relative rounded-xl border transition-all duration-200 ${hasVisualCase ? 'p-3 md:p-4' : 'p-4 md:p-5'} ${statusClass}`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center mr-3 md:mr-4 text-xs md:text-sm font-bold border ${
+                      <div className={`rounded-lg flex items-center justify-center mr-3 md:mr-4 text-xs md:text-sm font-bold border ${
+                        hasVisualCase ? 'w-6 h-6 md:w-8 md:h-8' : 'w-8 h-8 md:w-10 md:h-10'
+                      } ${
                         hasAnswered && opt === currentCase.correctAnswer
                           ? 'bg-green-100 border-green-200 text-green-700'
                           : 'bg-slate-100 border-slate-200 text-slate-500'
                       }`}>
                         {String.fromCharCode(65 + idx)}
                       </div>
-                      <span className="font-semibold text-xs md:text-sm">{opt}</span>
+                      <span className={`${hasVisualCase ? 'text-xs md:text-sm' : 'text-sm md:text-base'} font-semibold leading-relaxed`}>{opt}</span>
                     </div>
 
                     {hasAnswered && gameMode === GameMode.PVP_BATTLE && latestHistoryEntry?.opponent.correct && opt === currentCase.correctAnswer && (
@@ -260,9 +332,15 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                 </div>
               </div>
             )}
+            </div>
           </div>
 
-          <div className="p-4 md:p-6 border-t border-slate-100 bg-white shrink-0">
+          <div
+            className="p-4 md:p-6 border-t border-slate-100 bg-white shrink-0"
+            style={{
+              paddingBottom: 'max(16px, var(--safe-bottom))',
+            }}
+          >
             {hasAnswered && (
               <Button onClick={onNextRound} className="w-full py-3 md:py-4 text-sm md:text-base shadow-lg shadow-blue-500/20">
                 {nextActionLabel}

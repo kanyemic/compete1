@@ -25,6 +25,8 @@ const buildGuestIdentity = (): LocalPlayerIdentity => {
   };
 };
 
+export const createFreshGuestIdentity = (): LocalPlayerIdentity => saveLocalPlayerIdentity(buildGuestIdentity());
+
 export const saveLocalPlayerIdentity = (identity: LocalPlayerIdentity): LocalPlayerIdentity => {
   localStorage.setItem(PLAYER_IDENTITY_STORAGE_KEY, JSON.stringify(identity));
   return identity;

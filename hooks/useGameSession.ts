@@ -10,6 +10,7 @@ import {
 import { fetchDailyChallengeCases, fetchRandomCase } from '../services/data';
 import { calculateScore, generateOpponent, getBotBehavior } from '../services/bot';
 import { getTodayChallengeDateKey } from '../services/dailyChallenge';
+import { QuestionBankId } from '../services/questionBanks';
 
 interface DailyChallengeCompletionPayload {
   score: number;
@@ -27,6 +28,7 @@ interface SoloRunCompletionPayload {
 }
 
 interface UseGameSessionOptions {
+  selectedQuestionBankId: QuestionBankId;
   onGameStateChange: (state: GameState) => void;
   onWrongAnswer: (payload: {
     mode: WrongQuestionEntry['mode'];
@@ -68,6 +70,7 @@ const mapWrongQuestionEntryToCase = (entry: WrongQuestionEntry): QuestionCase =>
 });
 
 export const useGameSession = ({
+  selectedQuestionBankId,
   onGameStateChange,
   onWrongAnswer,
   onSessionStarted,
@@ -94,6 +97,7 @@ export const useGameSession = ({
   const retryTimerRef = useRef<number | null>(null);
 
   const gameModeRef = useRef(gameMode);
+  const selectedQuestionBankIdRef = useRef(selectedQuestionBankId);
   const currentCaseRef = useRef(currentCase);
   const dailyChallengeCasesRef = useRef(dailyChallengeCases);
   const battleStateRef = useRef(battleState);
@@ -105,6 +109,10 @@ export const useGameSession = ({
   useEffect(() => {
     gameModeRef.current = gameMode;
   }, [gameMode]);
+
+  useEffect(() => {
+    selectedQuestionBankIdRef.current = selectedQuestionBankId;
+  }, [selectedQuestionBankId]);
 
   useEffect(() => {
     currentCaseRef.current = currentCase;
@@ -220,7 +228,7 @@ export const useGameSession = ({
     try {
       const caseData = mode === GameMode.DAILY_CHALLENGE
         ? cases[round - 1]
-        : await fetchRandomCase();
+        : await fetchRandomCase(selectedQuestionBankIdRef.current);
 
       if (!caseData) {
         throw new Error('No case data available for this round.');
@@ -404,7 +412,7 @@ export const useGameSession = ({
   }
 
   async function startDailyChallenge() {
-    const cases = await fetchDailyChallengeCases(getTodayChallengeDateKey(), 5);
+    const cases = await fetchDailyChallengeCases(getTodayChallengeDateKey(), 5, selectedQuestionBankIdRef.current);
     const initialBattleState: BattleState = {
       round: 1,
       totalRounds: cases.length,

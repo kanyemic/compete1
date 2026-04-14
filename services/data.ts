@@ -1,25 +1,34 @@
 import { DailyChallengeRecord, LeaderboardData, LeaderboardType, QuestionCase } from '../types';
+import { getAdminDailyChallengeCases, getAdminQuestionCatalog } from './admin';
 import { fetchDailyChallengeCasesFromBackend, fetchLeaderboardDataFromBackend, fetchRandomCaseFromBackend } from './backend';
 import { getTodayChallengeDateKey } from './dailyChallenge';
-import { buildMockLeaderboardData, MOCK_CASE_DATABASE } from './mockData';
+import { buildMockLeaderboardData, getMockQuestionCases } from './mockData';
 import { LocalPlayerIdentity } from './playerIdentity';
+import { buildQuestionBankSeed, filterQuestionCasesByBank, type QuestionBankId } from './questionBanks';
+
+const getLocalAvailableCases = async (questionBankId: QuestionBankId): Promise<QuestionCase[]> => {
+  const localCatalog = await getAdminQuestionCatalog();
+  const approvedCases = localCatalog
+    .filter((entry) => entry.isActive && entry.reviewStatus === 'approved')
+    .map(({ isActive, ...question }) => question);
+  const fallbackCases = approvedCases.length > 0 ? approvedCases : getMockQuestionCases();
+  const filteredCases = filterQuestionCasesByBank(fallbackCases, questionBankId);
+
+  return filteredCases.length > 0 ? filteredCases : fallbackCases;
+};
 
 // Simulate API call to backend
-export const fetchRandomCase = async (): Promise<QuestionCase> => {
+export const fetchRandomCase = async (questionBankId: QuestionBankId = 'all'): Promise<QuestionCase> => {
   const backendCase = await fetchRandomCaseFromBackend();
-  if (backendCase) {
+  if (backendCase && filterQuestionCasesByBank([backendCase], questionBankId).length > 0) {
     return backendCase;
   }
 
   await new Promise(resolve => setTimeout(resolve, 600));
 
-  const randomIndex = Math.floor(Math.random() * MOCK_CASE_DATABASE.length);
-  const data = MOCK_CASE_DATABASE[randomIndex];
-
-  return {
-    id: crypto.randomUUID(),
-    ...data
-  };
+  const fallbackCases = await getLocalAvailableCases(questionBankId);
+  const randomIndex = Math.floor(Math.random() * fallbackCases.length);
+  return fallbackCases[randomIndex];
 };
 
 export const fetchLeaderboardData = async (payload: {
@@ -41,27 +50,40 @@ export const fetchLeaderboardData = async (payload: {
     return buildMockLeaderboardData(payload);
 };
 
-const sortMockCasesBySeed = (seed: string): Omit<QuestionCase, 'id'>[] => {
+const sortCasesBySeed = (cases: QuestionCase[], seed: string): QuestionCase[] => {
   const seedValue = Array.from(seed).reduce((sum, char) => sum + char.charCodeAt(0), 0);
-  return [...MOCK_CASE_DATABASE].sort((left, right) => {
+  return [...cases].sort((left, right) => {
     const leftScore = Array.from(left.description).reduce((sum, char) => sum + char.charCodeAt(0), seedValue);
     const rightScore = Array.from(right.description).reduce((sum, char) => sum + char.charCodeAt(0), seedValue);
     return leftScore - rightScore;
   });
 };
 
-export const fetchDailyChallengeCases = async (dateSeed: string, count: number = 5): Promise<QuestionCase[]> => {
+export const fetchDailyChallengeCases = async (
+  dateSeed: string,
+  count: number = 5,
+  questionBankId: QuestionBankId = 'all'
+): Promise<QuestionCase[]> => {
+  const adminCases = await getAdminDailyChallengeCases(dateSeed);
+  const filteredAdminCases = adminCases ? filterQuestionCasesByBank(adminCases, questionBankId) : [];
+  if (filteredAdminCases.length >= count) {
+    return filteredAdminCases.slice(0, count);
+  }
+  if (questionBankId === 'all' && adminCases && adminCases.length > 0) {
+    return adminCases.slice(0, count);
+  }
+
   const backendCases = await fetchDailyChallengeCasesFromBackend(dateSeed, count);
-  if (backendCases && backendCases.length > 0) {
+  const filteredBackendCases = backendCases ? filterQuestionCasesByBank(backendCases, questionBankId) : [];
+  if (filteredBackendCases.length >= count) {
+    return filteredBackendCases.slice(0, count);
+  }
+  if (questionBankId === 'all' && backendCases && backendCases.length > 0) {
     return backendCases;
   }
 
   await new Promise(resolve => setTimeout(resolve, 300));
 
-  return sortMockCasesBySeed(dateSeed)
-    .slice(0, count)
-    .map((item, index) => ({
-      id: `${dateSeed}-${index}-${item.correctAnswer}`,
-      ...item,
-    }));
+  const localCases = await getLocalAvailableCases(questionBankId);
+  return sortCasesBySeed(localCases, buildQuestionBankSeed(dateSeed, questionBankId)).slice(0, count);
 };

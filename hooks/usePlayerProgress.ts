@@ -15,10 +15,10 @@ import {
   type LocalPlayerStats,
 } from '../services/playerStats';
 import {
+  createFreshGuestIdentity,
   getLocalPlayerIdentity,
   linkLocalIdentityToAccount,
   type LocalPlayerIdentity,
-  unlinkLocalIdentityFromAccount,
   updateLocalPlayerIdentity,
 } from '../services/playerIdentity';
 import {
@@ -137,7 +137,7 @@ export const usePlayerProgress = () => {
 
     void syncSession();
 
-    const subscription = subscribeToAuthStateChange((_event, session) => {
+    const subscription = subscribeToAuthStateChange((event, session) => {
       if (!active) {
         return;
       }
@@ -151,7 +151,9 @@ export const usePlayerProgress = () => {
         setPlayerIdentity(nextIdentity);
         void ensureBackendPlayerProfile(nextIdentity);
       } else {
-        const nextIdentity = unlinkLocalIdentityFromAccount();
+        const nextIdentity = event === 'SIGNED_OUT'
+          ? createFreshGuestIdentity()
+          : getLocalPlayerIdentity();
         setPlayerIdentity(nextIdentity);
       }
     });
@@ -316,13 +318,9 @@ export const usePlayerProgress = () => {
       };
     }
 
-    const nextIdentity = unlinkLocalIdentityFromAccount();
-    setPlayerIdentity(nextIdentity);
-    setAccountSession(null);
-
     return {
       success: true,
-      message: '已退出登录，当前设备将回到游客模式。',
+      message: '已退出登录，当前设备已切换为新的游客身份。',
     };
   };
 

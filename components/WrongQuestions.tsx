@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { WrongQuestionEntry } from '../types';
 import { Button } from './Button';
 import { QuestionMetaPanel } from './QuestionMetaPanel';
+import { ScreenHeader } from './ScreenHeader';
+import { buildWrongQuestionFocusAreas, buildWrongQuestionReviewPlan, getWrongQuestionRecommendations } from '../services/wrongQuestions';
 
 interface WrongQuestionsProps {
   entries: WrongQuestionEntry[];
@@ -15,12 +17,22 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
   const [modeFilter, setModeFilter] = useState<'all' | WrongQuestionEntry['mode']>('all');
   const [difficultyFilter, setDifficultyFilter] = useState<'all' | WrongQuestionEntry['difficulty']>('all');
   const [categoryQuery, setCategoryQuery] = useState('');
+  const [activeFocusKey, setActiveFocusKey] = useState<string | null>(null);
+  const recommendations = useMemo(() => getWrongQuestionRecommendations(entries, 3), [entries]);
+  const reviewPlan = useMemo(() => buildWrongQuestionReviewPlan(entries, 3), [entries]);
+  const focusAreas = useMemo(() => buildWrongQuestionFocusAreas(entries, 3), [entries]);
+  const recommendedQuestionIds = new Set(recommendations.map((item) => item.entry.id));
+  const normalizedQuery = categoryQuery.trim().toLowerCase();
 
   const filteredEntries = entries.filter((entry) => {
     const matchesMode = modeFilter === 'all' || entry.mode === modeFilter;
     const matchesDifficulty = difficultyFilter === 'all' || entry.difficulty === difficultyFilter;
-    const matchesCategory = categoryQuery.trim().length === 0
-      || entry.category.toLowerCase().includes(categoryQuery.trim().toLowerCase());
+    const matchesCategory = normalizedQuery.length === 0
+      || [
+        entry.category,
+        entry.specialty ?? '',
+        entry.modality ?? '',
+      ].join(' ').toLowerCase().includes(normalizedQuery);
 
     return matchesMode && matchesDifficulty && matchesCategory;
   });
@@ -28,24 +40,182 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
     setSelectedEntry(filteredEntries[0] ?? null);
   }, [entries, modeFilter, difficultyFilter, categoryQuery]);
 
+  useEffect(() => {
+    if (!activeFocusKey) {
+      return;
+    }
+
+    if (!focusAreas.some((item) => item.key === activeFocusKey)) {
+      setActiveFocusKey(null);
+    }
+  }, [activeFocusKey, focusAreas]);
+
+  const applyFocusArea = (focusKey: string) => {
+    const focusArea = focusAreas.find((item) => item.key === focusKey);
+    if (!focusArea) {
+      return;
+    }
+
+    setActiveFocusKey(focusArea.key);
+    setCategoryQuery(focusArea.query);
+    setSelectedEntry(focusArea.representativeEntry);
+  };
+
+  const clearFocusArea = () => {
+    setActiveFocusKey(null);
+    setCategoryQuery('');
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 p-4 animate-fade-in relative">
+    <div className="app-safe-screen flex flex-col items-center justify-center min-h-screen bg-slate-50 p-4 animate-fade-in relative">
       <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-amber-100 rounded-full blur-3xl opacity-30"></div>
       </div>
 
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[92vh]">
-        <div className="p-6 md:p-8 border-b border-slate-100 bg-white">
-          <div className="flex justify-between items-center gap-4">
-            <div>
-              <h2 className="text-3xl font-display font-extrabold text-slate-900">错题本</h2>
-              <p className="text-sm text-slate-400 font-medium mt-1">优先显示最近的错题，用来快速复盘易错点。</p>
+        <ScreenHeader
+          eyebrow="Wrong Book"
+          title="错题本"
+          description="优先显示最近的错题，用来快速复盘易错点。"
+          backLabel="返回"
+          onBack={onClose}
+        />
+
+        <div className="px-6 md:px-8 pb-5 bg-white">
+          {recommendations.length > 0 && (
+            <div className="mt-5 rounded-3xl border border-blue-100 bg-[linear-gradient(135deg,rgba(219,234,254,0.95),rgba(255,255,255,0.92))] p-5">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div>
+                  <div className="text-[11px] uppercase tracking-[0.24em] font-semibold text-blue-500">Review Focus</div>
+                  <div className="text-xl font-display font-bold text-slate-900 mt-2">建议优先复练</div>
+                  <div className="text-sm text-slate-500 mt-2 leading-relaxed">
+                    我按难度、错题新鲜度和来源模式，先帮你排了本轮最值得复盘的题。
+                  </div>
+                </div>
+                <Button onClick={() => onRetryEntry(recommendations[0].entry)}>
+                  先练推荐第 1 题
+                </Button>
+              </div>
+
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                {recommendations.map((item, index) => (
+                  <button
+                    key={item.entry.id}
+                    onClick={() => setSelectedEntry(item.entry)}
+                    className="rounded-2xl border border-white/80 bg-white/88 text-left p-4 transition hover:bg-white"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-xs font-semibold text-blue-600">TOP {index + 1}</span>
+                      <span className="px-2 py-1 rounded-full bg-blue-50 text-[10px] font-bold text-blue-600">
+                        {item.badge}
+                      </span>
+                    </div>
+                    <div className="mt-3 text-sm font-semibold text-slate-900">{item.entry.category}</div>
+                    <div className="mt-2 text-xs text-slate-500 leading-relaxed">{item.reason}</div>
+                  </button>
+                ))}
+              </div>
             </div>
-            <Button variant="ghost" onClick={onClose} className="!p-2">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            </Button>
-          </div>
+          )}
+
+          {reviewPlan && (
+            <div className="mt-5 rounded-3xl border border-emerald-100 bg-[linear-gradient(135deg,rgba(220,252,231,0.95),rgba(255,255,255,0.92))] p-5">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div>
+                  <div className="text-[11px] uppercase tracking-[0.24em] font-semibold text-emerald-600">Today Review Plan</div>
+                  <div className="text-xl font-display font-bold text-slate-900 mt-2">今日复练计划</div>
+                  <div className="text-sm text-slate-500 mt-2 leading-relaxed">
+                    {reviewPlan.summary}
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-white/88 px-4 py-3 text-right min-w-[120px]">
+                  <div className="text-[10px] uppercase tracking-wide font-bold text-slate-400">预计耗时</div>
+                  <div className="text-2xl font-display font-bold text-emerald-600 mt-1">
+                    {reviewPlan.totalEstimatedMinutes} 分钟
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                {reviewPlan.items.map((item, index) => (
+                  <div
+                    key={item.entry.id}
+                    className="rounded-2xl border border-white/80 bg-white/90 p-4"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-xs font-semibold text-emerald-600">STEP {index + 1}</span>
+                      <span className="px-2 py-1 rounded-full bg-emerald-50 text-[10px] font-bold text-emerald-600">
+                        {item.estimatedMinutes} 分钟
+                      </span>
+                    </div>
+                    <div className="mt-3 text-sm font-semibold text-slate-900">{item.title}</div>
+                    <div className="mt-2 text-xs text-slate-600 leading-relaxed">{item.focus}</div>
+                    <div className="mt-2 text-xs text-slate-500 leading-relaxed">{item.reason}</div>
+                    <div className="mt-4">
+                      <Button
+                        onClick={() => onRetryEntry(item.entry)}
+                        variant={index === 0 ? 'primary' : 'secondary'}
+                        className="w-full"
+                      >
+                        {index === 0 ? '开始这一步' : '练这道题'}
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {focusAreas.length > 0 && (
+            <div className="mt-5 rounded-3xl border border-violet-100 bg-[linear-gradient(135deg,rgba(243,232,255,0.9),rgba(255,255,255,0.94))] p-5">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div>
+                  <div className="text-[11px] uppercase tracking-[0.24em] font-semibold text-violet-600">Focus Areas</div>
+                  <div className="text-xl font-display font-bold text-slate-900 mt-2">当前薄弱专题</div>
+                  <div className="text-sm text-slate-500 mt-2 leading-relaxed">
+                    我把错题按专科和模态聚到一起，先帮你找出最值得集中补的一组。
+                  </div>
+                </div>
+                {activeFocusKey && (
+                  <Button onClick={clearFocusArea} variant="secondary">
+                    清除专题聚焦
+                  </Button>
+                )}
+              </div>
+
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                {focusAreas.map((area) => (
+                  <button
+                    key={area.key}
+                    onClick={() => applyFocusArea(area.key)}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      activeFocusKey === area.key
+                        ? 'border-violet-300 bg-white shadow-[0_12px_28px_rgba(139,92,246,0.12)]'
+                        : 'border-white/80 bg-white/88 hover:bg-white'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="text-xs font-semibold text-violet-600">{area.title}</span>
+                      <span className="rounded-full bg-violet-50 px-2 py-1 text-[10px] font-bold text-violet-600">
+                        {area.badge}
+                      </span>
+                    </div>
+                    <div className="mt-2 text-sm font-semibold text-slate-900">{area.subtitle}</div>
+                    <div className="mt-2 text-xs text-slate-500 leading-relaxed">{area.reason}</div>
+                    <div className="mt-3 flex items-center justify-between text-xs">
+                      <span className="rounded-full bg-slate-100 px-2 py-1 font-semibold text-slate-600">
+                        {area.count} 道错题
+                      </span>
+                      <span className="font-semibold text-violet-600">
+                        聚焦复练
+                      </span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_150px_150px] gap-3 mt-5">
             <input
@@ -75,6 +245,16 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
               <option value="Hard">困难</option>
             </select>
           </div>
+          {activeFocusKey && (
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700">
+                已聚焦专题
+              </span>
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                {focusAreas.find((item) => item.key === activeFocusKey)?.title ?? '当前专题'}
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-[320px_1fr]">
@@ -103,13 +283,22 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                   className={`w-full text-left rounded-2xl border p-4 transition-all ${
                     selectedEntry?.id === entry.id
                       ? 'bg-white border-blue-200 shadow-md'
-                      : 'bg-white/80 border-slate-200 hover:border-slate-300'
+                      : recommendedQuestionIds.has(entry.id)
+                        ? 'bg-blue-50/60 border-blue-100 hover:border-blue-200'
+                        : 'bg-white/80 border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3 mb-2">
-                    <span className="text-[10px] uppercase tracking-wide font-bold text-slate-400">
-                      {entry.mode === 'daily_challenge' ? '每日挑战' : entry.mode === 'review_practice' ? '错题复练' : '单人连胜'}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] uppercase tracking-wide font-bold text-slate-400">
+                        {entry.mode === 'daily_challenge' ? '每日挑战' : entry.mode === 'review_practice' ? '错题复练' : '单人连胜'}
+                      </span>
+                      {recommendedQuestionIds.has(entry.id) && (
+                        <span className="px-2 py-1 rounded-full bg-blue-50 text-[10px] font-bold text-blue-600">
+                          建议优先
+                        </span>
+                      )}
+                    </div>
                     <span className={`px-2 py-1 rounded-md text-[10px] font-bold border ${
                       entry.difficulty === 'Hard' ? 'text-red-600 bg-red-50 border-red-100' :
                       entry.difficulty === 'Medium' ? 'text-orange-600 bg-orange-50 border-orange-100' :
