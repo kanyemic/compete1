@@ -19,8 +19,8 @@ export const ScreenHeader: React.FC<ScreenHeaderProps> = ({
 }) => {
   return (
     <div className="app-safe-header border-b border-slate-200/80 bg-white/90 backdrop-blur-xl px-4 py-4 md:px-8 md:py-5">
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex items-start gap-3">
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+        <div className="flex min-w-0 items-start gap-3">
           {onBack && (
             <button
               onClick={onBack}
@@ -33,23 +33,23 @@ export const ScreenHeader: React.FC<ScreenHeaderProps> = ({
               <span>{backLabel}</span>
             </button>
           )}
-          <div>
+          <div className="min-w-0">
             {eyebrow && (
               <div className="text-[11px] uppercase tracking-[0.24em] font-semibold text-slate-500">
                 {eyebrow}
               </div>
             )}
-            <h2 className="mt-2 text-[32px] leading-none font-display font-bold text-slate-900">
+            <h2 className="mt-2 text-[28px] leading-none font-display font-bold text-slate-900 md:text-[32px]">
               {title}
             </h2>
             {description && (
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-slate-600 md:text-sm">
                 {description}
               </p>
             )}
           </div>
         </div>
-        {actions ? <div className="shrink-0">{actions}</div> : null}
+        {actions ? <div className="shrink-0 self-start md:self-auto">{actions}</div> : null}
       </div>
     </div>
   );

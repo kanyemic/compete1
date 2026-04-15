@@ -48,22 +48,70 @@ export const buildWeeklyActivity = (
   history: TrainingHistoryEntry[],
   days: number = 7
 ): ActivityDay[] => {
-  const activeDays = new Set(history.map((entry) => toDateKey(entry.completedAt)));
+  const dailyCounts = history.reduce<Map<string, number>>((accumulator, entry) => {
+    const dateKey = toDateKey(entry.completedAt);
+    accumulator.set(dateKey, (accumulator.get(dateKey) ?? 0) + 1);
+    return accumulator;
+  }, new Map());
   const today = new Date();
   const result: ActivityDay[] = [];
+
+  const resolveLevel = (count: number): ActivityDay['level'] => {
+    if (count <= 0) {
+      return 0;
+    }
+    if (count === 1) {
+      return 1;
+    }
+    if (count === 2) {
+      return 2;
+    }
+    if (count <= 4) {
+      return 3;
+    }
+    return 4;
+  };
 
   for (let index = days - 1; index >= 0; index -= 1) {
     const date = new Date(today);
     date.setDate(today.getDate() - index);
+    const dateKey = toDateKey(date);
+    const count = dailyCounts.get(dateKey) ?? 0;
 
     result.push({
-      dateKey: toDateKey(date),
+      dateKey,
       label: date.toLocaleDateString('zh-CN', { weekday: 'short' }),
-      active: activeDays.has(toDateKey(date)),
+      active: count > 0,
+      count,
+      level: resolveLevel(count),
     });
   }
 
   return result;
+};
+
+export const buildContributionActivity = (
+  history: TrainingHistoryEntry[],
+  days: number | 'all' = 365
+): ActivityDay[] => {
+  if (days === 'all') {
+    if (history.length === 0) {
+      return buildWeeklyActivity(history, 30);
+    }
+
+    const today = new Date();
+    const earliestEntry = history.reduce((earliest, entry) => {
+      const current = new Date(entry.completedAt);
+      return current.getTime() < earliest.getTime() ? current : earliest;
+    }, new Date(history[0].completedAt));
+
+    const diffMs = today.getTime() - earliestEntry.getTime();
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24)) + 1;
+
+    return buildWeeklyActivity(history, Math.max(diffDays, 30));
+  }
+
+  return buildWeeklyActivity(history, days);
 };
 
 export const getLatestTrainingRecord = (

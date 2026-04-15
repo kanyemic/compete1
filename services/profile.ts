@@ -3,7 +3,7 @@ import { ensureBackendPlayerProfile, fetchLeaderboardDataFromBackend } from './b
 import { getTodayChallengeDateKey } from './dailyChallenge';
 import { buildMockLeaderboardData } from './mockData';
 import { LocalPlayerIdentity } from './playerIdentity';
-import { buildWeeklyActivity } from './playerHistory';
+import { buildContributionActivity, buildWeeklyActivity } from './playerHistory';
 import { LocalPlayerStats } from './playerStats';
 import { getSupabaseClient } from './supabase';
 
@@ -70,6 +70,8 @@ export const buildLocalProfileSummary = (payload: {
     soloStreakRank: buildRankSnapshot(streakLeaderboard, payload.stats.bestSoloStreak),
     recentRecords: payload.trainingHistory.slice(0, 5),
     weeklyActivity: buildWeeklyActivity(payload.trainingHistory),
+    yearlyActivity: buildContributionActivity(payload.trainingHistory, 365),
+    lifetimeActivity: buildContributionActivity(payload.trainingHistory, 'all'),
   };
 };
 
@@ -178,5 +180,7 @@ export const fetchProfileSummaryFromBackend = async (
       : { rank: null, totalPlayers: 0, topScore: null, gapToTop: null },
     recentRecords,
     weeklyActivity: buildWeeklyActivity(combinedHistory, 7),
+    yearlyActivity: buildContributionActivity(combinedHistory, 365),
+    lifetimeActivity: buildContributionActivity(combinedHistory, 'all'),
   };
 };

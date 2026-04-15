@@ -133,6 +133,8 @@ export interface ActivityDay {
   dateKey: string;
   label: string;
   active: boolean;
+  count: number;
+  level: 0 | 1 | 2 | 3 | 4;
 }
 
 export interface RankSnapshot {
@@ -159,6 +161,8 @@ export interface ProfileSummary {
   soloStreakRank: RankSnapshot;
   recentRecords: TrainingHistoryEntry[];
   weeklyActivity: ActivityDay[];
+  yearlyActivity: ActivityDay[];
+  lifetimeActivity: ActivityDay[];
 }
 
 export interface AdminQuestionSummary {
