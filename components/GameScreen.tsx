@@ -35,6 +35,13 @@ export const GameScreen: React.FC<GameScreenProps> = ({
   onExit,
 }) => {
   const [exitConfirmOpen, setExitConfirmOpen] = React.useState(false);
+  const reviewStatusLabel = currentCase.reviewStatus === 'approved'
+    ? '已审核'
+    : currentCase.reviewStatus === 'reviewing'
+      ? '审核中'
+      : currentCase.reviewStatus === 'archived'
+        ? '已归档'
+        : '待补充';
   const latestHistoryEntry = battleState.history[battleState.history.length - 1];
   const isDaily = gameMode === GameMode.DAILY_CHALLENGE;
   const isReview = gameMode === GameMode.REVIEW_PRACTICE;
@@ -239,6 +246,25 @@ export const GameScreen: React.FC<GameScreenProps> = ({
                 {!hasVisualCase && (
                   <span className="px-2.5 py-1 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider border border-blue-100 bg-blue-50 text-blue-600">
                     文字题
+                  </span>
+                )}
+              </div>
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-[10px] font-bold text-blue-600">
+                  来源：{currentCase.sourceName ?? '暂未标注'}
+                </span>
+                <span className={`rounded-full border px-3 py-1 text-[10px] font-bold ${
+                  currentCase.reviewStatus === 'approved'
+                    ? 'border-emerald-100 bg-emerald-50 text-emerald-600'
+                    : currentCase.reviewStatus === 'reviewing'
+                      ? 'border-amber-100 bg-amber-50 text-amber-600'
+                      : 'border-slate-200 bg-slate-100 text-slate-500'
+                }`}>
+                  {reviewStatusLabel}
+                </span>
+                {currentCase.reviewerName && (
+                  <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-semibold text-slate-500">
+                    审核人：{currentCase.reviewerName}
                   </span>
                 )}
               </div>

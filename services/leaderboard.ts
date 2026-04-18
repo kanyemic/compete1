@@ -272,12 +272,13 @@ export const buildLeaderboardInsights = (payload: {
   entries: LeaderboardEntry[];
   currentUserId: string;
   type: LeaderboardType;
-}): Pick<LeaderboardData, 'currentUserEntry' | 'totalPlayers' | 'topScore' | 'chaseMessage' | 'stabilityMessage'> => {
+}): Pick<LeaderboardData, 'currentUserEntry' | 'nearbyEntries' | 'totalPlayers' | 'topScore' | 'chaseMessage' | 'stabilityMessage'> => {
   const currentUserEntry = payload.entries.find((entry) => entry.id === payload.currentUserId) ?? null;
 
   if (!currentUserEntry) {
     return {
       currentUserEntry: null,
+      nearbyEntries: [],
       totalPlayers: payload.entries.length,
       topScore: payload.entries[0]?.score ?? null,
       chaseMessage: null,
@@ -288,6 +289,7 @@ export const buildLeaderboardInsights = (payload: {
   const currentIndex = currentUserEntry.rank - 1;
   const previousEntry = payload.entries[currentIndex - 1] ?? null;
   const nextEntry = payload.entries[currentIndex + 1] ?? null;
+  const nearbyEntries = payload.entries.slice(Math.max(0, currentIndex - 1), currentIndex + 2);
 
   let chaseMessage: string | null = null;
   let stabilityMessage: string | null = null;
@@ -333,6 +335,7 @@ export const buildLeaderboardInsights = (payload: {
 
   return {
     currentUserEntry,
+    nearbyEntries,
     totalPlayers: payload.entries.length,
     topScore: payload.entries[0]?.score ?? null,
     chaseMessage,

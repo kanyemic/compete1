@@ -295,10 +295,16 @@ const MOCK_RATING_SCORES = [980, 960, 935, 910, 890, 860, 845, 820, 790, 760];
 const MOCK_RATING_TIMES_MS = [24100, 25600, 26800, 27400, 28900, 30100, 31500, 32800, 34000, 35600];
 const MOCK_STREAK_SCORES = [28, 24, 21, 19, 17, 15, 13, 11, 10, 9];
 const MOCK_TRENDS: LeaderboardEntry['trend'][] = ['up', 'same', 'up', 'down', 'same', 'up', 'same', 'down', 'same', 'up'];
+const LEADERBOARD_VISIBLE_LIMIT = 50;
 
 export const buildMockLeaderboard = (type: LeaderboardType): LeaderboardEntry[] =>
-  Array.from({ length: 10 }).map((_, index) => {
-    const score = type === 'rating' ? MOCK_RATING_SCORES[index] : MOCK_STREAK_SCORES[index];
+  Array.from({ length: LEADERBOARD_VISIBLE_LIMIT }).map((_, index) => {
+    const score = type === 'rating'
+      ? Math.max(120, (MOCK_RATING_SCORES[index % MOCK_RATING_SCORES.length] - Math.floor(index / MOCK_RATING_SCORES.length) * 45))
+      : Math.max(1, (MOCK_STREAK_SCORES[index % MOCK_STREAK_SCORES.length] - Math.floor(index / MOCK_STREAK_SCORES.length) * 2));
+    const totalTimeMs = type === 'rating'
+      ? MOCK_RATING_TIMES_MS[index % MOCK_RATING_TIMES_MS.length] + Math.floor(index / MOCK_RATING_TIMES_MS.length) * 1850
+      : null;
 
     return {
       id: `user-${index}`,
@@ -307,7 +313,7 @@ export const buildMockLeaderboard = (type: LeaderboardType): LeaderboardEntry[] 
       avatar: MOCK_AVATARS[index % MOCK_AVATARS.length],
       score,
       trend: MOCK_TRENDS[index % MOCK_TRENDS.length],
-      totalTimeMs: type === 'rating' ? MOCK_RATING_TIMES_MS[index] : null,
+      totalTimeMs,
     };
   });
 
@@ -329,6 +335,7 @@ export const buildMockLeaderboardData = (payload: {
     return {
       entries: baseEntries,
       currentUserEntry: null,
+      nearbyEntries: [],
       totalPlayers: baseEntries.length,
       topScore: baseEntries[0]?.score ?? null,
       chaseMessage: null,
@@ -360,7 +367,7 @@ export const buildMockLeaderboardData = (payload: {
     type: payload.type,
   });
   const topEntries = combinedEntries
-    .slice(0, 10)
+    .slice(0, LEADERBOARD_VISIBLE_LIMIT)
     .map((entry) => ({
       ...entry,
       trend: entry.id === payload.identity.id ? 'same' : entry.trend,
@@ -369,6 +376,7 @@ export const buildMockLeaderboardData = (payload: {
   return {
     entries: topEntries,
     currentUserEntry: insights.currentUserEntry,
+    nearbyEntries: insights.nearbyEntries,
     totalPlayers: insights.totalPlayers,
     topScore: insights.topScore,
     chaseMessage: insights.chaseMessage,

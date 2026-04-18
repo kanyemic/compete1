@@ -83,6 +83,7 @@ export type LeaderboardType = 'rating' | 'streak';
 export interface LeaderboardData {
   entries: LeaderboardEntry[];
   currentUserEntry: LeaderboardEntry | null;
+  nearbyEntries: LeaderboardEntry[];
   totalPlayers: number;
   topScore: number | null;
   chaseMessage: string | null;
@@ -96,6 +97,34 @@ export interface DailyChallengeRecord {
   totalQuestions: number;
   completedAt: string;
   totalTimeMs?: number;
+  reviewSnapshot?: DailyChallengeReviewSnapshot;
+}
+
+export interface DailyChallengeReviewSnapshotItem {
+  questionId: string;
+  category: string;
+  specialty?: string;
+  modality?: string;
+  description: string;
+  options: string[];
+  correctAnswer: string;
+  selectedAnswer: string | null;
+  explanation: string;
+  difficulty: QuestionCase['difficulty'];
+  imageUrl: string;
+  sourceName?: string | null;
+  sourceUrl?: string | null;
+  reviewStatus?: ReviewStatus;
+  reviewerName?: string | null;
+  updatedAt?: string | null;
+  score: number;
+  timeTaken: number;
+  correct: boolean;
+}
+
+export interface DailyChallengeReviewSnapshot {
+  totalTimeMs: number;
+  items: DailyChallengeReviewSnapshotItem[];
 }
 
 export interface WrongQuestionEntry {

@@ -84,6 +84,7 @@ const App: React.FC = () => {
     startDailyChallenge,
     startWrongQuestionReview,
     restartWrongQuestionReview,
+    endSession,
     onMatchFound,
     submitAnswer,
     nextRound,
@@ -201,6 +202,15 @@ const App: React.FC = () => {
       sourceMode: entry.mode,
     });
     startWrongQuestionReview(entry);
+  };
+
+  const retryWrongQuestionByQuestionId = (questionId: string) => {
+    const targetEntry = wrongQuestions.find((entry) => entry.questionId === questionId);
+    if (!targetEntry) {
+      return;
+    }
+
+    retryWrongQuestion(targetEntry);
   };
 
   const openLeaderboard = () => {
@@ -367,7 +377,10 @@ const App: React.FC = () => {
           shuffledOptions={shuffledOptions}
           onSubmitAnswer={submitAnswer}
           onNextRound={nextRound}
-          onExit={() => setGameState(GameState.MENU)}
+          onExit={() => {
+            endSession();
+            setGameState(GameState.MENU);
+          }}
         />
       )}
       {gameState === GameState.GAME_OVER && battleState && (
@@ -381,6 +394,7 @@ const App: React.FC = () => {
             void openProfile(playerIdentity.isGuest ? 'signup' : 'signin');
           }}
           onViewLeaderboard={openLeaderboard}
+          onRetryWrongQuestion={retryWrongQuestionByQuestionId}
           onReplay={
             gameMode === GameMode.PVP_BATTLE
               ? startPvP

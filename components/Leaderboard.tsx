@@ -24,6 +24,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({
     const [leaderboardData, setLeaderboardData] = useState<LeaderboardData>({
       entries: [],
       currentUserEntry: null,
+      nearbyEntries: [],
       totalPlayers: 0,
       topScore: null,
       chaseMessage: null,
@@ -48,6 +49,8 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({
 
     const data = leaderboardData.entries;
     const currentUserEntry = leaderboardData.currentUserEntry;
+    const nearbyEntries = leaderboardData.nearbyEntries.filter((entry) => !data.some((topEntry) => topEntry.id === entry.id));
+    const visibleEntryCount = data.length;
     const playerHasScore = activeTab === 'rating'
       ? Boolean(dailyChallengeRecord && dailyChallengeRecord.score > 0)
       : bestSoloStreak > 0;
@@ -114,7 +117,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({
                             <div className="text-sm text-slate-500 mt-1">
                                 {playerHasScore
                                   ? currentUserEntry
-                                    ? `当前排在第 ${currentUserEntry.rank} 名，共 ${leaderboardData.totalPlayers} 人上榜`
+                                    ? `当前排在第 ${currentUserEntry.rank} 名，共 ${leaderboardData.totalPlayers} 人上榜，当前榜单展示前 ${visibleEntryCount} 位`
                                     : '成绩已记录，等待进入榜单刷新'
                                   : activeTab === 'rating'
                                     ? '先完成今日挑战，才能进入今日榜。'
@@ -173,6 +176,53 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({
                             <div className="mt-2 text-xs leading-relaxed text-slate-600">{target.detail}</div>
                           </div>
                         ))}
+                      </div>
+                    )}
+
+                    {playerHasScore && currentUserEntry && nearbyEntries.length > 0 && (
+                      <div className="mt-4 rounded-[24px] border border-[#d9e8ff] bg-[#f7fbff] p-4 shadow-[0_8px_24px_rgba(10,132,255,0.06)]">
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <div className="text-[10px] uppercase tracking-[0.24em] font-semibold text-[#0a84ff]">附近排名</div>
+                            <div className="mt-1 text-sm font-semibold text-slate-900">你当前前后最接近的对手</div>
+                          </div>
+                          <div className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-slate-500 shadow-sm">
+                            第 {currentUserEntry.rank} 名
+                          </div>
+                        </div>
+                        <div className="mt-3 space-y-2">
+                          {nearbyEntries.map((entry) => (
+                            <div
+                              key={entry.id}
+                              className={`flex items-center gap-3 rounded-[18px] px-3 py-3 ${
+                                entry.id === playerIdentity.id
+                                  ? 'border border-[#b6dbff] bg-white shadow-[0_8px_20px_rgba(10,132,255,0.08)]'
+                                  : 'bg-white/80'
+                              }`}
+                            >
+                              <div className="w-8 text-center text-sm font-bold text-slate-400">#{entry.rank}</div>
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f2f2f7] text-xl">
+                                {entry.avatar}
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <div className="truncate text-sm font-semibold text-slate-900">{entry.name}</div>
+                                <div className="text-[11px] text-slate-400">
+                                  {activeTab === 'rating'
+                                    ? (formatLeaderboardTime(entry.totalTimeMs) ? `总耗时 ${formatLeaderboardTime(entry.totalTimeMs)}` : '今日挑战')
+                                    : '历史最佳连胜'}
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-lg font-display font-bold text-slate-900 tabular-nums">
+                                  {entry.score}
+                                </div>
+                                <div className="text-[10px] uppercase tracking-wide font-semibold text-slate-400">
+                                  {activeTab === 'rating' ? '积分' : '胜场'}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
                 </div>
@@ -234,6 +284,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({
 
                 {/* Footer */}
                 <div className="app-safe-bottom p-6 border-t border-slate-100 bg-white/84 text-center">
+                    <p className="text-xs text-slate-500 font-medium mb-1">当前展示前 {visibleEntryCount} 名，共 {leaderboardData.totalPlayers} 人进入榜单</p>
                     <p className="text-xs text-slate-400 font-medium">{leaderboardFootnote}</p>
                 </div>
             </div>

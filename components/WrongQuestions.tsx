@@ -66,6 +66,22 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
     setCategoryQuery('');
   };
 
+  const getReviewStatusLabel = (status: WrongQuestionEntry['reviewStatus']) => {
+    if (status === 'approved') {
+      return '已审核';
+    }
+
+    if (status === 'reviewing') {
+      return '审核中';
+    }
+
+    if (status === 'archived') {
+      return '已归档';
+    }
+
+    return '待补充';
+  };
+
   return (
     <div className="app-safe-screen flex flex-col items-center justify-center min-h-screen bg-slate-50 p-4 animate-fade-in relative">
       <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
@@ -309,6 +325,20 @@ export const WrongQuestions: React.FC<WrongQuestionsProps> = ({ entries, loading
                   </div>
                   <div className="font-bold text-slate-900 text-sm mb-1">{entry.category}</div>
                   <div className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{entry.description}</div>
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-500">
+                      {entry.sourceName ?? '来源待补充'}
+                    </span>
+                    <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold ${
+                      entry.reviewStatus === 'approved'
+                        ? 'bg-emerald-50 text-emerald-600'
+                        : entry.reviewStatus === 'reviewing'
+                          ? 'bg-amber-50 text-amber-600'
+                          : 'bg-slate-100 text-slate-500'
+                    }`}>
+                      {getReviewStatusLabel(entry.reviewStatus)}
+                    </span>
+                  </div>
                 </button>
                 ))}
               </>

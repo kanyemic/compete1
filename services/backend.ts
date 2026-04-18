@@ -46,6 +46,8 @@ type DailyChallengeQuestionRow = {
   question: BackendQuestionCaseRow | BackendQuestionCaseRow[] | null;
 };
 
+const LEADERBOARD_VISIBLE_LIMIT = 50;
+
 const difficultyLabelMap: Record<BackendQuestionCaseRow['difficulty'], QuestionCase['difficulty']> = {
   easy: 'Easy',
   medium: 'Medium',
@@ -294,7 +296,7 @@ const fetchDailyLeaderboard = async (): Promise<LeaderboardData | null> => {
     .eq('status', 'completed')
     .order('score', { ascending: false })
     .order('total_time_ms', { ascending: true })
-    .limit(10);
+    .limit(LEADERBOARD_VISIBLE_LIMIT);
 
   if (error) {
     console.error('Failed to fetch daily leaderboard:', error);
@@ -303,8 +305,9 @@ const fetchDailyLeaderboard = async (): Promise<LeaderboardData | null> => {
 
   const entries = mapDailyLeaderboardEntries((data as unknown as DailyLeaderboardRow[]) ?? []);
   return {
-    entries: entries.slice(0, 10),
+    entries: entries.slice(0, LEADERBOARD_VISIBLE_LIMIT),
     currentUserEntry: null,
+    nearbyEntries: [],
     totalPlayers: entries.length,
     topScore: entries[0]?.score ?? null,
     chaseMessage: null,
@@ -322,7 +325,7 @@ const fetchSoloBestLeaderboard = async (): Promise<LeaderboardData | null> => {
     .from('v_leaderboard_solo_best')
     .select('user_id, display_name, avatar_url, best_streak')
     .order('best_streak', { ascending: false })
-    .limit(10);
+    .limit(LEADERBOARD_VISIBLE_LIMIT);
 
   if (error) {
     console.error('Failed to fetch solo leaderboard:', error);
@@ -331,8 +334,9 @@ const fetchSoloBestLeaderboard = async (): Promise<LeaderboardData | null> => {
 
   const entries = mapSoloLeaderboardEntries((data as SoloLeaderboardRow[]) ?? []);
   return {
-    entries: entries.slice(0, 10),
+    entries: entries.slice(0, LEADERBOARD_VISIBLE_LIMIT),
     currentUserEntry: null,
+    nearbyEntries: [],
     totalPlayers: entries.length,
     topScore: entries[0]?.score ?? null,
     chaseMessage: null,
@@ -359,6 +363,7 @@ export const fetchLeaderboardDataFromBackend = async (
       return {
         entries: [],
         currentUserEntry: null,
+        nearbyEntries: [],
         totalPlayers: 0,
         topScore: null,
         chaseMessage: null,
@@ -395,8 +400,9 @@ export const fetchLeaderboardDataFromBackend = async (
       type,
     });
     return {
-      entries: mappedEntries.slice(0, 10),
+      entries: mappedEntries.slice(0, LEADERBOARD_VISIBLE_LIMIT),
       currentUserEntry: insights.currentUserEntry,
+      nearbyEntries: insights.nearbyEntries,
       totalPlayers: insights.totalPlayers,
       topScore: insights.topScore,
       chaseMessage: insights.chaseMessage,
@@ -421,8 +427,9 @@ export const fetchLeaderboardDataFromBackend = async (
     type,
   });
   return {
-    entries: mappedEntries.slice(0, 10),
+    entries: mappedEntries.slice(0, LEADERBOARD_VISIBLE_LIMIT),
     currentUserEntry: insights.currentUserEntry,
+    nearbyEntries: insights.nearbyEntries,
     totalPlayers: insights.totalPlayers,
     topScore: insights.topScore,
     chaseMessage: insights.chaseMessage,

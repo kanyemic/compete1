@@ -326,6 +326,33 @@ export const usePlayerProgress = () => {
 
   const recordDailyChallengeCompletion = (payload: DailyChallengeCompletionPayload) => {
     const totalTimeMs = payload.history.reduce((sum, entry) => sum + Math.round(entry.timeTaken * 1000), 0);
+    const reviewSnapshot = {
+      totalTimeMs,
+      items: payload.cases.map((question, index) => {
+        const result = payload.history[index];
+        return {
+          questionId: question.id,
+          category: question.category,
+          specialty: question.specialty,
+          modality: question.modality,
+          description: question.description,
+          options: question.options,
+          correctAnswer: question.correctAnswer,
+          selectedAnswer: result?.selectedAnswer ?? null,
+          explanation: question.explanation,
+          difficulty: question.difficulty,
+          imageUrl: question.imageUrl,
+          sourceName: question.sourceName,
+          sourceUrl: question.sourceUrl,
+          reviewStatus: question.reviewStatus,
+          reviewerName: question.reviewerName,
+          updatedAt: question.updatedAt,
+          score: result?.score ?? 0,
+          timeTaken: result?.timeTaken ?? 0,
+          correct: result?.correct ?? false,
+        };
+      }),
+    };
 
     const nextHistory = saveTrainingHistoryEntry({
       mode: 'daily_challenge',
@@ -339,6 +366,7 @@ export const usePlayerProgress = () => {
       totalQuestions: payload.totalQuestions,
       completedAt: new Date().toISOString(),
       totalTimeMs,
+      reviewSnapshot,
     });
 
     setTrainingHistory(nextHistory);

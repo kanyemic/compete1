@@ -41,6 +41,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "X 线基础",
     "specialty": "影像基础",
     "modality": "X 光",
+    "description": "X线检查程序可以简化为",
+    "correctAnswer": "X线→被照物→信号→检测→图像形成",
+    "options": [
+      "X线→被照物→信号→检测→图像形成",
+      "被照物→X线→信号→检测→图像形成",
+      "X线→被照物→检测→图像形成→信号",
+      "被照物→X线→检测→信号→图像形成",
+      "X线→被照物→检测→信号→图像形成"
+    ],
+    "explanation": "X线成像的过程。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
     "description": "不能直接产生X线对比度的组织与器官包括",
     "correctAnswer": "消化道、血管、生殖系统",
     "options": [
@@ -52,6 +73,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "人体各种软组织和液体的比重大致相同，在它们之间缺乏天然对比，所以不能直接产生X线对比度。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "关于X线强度分布的叙述，错误的是",
+    "correctAnswer": "在照射野内分布是均匀的",
+    "options": [
+      "与阳极靶面倾斜角度有关",
+      "X线阴阳极端X线强度分布不均",
+      "在照射野内分布是均匀的",
+      "X线管长轴两侧X线强度对称",
+      "靶面损坏，X线强度不均"
+    ],
+    "explanation": "<p>X线强度在照射野内分布不均匀。</p><p>在x线管长轴方向上，110°处x线强度最大（阳极角为20°）。</p><p>在x线管短轴方向上，分布对称。</p><p>注意D选项为长轴两侧而不是长轴方向。</p>",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -83,6 +125,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "X 线基础",
     "specialty": "影像基础",
     "modality": "X 光",
+    "description": "关于X线在物质中衰减的叙述，不正确的是",
+    "correctAnswer": "X线衰减与X线波长无关",
+    "options": [
+      "X线衰减与X线波长无关",
+      "X线衰减与透过物质有关",
+      "X线性衰减系数是以长度为单位的衰减",
+      "质量吸收系数是以质量厚度为单位的衰减",
+      "总衰减系数是各种衰减系数的总和"
+    ],
+    "explanation": "X线波长越长，衰减越大。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
     "description": "下列正确的是",
     "correctAnswer": "X线摄影时用增感屏是为缩短曝光时间",
     "options": [
@@ -94,6 +157,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "X线摄影时用增感屏是为了提高射线利用率，减少辐射剂量以及缩短曝光时间。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "指出下列说法中错误的是",
+    "correctAnswer": "影像放大率与靶片距离成正比",
+    "options": [
+      "X线束是从X线管向人体作锥形投射，因此使X线影像有一定的放大和变形",
+      "伴影的产生与锥形束有关",
+      "斜射投照会造成影像歪曲失真",
+      "减少伴影的方法是增大片距离",
+      "影像放大率与靶片距离成正比"
+    ],
+    "explanation": "<p>X线束是从X线管向人体作锥形投射，因此使X线影像有一定的放大和变形失真，并产生 伴影。影像放大率与靶片距离成反比。</p>",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -125,6 +209,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "X 线基础",
     "specialty": "影像基础",
     "modality": "X 光",
+    "description": "CR摄影和常规X线摄影不同之处在于，前者",
+    "correctAnswer": "使用成像板代替胶片",
+    "options": [
+      "使用成像板代替胶片",
+      "X线发生器不同",
+      "人体X线吸收系数不同",
+      "对CR图像的观察与分析不同",
+      "将已摄取的X线胶片数字化"
+    ],
+    "explanation": "常规X线摄影是用X线胶片作为记录和显示信息的载体，而CR是使用可记录并由激光读出X线影像信息的成像板（IP）作为载体，经X线曝光及信息读出处理，形成数字式平片影像。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
     "description": "与常规X线摄影相比，DR的优点不包括",
     "correctAnswer": "空间分辨力高",
     "options": [
@@ -136,6 +241,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "DR成像技术有非常高的转换效率、极为宽广的动态范围、高的密度分辨力和彻底清除散射效应，有极佳的MTF特性。但其空间分辨力逊于常规X线摄影。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "CR中可记录与读出X线影像信息的载体是",
+    "correctAnswer": "成像板",
+    "options": [
+      "胶片",
+      "磁盘",
+      "成像板",
+      "荧光屏",
+      "平板探测器"
+    ],
+    "explanation": "计算机X线摄影是使用可记录并可由激光读出X线影像信息的成像板作为载体。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -157,6 +283,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "DR摄影与CR摄影相比时间分辨力和空间分辨力均进一步提高。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "关于放射防护，下列哪种说法是错误的",
+    "correctAnswer": "X线穿透人体一定会产生生物损害",
+    "options": [
+      "屏蔽防护是最主要的防护措施之一",
+      "使用原子序数较高的物质材料阻挡与X线",
+      "限制每次检查的照射次数，避免短期不必要的多次重复检查",
+      "X线穿透人体一定会产生生物损害",
+      "最简易的防护措施是距离防护"
+    ],
+    "explanation": "<p>X线穿透人体会产生一定的生物效应，如辐射量在容许范围内， 一般少有影响</p>",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -188,6 +335,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "CT",
+    "description": "下列何种处理方式不影响CT图像噪声的改变?",
+    "correctAnswer": "改变扫描范围",
+    "options": [
+      "改变电流量",
+      "改变扫描范围",
+      "改变准直",
+      "改变球管到探测器的距离",
+      "改变矩阵"
+    ],
+    "explanation": "影响噪声的因素：①X线剂量大小②扫描层厚③重建算法④物体中的射线衰减性能⑤检测器的转换效率。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
     "description": "关于螺旋CT特点的叙述，错误的是",
     "correctAnswer": "笔形X线束",
     "options": [
@@ -208,6 +376,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "CT",
+    "description": "与平片相比，下列哪一项不是CT的优势",
+    "correctAnswer": "空间分辨率高",
+    "options": [
+      "密度分辨率高",
+      "空间分辨率高",
+      "解剖分辨率高",
+      "增强扫描有利于病变定性",
+      "可进行多方位重建"
+    ],
+    "explanation": "CT的空间分辨率比平片低，其他均为CT的优势。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "影像综合",
     "description": "如果准直为10mm，球管旋转1周进床5mm，那么螺距应当是：",
     "correctAnswer": "0.5",
@@ -219,6 +408,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "螺距=球管旋转360°床移动距离÷准直器宽度。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "关于分辨率的描述，不正确的是",
+    "correctAnswer": "密度分辨率，平片高于CT",
+    "options": [
+      "密度分辨率，平片高于CT",
+      "组织分辨率，MRI高于CT",
+      "密度分辨率，CT高于平片",
+      "密度分辨率与空间分辨率成反比",
+      "空间分辨率，平片高于CT"
+    ],
+    "explanation": "CT特点是软组织分辨率高，模拟成像的X线胶片密度分辨率仅26灰阶，数字成像的密度分辨率可达210～212灰阶，可通过窗宽、窗位的调整，使全部灰阶通过分段得到充分的显示，这样对不同正常组织间的分辨率和正常组织与病理组织之间的分辨能力明显提高。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -250,6 +460,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "CT",
+    "description": "多层螺旋CT是指",
+    "correctAnswer": "可同时采集多个层面数据的CT设备",
+    "options": [
+      "可同时显示多个层面影像的CT设备",
+      "可同时采集多个层面数据的CT设备",
+      "可同时存储多个层面影像的CT设备",
+      "可同时处理多个层面影像的CT设备",
+      "可同时重建多个层面影像的CT设备"
+    ],
+    "explanation": "多层螺旋CT是指具有多排探测器的CT设备，球管旋转一周，可同时采集多个层面的数据。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
     "description": "空间分辨率的影响因素不包括",
     "correctAnswer": "被测物质的几何尺寸",
     "options": [
@@ -261,6 +492,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "空间分辨率又称高分辨率，是指CT对物体空间大小的鉴别能力，被测物体的几何尺寸与空间分辨率没关系。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "下列哪种方法可以减少影像的部分容积效应",
+    "correctAnswer": "减小扫描层厚",
+    "options": [
+      "提高扫描条件（kV值、mA值）",
+      "减小扫描层厚",
+      "缩短扫描时间",
+      "改变重建方法",
+      "选择适当的窗宽、窗位"
+    ],
+    "explanation": "在同一扫描层面内含有两种以上不同密度的组织相互重叠时，所测得的CT值不能如实反映该单位体素内任何一种组织真实的CT值，而是这些组织的平均CT值，这种现象称部分容积效应。减少部分容积效应可采用薄层扫描、小扫描视野及大矩阵等方法。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -291,6 +543,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "CT",
+    "description": "以下哪一项不是影像后处理技术",
+    "correctAnswer": "薄层骨算法重建",
+    "options": [
+      "表面阴影显示",
+      "曲面重组",
+      "薄层骨算法重建",
+      "最大密度投影",
+      "仿真内窥镜"
+    ],
+    "explanation": "图像后处理包括：MPR、CPR、SSD、MIP、MinIP、VR、CTVE。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "影像综合",
     "description": "下列关于矩阵的概念，不正确的是",
     "correctAnswer": "矩阵大，表明像素大，单位面积像素数量多，图像分辨率高",
@@ -302,6 +575,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "显示矩阵是指图像的排列阵列"
     ],
     "explanation": "相同的扫描野，矩阵越大，表明单位面积像素数量越多，像素越小，图像分辨率越高。像素=视野/矩阵。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "关于CT窗宽、窗位的叙述，不正确的是",
+    "correctAnswer": "增加窗宽可使图像的信息量增加",
+    "options": [
+      "增加窗宽可使图像的信息量增加",
+      "它能抑制无用的信息",
+      "它能增强显示有用的信息",
+      "窗宽、窗位的调节并不能增加图像本身的信息",
+      "窗宽、窗位的调节是CT的一项重要图像处理技术"
+    ],
+    "explanation": "CT窗宽、窗位的调节是其一项重要图像处理技术，它并不能增加图像本身的信息，但通过调节可根据诊断需要增强或抑制某些信息。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -334,6 +628,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "CT",
+    "description": "冠状动脉狭窄",
+    "correctAnswer": "灌注扫描",
+    "options": [
+      "平扫",
+      "增强扫描",
+      "灌注扫描",
+      "高分辨率扫描",
+      "薄层扫描"
+    ],
+    "explanation": "灌注扫描不同于普通动态扫描,是在静脉快速团注对比剂时,对感兴趣区层面进行连续CT扫描。冠状动脉狭窄时，一方面要求极短时间、极高时间分辨率，保证动脉期扫描，同时要观察心肌的灌注情况。所以使用灌注扫描。而普通动态增强，时间分辨率实际上都慢于灌注扫描，确切来说都是有所延迟的，并且不能观察心肌的有效灌注情况。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
     "description": "CT仿真内镜",
     "correctAnswer": "CTVE",
     "options": [
@@ -355,6 +670,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "MRI",
+    "description": "MRI设备不包括",
+    "correctAnswer": "高压发生器",
+    "options": [
+      "主磁体",
+      "梯度线圈",
+      "射频发生器",
+      "高压发生器",
+      "信号接收器"
+    ],
+    "explanation": "MRI设备包括磁体、梯度线圈、供电部分、射频发射器及MR信号接收器，这些部分负责MR信号产生、探测与编码；模拟转换器、电子计算机、磁盘与磁带机等部分则负责数据处理、图像重建、显示与储存。高压发生器是X线设备。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
     "description": "在GRE脉冲序列中， 翻转角(小于90°角) 越大所获图像越接近于",
     "correctAnswer": "T1权像",
     "options": [
@@ -365,6 +701,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均不是"
     ],
     "explanation": "在GRE序列，翻转角(FA)大小也是决定图像对比度的因素之一，大FA参与形成T1WI，小FA参与形成T2WI。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "“常规SE序列质子加权”的扫描参数为以下哪项?",
+    "correctAnswer": "TR≥2000ms，TE≤50ms",
+    "options": [
+      "TR≥60ms，TE≤1500ms",
+      "TR≥600ms，TE≤2000ms",
+      "TR≥80ms，TE≥2000ms",
+      "TR≥2000ms，TE≤50ms",
+      "TR≤100ms，TE≤1500ms"
+    ],
+    "explanation": "在SE序列中，一般采用较长TR和较短TE时可获得质子密度加权图像，一般TR为2500ms左右，TE为20ms左右时，SE序列成像可获得较好的质子密度加权图像。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -397,6 +754,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "MRI",
+    "description": "以下哪种患者一般不进行MR检查?",
+    "correctAnswer": "幽闭综合征患者",
+    "options": [
+      "钛合金股骨头置换术后患者",
+      "急性脑梗死患者",
+      "CT未发现高密度异物的眼球外伤患者",
+      "幽闭综合征患者",
+      "配合的低龄高热患者"
+    ],
+    "explanation": "幽闭综合征患者由于病情特点，一般不能在MR仪中坚持相对长的时间，所以不进行MR检查。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
     "description": "在MR成像装置中，共设计有几种梯度磁场",
     "correctAnswer": "3种",
     "options": [
@@ -407,6 +785,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "5种"
     ],
     "explanation": "在MR成像装置中，共设计有3种梯度磁场：一是层面选择梯度，二是频率编码梯度，三是相位编码梯度。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "在显示以下病变和组织结构方面，MRI不如CT的是",
+    "correctAnswer": "少量新鲜出血",
+    "options": [
+      "少量新鲜出血",
+      "黑色素瘤定性",
+      "可显示视神经、眼外肌",
+      "可显示膝关节半月板",
+      "可显示眶内软组织结构"
+    ],
+    "explanation": "对于少量新鲜出血， CT较MRI敏感。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -438,6 +837,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "K空间周边区域的数据主要决定",
+    "correctAnswer": "图像的解剖细节",
+    "options": [
+      "图像的矩阵",
+      "图像的信噪比",
+      "成像的速度",
+      "图像的解剖细节",
+      "图像的对比"
+    ],
+    "explanation": "越靠近K空间周边的MR信号所含的空间信息越多，图像的解剖细节显示得越细。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "影像综合",
     "description": "脂肪抑制技术可以改善下列哪种伪影",
     "correctAnswer": "化学位移伪影",
@@ -449,6 +869,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "部分容积效应"
     ],
     "explanation": "脂肪抑制技术可以改善化学位移伪影。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
+    "description": "以下哪种组织结构在MRI上呈高信号",
+    "correctAnswer": "颅骨板障",
+    "options": [
+      "颅骨内外板",
+      "颅骨板障",
+      "硬脑膜",
+      "含气鼻窦腔",
+      "乳突气房"
+    ],
+    "explanation": "颅骨板障内含有骨髓，故信号偏高。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -470,6 +911,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "自由水的T1明显缩短"
     ],
     "explanation": "水是磁共振成像的物理基础。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "关于MRI射频系统中射频线圈的分类，不正确的是",
+    "correctAnswer": "体层线圈",
+    "options": [
+      "全容积线圈",
+      "部分容积线圈",
+      "表面线圈",
+      "体层线圈",
+      "相控阵线圈"
+    ],
+    "explanation": "射频线圈的分类：全容积线圈、部分容积线圈、表面线圈、体腔内线圈和相控阵线圈",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -501,6 +963,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "心脏大血管的搏动及呼吸运动可产生",
+    "correctAnswer": "运动伪影",
+    "options": [
+      "运动伪影",
+      "卷褶伪影",
+      "化学位移伪影",
+      "磁敏感性伪影",
+      "截断伪影"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "MRI",
     "description": "主要用于心脏MRI切层定位",
     "correctAnswer": "体轴矢状面断层",
@@ -512,6 +995,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "左前斜垂直室间隔心室短轴断层"
     ],
     "explanation": "体轴矢状断层主要用于心脏MRI切层定位。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "采用长TE技术获得重T2WI影像",
+    "correctAnswer": "水成像",
+    "options": [
+      "水成像",
+      "功能性MRI成像",
+      "脂肪抑制",
+      "MRI对比增强检查",
+      "MR血管造影"
+    ],
+    "explanation": "无。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -541,6 +1045,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "最常用的阴性造影剂是",
+    "correctAnswer": "空气",
+    "options": [
+      "氮气",
+      "氧气",
+      "空气",
+      "二氧化碳",
+      "氦气"
+    ],
+    "explanation": "阴性对比剂常用的有空气、氧气、水等。主要用于胃肠道充盈，其中以空气应用最方便、最多、费用最低。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 CT",
     "specialty": "胸部",
     "modality": "CT",
@@ -554,6 +1079,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上都不是"
     ],
     "explanation": "对比剂的引入方法分为两种：①直接引入法：其中包括口服法、灌注法、直接注入法。CT还包括椎管造影、CT导引下人工气胸、CT导引下胸膜腔内成像、CT导引下肝内胆管成像等。②间接引入法：对比剂经不同途径引入体内，经吸收或聚集，增加不同组织间的对比度。如静脉肾盂造影、排泄性胆道造影等。CT静脉注射对比剂进行增强扫描也是属于间接引入法。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "高浓度顺磁对比剂对质子弛豫时间的影响为",
+    "correctAnswer": "T1缩短，T2缩短",
+    "options": [
+      "T1缩短，T2改变不大",
+      "T1缩短，T2延长",
+      "T1延长，T2缩短",
+      "T1缩短，T2缩短",
+      "T1延长，T2延长"
+    ],
+    "explanation": "顺磁性对比剂Gd—DTPA浓度较低时，由于机体组织的T1弛豫时间较长，故对比剂对组织的T1弛豫时间影响较大。但随着其浓度增加，T2缩短效应渐趋明显，当Gd—DTPA浓度大大高于临床剂量，T2缩短效应非常显著，以致其T2增强掩盖了T1增强作用，此时若采用T2或T2＊加权成像，含对比剂部分组织则表现为低信号。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -586,6 +1132,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
+    "description": "高浓度顺磁造影剂对质子弛豫时间的影响为",
+    "correctAnswer": "T1缩短，T2缩短",
+    "options": [
+      "T1缩短，T2改变不大",
+      "T1缩短，T2延长",
+      "T1延长，T2缩短",
+      "T1缩短，T2缩短",
+      "T1延长，T2延长"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
     "description": "目前血管系统介入放射学首选的监视方法是",
     "correctAnswer": "DSA",
     "options": [
@@ -596,6 +1163,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "DSA"
     ],
     "explanation": "DSA优点：实时成像绘制血管路径图，减少碘对比剂用量。具有影现象后处理功能，突出微小的密度差别，减少胶片用量。其他选项亦非首选。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "导管的主要目的为",
+    "correctAnswer": "以上都对",
+    "options": [
+      "造影与引流",
+      "建立通道",
+      "注入药物",
+      "扩张狭窄管腔",
+      "以上都对"
+    ],
+    "explanation": "导管是介入放射学的主要器材，根据用途分为造影导管、引流导管和球囊扩张导管等。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -618,6 +1206,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "PTA是经皮经腔血管成形术，它采用导管技术扩张或再通动脉粥样硬化或其他原因所致的血管狭窄或闭塞性病变，主要包括球夹血管成形术和血管支架植入术两种方法。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
+    "description": "DSA图像采集，取25帧／秒的部位是",
+    "correctAnswer": "冠状动脉",
+    "options": [
+      "腹部",
+      "颈部",
+      "冠状动脉",
+      "盆腔",
+      "四肢"
+    ],
+    "explanation": "DSA图像采集，一般来说，四肢、盆腔、颈部、腹部等采集帧率在6帧/秒以下即可，心脏及冠状动脉等运动大的部位，在25帧/秒或以上，才能保证采集的图像清晰。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -649,6 +1258,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
+    "description": "血管内支架是具有一定几何形状的圆筒状支撑物，用于支撑血管狭窄处，血流保持通畅，临床应用广泛，但不用于下列哪种情况？",
+    "correctAnswer": "肾动脉分支狭窄",
+    "options": [
+      "髂外动脉狭窄",
+      "颈动脉狭窄",
+      "肾动脉分支狭窄",
+      "冠状动脉狭窄",
+      "下腔静脉狭窄"
+    ],
+    "explanation": "血管内支架一般用于管径较大的血管。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
     "description": "下列材料属于短期栓塞剂的是",
     "correctAnswer": "自体血凝块",
     "options": [
@@ -659,6 +1289,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "无水酒精"
     ],
     "explanation": "明胶海绵及碘油属于中期栓塞剂，螺圈、无水酒精属于长期栓塞剂。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "DSA的禁忌证不包括",
+    "correctAnswer": "主动脉瓣关闭不全",
+    "options": [
+      "碘和麻醉剂过敏",
+      "急性炎症或高热",
+      "严重的心、肝、肾功能损害",
+      "主动脉瓣关闭不全",
+      "穿刺部位感染"
+    ],
+    "explanation": "DSA对主动脉瓣关闭不全是一种很好的检查方式，曝光连续采集，还能动态观察射血和反流。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -691,6 +1342,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
+    "description": "下列关于Seldinger技术的描述，不正确的是",
+    "correctAnswer": "动脉穿刺时穿刺针进入血管后，针尾血流不畅，其色暗红，表示穿刺针未完全进入血管腔",
+    "options": [
+      "股动脉是最常选用的动脉穿刺部位",
+      "动脉穿刺时穿刺针进入血管后，针尾血流不畅，其色鲜红，表示穿刺针进入动脉",
+      "动脉穿刺时穿刺针进入血管后，血流喷出顺利，但导丝进入有明显阻力或无法送人，则多为针尖顶在血管壁上",
+      "动脉穿刺时穿刺针进入血管后，针尾血流不畅，其色暗红，表示穿刺针未完全进入血管腔",
+      "Seldinger技术的并发症包括局部血栓形成或栓塞、出血或形成血肿等"
+    ],
+    "explanation": "动脉穿刺时穿刺针进入血管后，针尾血流不畅，其色鲜红，表示穿刺针进入动脉，其色暗红，表示穿刺针进入静脉。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
     "description": "介入放射学常用的血管扩张类药物包括",
     "correctAnswer": "妥拉苏林",
     "options": [
@@ -712,6 +1384,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
+    "description": "冠状动脉扩张和动脉瘤最常见的病因是",
+    "correctAnswer": "动脉粥样硬化",
+    "options": [
+      "冠状动脉夹层",
+      "红斑狼疮",
+      "外伤",
+      "动脉粥样硬化",
+      "硬皮病"
+    ],
+    "explanation": "冠状动脉扩张和动脉瘤最常见的病因是动脉粥样硬化，可不伴有血管狭窄，也可与狭窄并存而呈串珠样改变。此外，某些疾病也可引起冠状动脉扩张和动脉瘤，如川崎病、结节性动脉周围炎、红斑狼疮、硬皮病、梅毒、马方综合征、大动脉炎或外伤等。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
     "description": "左心室造影可选择的体位为",
     "correctAnswer": "30°右斜位",
     "options": [
@@ -722,6 +1415,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "左侧位"
     ],
     "explanation": "左心室造影可取30°右前斜位或60°左前斜位。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "动脉导管未闭X线造影检查，一般所取的体位为",
+    "correctAnswer": "左前斜位和左侧位",
+    "options": [
+      "前后位和左侧",
+      "左前斜位和左侧位",
+      "右前斜位和后前位",
+      "左侧位和右前斜位",
+      "右侧位和左前斜位"
+    ],
+    "explanation": "原始题库暂未提供详细解析。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -751,6 +1465,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "下列食管狭窄性病变，不适合单纯利用球囊成形术治疗的有",
+    "correctAnswer": "食管癌造成的食管狭窄和并发气管瘘",
+    "options": [
+      "术后吻合口狭窄",
+      "食管癌造成的食管狭窄和并发气管瘘",
+      "贲门失弛缓症",
+      "幽门良性梗阻",
+      "食管炎性（包括化学性炎症）狭窄"
+    ],
+    "explanation": "食管癌致食管狭窄并发气管瘘时可采用食管覆膜支架治疗。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
@@ -765,6 +1500,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "法洛四联症右心造影可见收缩期左心室及主动脉提早显影，透视下可见双向分流，主动脉骑跨在室间隔之上，升主动脉弓扩张。漏斗部狭窄多较长，呈管状，如为瓣膜狭窄，在收缩期呈鱼口状突向肺动脉，肺动脉干及左右分支常较细小。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "心内膜垫缺损造影可显示其特征性“鹅颈征”表现的体位是",
+    "correctAnswer": "右前斜位",
+    "options": [
+      "右侧位",
+      "左前斜位",
+      "右前斜位",
+      "左侧位",
+      "以上均不正确"
+    ],
+    "explanation": "正位和右前斜位左心室造影是显示心内膜垫缺损的特征性表现“鹅颈征”的最佳位置。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -793,6 +1549,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "关于下腔静脉滤器的描述，不正确的是",
+    "correctAnswer": "滤器通常释放于双侧肾静脉开口水平以上下腔静脉内",
+    "options": [
+      "治疗机制是将下腔静脉横截面分割成若干小的几何形态，保证血流通畅并阻挡血栓",
+      "盆腔及下肢外科手术前存在盆腔及下肢深静脉血栓的病人，可放置临时或永久下腔静脉滤器",
+      "双侧下肢深静脉血栓病人或下腔静脉远端血栓病人可选取右侧颈静脉入路",
+      "滤器通常释放于双侧肾静脉开口水平以上下腔静脉内",
+      "并发症包括再发肺动脉栓塞、腔静脉闭塞、滤器移位和腔静脉血管壁损伤／穿孔"
+    ],
+    "explanation": "下腔静脉滤器尖端应定位于肾静脉开口水平以下1～2cm处，释放滤器，使之位于肾静脉和髂静脉之间的下腔静脉内。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
@@ -807,6 +1584,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "理解性记忆即可。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "关于消化道出血灌注止血药物，正确的是",
+    "correctAnswer": "血管加压素",
+    "options": [
+      "肾上腺素",
+      "利多卡因",
+      "罂粟碱",
+      "血管加压素",
+      "以上都不是"
+    ],
+    "explanation": "血管加压素是缩血管药物，可使局部血管强烈收缩以暂时性减少血流，并降低灌注压，同时也可使局部肠管收缩，达到减少出血部位血流和促进出血血管局部血栓形成的目的。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -838,6 +1636,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
+    "description": "贲门黏膜出血应首选栓塞的是下列哪种血管？",
+    "correctAnswer": "胃左动脉",
+    "options": [
+      "胃左动脉",
+      "脾动脉的胃短动脉分支",
+      "胃右动脉",
+      "胃十二指肠动脉分支",
+      "食管固有动脉"
+    ],
+    "explanation": "胃左动脉系腹腔动脉的分支之一。分出后向左上方至胃的贲门，然后沿胃小弯下行发出许多分支供应胃小弯区域营养。其虽然是腹腔干的最小分支，但是却是胃部最大的供血动脉。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
     "description": "下述关于肝细胞癌的介入治疗方式，错误的是",
     "correctAnswer": "PTA",
     "options": [
@@ -849,6 +1668,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "PTA为经皮血管腔内血管成形术，可用于四肢动脉、内脏动静脉、人造或移植血管狭窄或闭塞的再通治疗。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "肾囊肿介入治疗，每次酒精注入的安全量是",
+    "correctAnswer": "100～200ml",
+    "options": [
+      "80～100ml",
+      "200～300ml",
+      "100～200ml",
+      "30～50ml",
+      "50～80ml"
+    ],
+    "explanation": "肾囊肿介入治疗每次酒精注入的安全量是100～200ml。无水酒精注入的具体剂量因人而异，一般是注入抽出液体的50％，不超出上述安全剂量为准。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -869,6 +1709,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "肝肾功能严重衰竭，凝血功能严重障碍者"
     ],
     "explanation": "A、B、C、D选项为盆腔出血性疾病介入治疗的适应证。肝肾功能严重衰竭，凝血功能严重障碍者为介入治疗的禁忌证。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "PTCD术的方法不包括下列哪一项",
+    "correctAnswer": "脾动脉造影",
+    "options": [
+      "固定引流管",
+      "胆管造影",
+      "经皮肝穿刺",
+      "放置引流管",
+      "脾动脉造影"
+    ],
+    "explanation": "PTCD是经皮肝穿刺胆管引流术，是在影像设备的引导下，通过各种穿刺针、引流管，经皮肤穿刺胆管引流出胆汁，减轻患者临床症状的一门技术。脾动脉造影的目的是观察脾动脉主干走行、分支及脾脏大小，计数直径1mm左右的脾内动脉分支，控制脾动脉栓塞的程度。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -898,6 +1759,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "原发性肝癌HCC血管造影表现为",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "肝动脉血管增多，扭曲、变形、移位",
+      "大量紊乱、交织成网状的异常血管",
+      "动静脉瘘静脉早显",
+      "动脉包绕征",
+      "以上均正确"
+    ],
+    "explanation": "所述各项在典型HCC均可出现，但非特异性表现。动静脉瘘是HCC较具特异性的表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -911,6 +1793,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均正确"
     ],
     "explanation": "肢体动脉形成术球囊血管成形术的适应证为：短段狭窄或闭塞；髂股动脉狭窄伴远端血管闭塞，术后有利于远端肢体的侧支血供形成；跨狭窄压差＞2.67kPa(20mmHg)；血管搭桥术后吻合口狭窄；血管搭桥术后搭桥血管狭窄。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "经皮椎间盘脱出切吸术中被夹取钳夹碎并负压抽吸至体外的组织应为",
+    "correctAnswer": "椎间盘髓核",
+    "options": [
+      "后纵韧带",
+      "增生的椎体骨质",
+      "椎间盘髓核",
+      "椎间盘纤维环组织",
+      "椎管内脂肪组织"
+    ],
+    "explanation": "经皮穿刺椎间盘切吸术的基本原理就是通过切割、夹取和负压抽吸清除部分髓核组织，使椎间盘内压力减低，使突出的外层纤维组织和后纵韧带随之回缩，从而减轻或解除对神经、脊髓的刺激和压迫，达到治疗的目的。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -940,6 +1843,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "关于鼻咽癌表现的描述，下列不正确的是",
+    "correctAnswer": "常伴囊变或钙化",
+    "options": [
+      "在注射对比剂后，肿瘤呈轻度强化",
+      "好发于顶壁和顶后壁",
+      "早期可表现为鼻咽侧壁平坦、僵直、咽隐窝消失",
+      "常伴囊变或钙化",
+      "对骨的侵犯可为单纯性骨破坏、骨质硬化或两者兼有"
+    ],
+    "explanation": "鼻咽癌一般无囊变或钙化。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "神经 CT",
     "specialty": "神经",
     "modality": "CT",
@@ -953,6 +1877,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "慢性期"
     ],
     "explanation": "吸收后，软化灶均呈低密度表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 组织病理学",
+    "specialty": "神经",
+    "modality": "组织病理学",
+    "description": "脑梗死是按什么分布的",
+    "correctAnswer": "脑血管分布区",
+    "options": [
+      "脑实质",
+      "脑白质",
+      "脑叶",
+      "脑沟",
+      "脑血管分布区"
+    ],
+    "explanation": "脑梗死是脑血管闭塞后其闭塞动脉的供血区发生的一系列病理改变，故其发生规律按脑血管走行区分布。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -985,6 +1930,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 影像综合",
     "specialty": "神经",
     "modality": "影像综合",
+    "description": "室管膜瘤最好发部位是",
+    "correctAnswer": "第四脑室",
+    "options": [
+      "左侧脑室",
+      "右侧脑室",
+      "第四脑室",
+      "第三脑室",
+      "导水管"
+    ],
+    "explanation": "室管膜瘤可发生于脑室系统的任何部位，以第四脑室最多见。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
     "description": "以下关于听神经瘤的描述，错误的是",
     "correctAnswer": "一般不影响第四脑室",
     "options": [
@@ -995,6 +1961,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "一般不影响第四脑室"
     ],
     "explanation": "听神经瘤为良性脑外肿瘤。肿瘤呈圆形或椭圆形，有完整包膜。肿瘤长大可退变或脂肪性变，亦可形成囊肿，偶有肿瘤出血；可有内耳道扩大；肿瘤增大压迫第四脑室形成阻塞性脑积水。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "关于急性硬膜下血肿的描述，错误的是",
+    "correctAnswer": "有明显灶周水肿",
+    "options": [
+      "外伤3天内发生的血肿",
+      "呈新月形高密度影",
+      "可超越骨缝",
+      "有占位效应",
+      "有明显灶周水肿"
+    ],
+    "explanation": "外伤3天内发生的血肿为急性硬膜下血肿。硬膜下血肿居于脑凸面硬膜与蛛网膜之间，由于蛛网膜无张力，与硬脑膜结合不紧密，故血肿范围较广，形状多呈新月形或半月形，可掩盖整个大脑半球。本病常合并脑挫裂伤，故占位效应显著，周围水肿较轻。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1024,6 +2011,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "微小听神经瘤的直径应",
+    "correctAnswer": "＜1.0cm",
+    "options": [
+      "＜0.5cm",
+      "＜1.0cm",
+      "＜1.5cm",
+      "＜2.0cm",
+      "＜2.5cm"
+    ],
+    "explanation": "微小听神经瘤直径<1cm，CT常规检查常无阳性发现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -1037,6 +2045,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均不是"
     ],
     "explanation": "乙状窦前缘到外耳道的距离正常是1-1.5cm。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "脑梗死最常见的CT增强表现形式为",
+    "correctAnswer": "脑回状强化",
+    "options": [
+      "轻度均匀强化",
+      "点线样强化",
+      "片状强化",
+      "薄壁环形强化",
+      "脑回状强化"
+    ],
+    "explanation": "脑梗死后2周左右，侧支循环的建立最为充分，此时CT增强扫描可见强化，为脑回状、条状、环状或结节状，偶见均匀强化。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1069,6 +2098,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 影像综合",
     "specialty": "神经",
     "modality": "影像综合",
+    "description": "关于肾上腺营养不良性脑白质病的脑内脱髓鞘改变，主要发生在",
+    "correctAnswer": "顶枕区",
+    "options": [
+      "双侧额叶",
+      "单侧额叶",
+      "双侧颞叶",
+      "单侧颞叶",
+      "顶枕区"
+    ],
+    "explanation": "该病变有由后向前发展的特征，主要发生在顶枕区。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
     "description": "脑外、脑内占位性病变的最主要鉴别点是",
     "correctAnswer": "病变周围的脑皮髓质的移位及局部蛛网膜下腔的改变",
     "options": [
@@ -1079,6 +2129,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "病变密度"
     ],
     "explanation": "脑外、脑内占位性病变的最主要鉴别点是病变周围的脑皮髓质的移位及局部蛛网膜下腔的改变。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "以下征象，不符合脑脓肿CT表现的是",
+    "correctAnswer": "病灶无瘤周水肿",
+    "options": [
+      "病灶呈环形",
+      "脓腔内可见气体密度影",
+      "可见强化的壁",
+      "明显占位效应",
+      "病灶无瘤周水肿"
+    ],
+    "explanation": "脑脓肿周边常有指状低密度水肿区。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1108,6 +2179,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
+    "description": "急性期蛛网膜下腔出血首选的检查方法应为",
+    "correctAnswer": "CT",
+    "options": [
+      "MRI",
+      "PET",
+      "ECG",
+      "CT",
+      "ECT"
+    ],
+    "explanation": "急性期蛛网膜下腔出血首选的检查方法为颅脑CT，表现为病变区脑沟、脑裂和脑池内“铸型”高密度影。由于出血在脑脊液内，容易被冲淡，出血3天以后CT的直接阳性率明显降低，故发病3日后CT表现如果正常，不能排除蛛网膜下腔出血的可能性。MRI在显示超过一周的亚急性期蛛网膜下腔出血方面明显优于CT。出血数天后红细胞溶解，释放出游离稀释的MHB，在所有成像序列中均呈高信号。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
@@ -1122,6 +2214,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "无。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "脑静脉和静脉窦血栓形成的CT特征表现是",
+    "correctAnswer": "平扫有“带”征，增强有“空三角征”",
+    "options": [
+      "平扫有“带”征，增强有“空三角征”",
+      "靠近脑表面的大片低密度区内见小的高密度影",
+      "双侧出血性脑梗死",
+      "脑萎缩，脑室系统扩大",
+      "大片低密度区内见高密度影"
+    ],
+    "explanation": "CT平扫可见到硬膜窦、脑表面静脉和深部静脉内高密度影，平行层面上呈线条状，称为束带征，增强扫描，硬膜窦中心不强化称为空三角征。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1150,6 +2263,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "男，16岁，头痛5个月。颅脑CT示松果体区有一3cm×2cm稍高密度影，边界清楚，均匀中等强化，最大可能为",
+    "correctAnswer": "肿瘤",
+    "options": [
+      "肿瘤",
+      "囊肿",
+      "结核",
+      "脓肿",
+      "动静脉畸形"
+    ],
+    "explanation": "松果体区边界清晰的类圆形稍高密度影，均匀性中等强化说明为实性病变，松果体区生殖细胞瘤最常见。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "儿科 X 光",
     "specialty": "儿科",
     "modality": "X 光",
@@ -1164,6 +2298,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "10以下儿童松果体虽然也可产生钙化，但因钙化点微细，不易在X线片上显示，至青春期钙化点渐增多变大，密度也高，可出现于X线片上，20岁以上者平片出现率可达20％～30％，故答案为C。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 X 光",
+    "specialty": "神经",
+    "modality": "X 光",
+    "description": "成人颅内高压的主要X线征象是",
+    "correctAnswer": "蝶鞍骨质吸收和扩大",
+    "options": [
+      "头颅增大",
+      "颅缝分离",
+      "囟门增宽",
+      "脑回压迹增多",
+      "蝶鞍骨质吸收和扩大"
+    ],
+    "explanation": "成人颅内高压的主要X线征象是蝶鞍扩大，鞍背和后床突模糊或消失。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1195,6 +2350,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 MRI",
     "specialty": "神经",
     "modality": "MRI",
+    "description": "有关血管源性脑水肿，下列说法错误的是",
+    "correctAnswer": "主要发生在脑皮质",
+    "options": [
+      "病理生理基础是血-脑屏障破坏，血浆进入细胞和细胞间隙",
+      "主要发生在脑皮质",
+      "可见于肿瘤、出血、炎症等",
+      "在T1加权像显示不明显",
+      "Gd-DTPA 增强后无异常对比强化"
+    ],
+    "explanation": "<section class=\"article135\"><section class=\"_135editor\"><p style=\"line-height: 2em;\"><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">血管源性脑水肿</span><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">是由于血脑屏障破裂，血浆蛋白质渗漏到细胞外空间，积存于血管周围及细胞间质的结果。</span></p><p style=\"line-height: 2em;\"><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">静水压和渗透压梯度引起组织水含量的增加，从而可能导致严重的脑组织肿胀，最终可引起</span><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">致命性脑疝。&nbsp;</span></p><p style=\"line-height: 2em;\"><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">引起血管源性脑水肿的典型疾病</span><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">包括脑肿瘤、脑脓肿、脑炎等，一些成熟的脑挫伤和脑出血病灶周围也可以出现血管源性脑水肿。</span></p><p style=\"line-height: 2em;\"><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">血管源性脑水肿</span><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">在白质分布较灰质更为明显，灰白质界限仍然保持；病变常呈手指状延伸分布模式。</span></p><p style=\"line-height: 2em;\"><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">CT上</span><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">可看到脑白质的密度减低，</span><span style=\"font-weight: 700; color: #3660f7; text-shadow: none; font-size: 15px;font-family:微软雅黑, &quot;Microsoft YaHei&quot;;\">MRI</span><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">上T1WI呈低信号，T2WI呈高信号，DWI上并不显示明显的弥散受限。&nbsp;</span></p><p style=\"line-height: 2em;\"><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">B项主要发生在脑白质，而不是脑皮质。</span></p></section></section><p><br/></p>",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
     "description": "间质性脑水肿的特点是",
     "correctAnswer": "是由于脑室压力增高所引起",
     "options": [
@@ -1206,6 +2382,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "间质性脑水肿是由于脑室压力增高所引起，MRI呈长T1、长T2信号。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 MRI",
+    "specialty": "胸部",
+    "modality": "MRI",
+    "description": "MRI显示脑转移瘤内有出血，常提示原发肿瘤可能来自",
+    "correctAnswer": "黑色素瘤、绒癌、甲状腺癌、肺癌",
+    "options": [
+      "前列腺癌、黑色素瘤、淋巴瘤",
+      "肝癌、结肠癌、骨肉瘤、肺癌",
+      "肺癌、前列腺癌、结肠癌",
+      "鼻咽癌、绒癌、甲状腺癌",
+      "黑色素瘤、绒癌、甲状腺癌、肺癌"
+    ],
+    "explanation": "有出血的脑转移瘤常提示原发肿瘤来自黑色素瘤、绒癌、甲状腺癌或肺癌。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1237,6 +2434,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 MRI",
     "specialty": "神经",
     "modality": "MRI",
+    "description": "下列关于脑肿瘤MRI信号特点的描述，不正确的为",
+    "correctAnswer": "信号均匀为良性，信号不均匀为恶性",
+    "options": [
+      "绝大多数肿瘤T1WI呈低信号，T2Wl呈高信号",
+      "信号均匀为良性，信号不均匀为恶性",
+      "有些肿瘤整体或部分在T1WI上呈等或低信号",
+      "钙化在T1WI低信号",
+      "钙化在T2WI呈低信号"
+    ],
+    "explanation": "MRI信号均匀的脑内肿瘤虽然绝大多数是良性的，但也有例外，如脑转移瘤等。恶性脑肿瘤信号多不均匀，但良性肿瘤信号不均匀者也不少见，如颅咽管瘤等。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
     "description": "患者，男性，62岁，左侧肢肌力下降1周。颅脑CT及MRI扫描图像如下，应首先考虑为",
     "correctAnswer": "脑脓肿",
     "options": [
@@ -1257,6 +2475,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "男性，22岁，发现右颈部肿物5年，逐渐增大，无痛。体检：肿物囊性感，压之凹陷，无压痛。MRI平扫图像如下，最可能的诊断为",
+    "correctAnswer": "囊性淋巴管瘤",
+    "options": [
+      "海绵状血管瘤",
+      "鳃裂囊肿",
+      "海绵状血管淋巴瘤",
+      "囊性淋巴管瘤",
+      "皮样囊肿"
+    ],
+    "explanation": "囊性淋巴管瘤又称淋巴管水瘤，单发、多发均可，形态不规则，沿组织间隙生长。MRI呈明显长T1、长T2信号。海绵状血管瘤及海绵状血管淋巴瘤信号多混杂。鳃裂囊肿有其特殊发病部位。皮样囊肿T1WI上应有脂肪信号。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "CT",
     "description": "以下哪一项CT表现最有利于筛窦黏液囊肿的诊断？",
     "correctAnswer": "窦腔呈气球样扩大",
@@ -1268,6 +2507,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "病变内相邻眶内侵犯"
     ],
     "explanation": "黏液囊肿的典型表现是：窦腔气球样扩大。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "鼻腔和鼻窦息肉最常见哪种类型？",
+    "correctAnswer": "水肿型",
+    "options": [
+      "混合型",
+      "纤维型",
+      "血管型",
+      "水肿型",
+      "坏死型"
+    ],
+    "explanation": "鼻腔和鼻窦息肉依据病变组织不同，可分为水肿型、纤维型、血管型，而水肿型最常见。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1297,6 +2557,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "眼科 影像综合",
+    "specialty": "眼科",
+    "modality": "影像综合",
+    "description": "检查眼前部病变的投照位置是",
+    "correctAnswer": "眼眶切线位",
+    "options": [
+      "视神经孔位",
+      "顶颜位",
+      "眼眶侧位",
+      "眼眶切线位",
+      "眼眶正位"
+    ],
+    "explanation": "检查眼前部病变的投照位置应选眼眶切线位，可依据具体要求采用适当的角度投照。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
@@ -1318,6 +2599,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "下列关于腺样体肥大的描述，错误的是",
+    "correctAnswer": "上颌骨缩短,硬腭低、宽,牙列不整齐",
+    "options": [
+      "多见于儿童",
+      "局部骨质无改变",
+      "上颌骨缩短,硬腭低、宽,牙列不整齐",
+      "鼻咽顶后壁软组织局限增厚",
+      "常合并慢性扁桃体炎"
+    ],
+    "explanation": "腺样体肥大多见于儿童，常与慢性扁桃体炎合并存在。影像学表现鼻咽顶后壁软组织影局限增厚，表面柔软光滑，局部骨质无破坏。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -1331,6 +2633,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "中耳"
     ],
     "explanation": "单纯型慢性化脓性中耳炎病变较轻，仅有鼓室及鼓窦黏膜炎性变化和纤维粘连。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "正常内耳道宽度为",
+    "correctAnswer": "4～6mm",
+    "options": [
+      "3～10mm",
+      "4～6mm",
+      "5～10mm",
+      "3～8mm",
+      "6～9mm"
+    ],
+    "explanation": "无。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1360,6 +2683,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "“轨道征”常见于下列哪种病变",
+    "correctAnswer": "视神经鞘脑膜瘤",
+    "options": [
+      "黑色素瘤",
+      "视神经鞘脑膜瘤",
+      "眶内炎性假瘤",
+      "视网膜母细胞瘤",
+      "视神经胶质瘤"
+    ],
+    "explanation": "视神经鞘脑膜瘤可表现为视神经外周不规则增厚变粗，其边缘有条片状或环形钙化，肿瘤可为对比剂明显增强，表现为高密度软组织增生或肿块包绕视神经。由于视神经本身保持低密度不强化，在横断面上可见低密度条状影两侧有高密度线影，称为“轨道征”。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "眼科 CT",
     "specialty": "眼科",
     "modality": "CT",
@@ -1373,6 +2717,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "铝"
     ],
     "explanation": "CT反映的是组织的密度分辨率，眼部异物与眶内容物的密度差别越大，越易显示，相对于金属，泥沙更接近软组织密度，因而CT往往难以显示。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "眼科 影像综合",
+    "specialty": "眼科",
+    "modality": "影像综合",
+    "description": "引起成年人单眼和双眼突出的最常见原因是",
+    "correctAnswer": "眼型Graves病",
+    "options": [
+      "眶内炎性假瘤",
+      "脉络膜黑色素瘤",
+      "视神经胶质瘤",
+      "颈动脉海绵窦瘘",
+      "眼型Graves病"
+    ],
+    "explanation": "Graves病是引起成人单侧和双侧眼球突出最常见的原因。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1402,6 +2767,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "眼科 MRI",
+    "specialty": "眼科",
+    "modality": "MRI",
+    "description": "MRI眼球内示短T1信号，通常不会发生在",
+    "correctAnswer": "炎症",
+    "options": [
+      "黑色素瘤",
+      "血管畸形",
+      "出血",
+      "视网膜母细胞瘤",
+      "炎症"
+    ],
+    "explanation": "黑色素瘤和视网膜母细胞瘤在T1WI上呈高信号为其特征表现，血管畸形及出血亦可表现为T1WI上呈高信号，眼球炎症于T1WI呈低信号。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -1423,6 +2809,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "有关Warthin瘤的描述，错误的是",
+    "correctAnswer": "青少年多见",
+    "options": [
+      "青少年多见",
+      "多发或双侧发病",
+      "多位于腮腺浅叶下极",
+      "有包膜",
+      "男性多见"
+    ],
+    "explanation": "Warthin瘤常见于50岁以上的高龄男性，通常为多发或双侧发病，多位于腮腺浅叶下极，肿瘤常有较薄的包膜和大小不等的囊腔。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 CT",
     "specialty": "骨科",
     "modality": "CT",
@@ -1437,6 +2844,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "骨肉瘤、上颌窦癌、含齿囊肿和软骨瘤CT一般不会表现为囊实性肿块。造釉细胞瘤多见于青壮年，80％发生于下颌骨，多数在磨牙区和下颌角及升支，CT表现为低密度囊状区与等密度混合存在，肿瘤内呈多房性、蜂窝状或单房状改变。故本例首先考虑为造釉细胞瘤。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
+    "description": "颅骨骨瘤在MRI上的信号特点为",
+    "correctAnswer": "T1WI无信号，大的松质骨型可见高信号",
+    "options": [
+      "T1WI等信号",
+      "T2WI高信号",
+      "PDWI高信号",
+      "T2WI等信号",
+      "T1WI无信号，大的松质骨型可见高信号"
+    ],
+    "explanation": "颅骨骨瘤一般在任意序列上均呈无信号，大的松质骨型由于其内有骨髓脂肪成分，故呈不同程度高信号。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1467,6 +2895,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "下列对腮腺肿瘤的描述，错误的是",
+    "correctAnswer": "腺淋巴瘤是最常见的腮腺良性肿瘤",
+    "options": [
+      "良性肿瘤较恶性肿瘤多见",
+      "腺淋巴瘤是最常见的腮腺良性肿瘤",
+      "腮腺混合瘤CT表现为类圆形软组织肿块，边缘光滑",
+      "腮腺腺淋巴瘤T1、T2WI均可呈高信号",
+      "腮腺混合瘤超声成像，于均匀实性回声中有细小的蜂窝状结构"
+    ],
+    "explanation": "腮腺最常见的良性肿瘤为良性混合瘤，占腮腺良性肿瘤的70％～80％，腺淋巴瘤占5％～10％。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "组织病理学",
     "description": "喉癌的组织学类型最多见为",
     "correctAnswer": "鳞癌",
@@ -1479,6 +2928,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "喉癌组织学上以鳞状细胞癌最常见，约占90％，其他类型如腺癌、未分化癌及肉瘤等少见。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "垂体瘤的CT表现不正确的是",
+    "correctAnswer": "瘤周水肿",
+    "options": [
+      "肿瘤有强化",
+      "蝶鞍扩大",
+      "瘤周水肿",
+      "鞍底下陷",
+      "垂体柄移位"
+    ],
+    "explanation": "垂体瘤的CT表现为：①垂体高度异常；②垂体内密度改变，垂体强化形式包括有均匀强化、不均匀强化、局限低密度、未见异常强化；③垂体上缘膨隆；④垂体柄偏移；⑤蝶鞍改变：蝶鞍扩大，变形和破坏；⑥血管丛征；⑦治疗效果：溴隐亭治疗后腺瘤可缩小，CT值升高。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1510,6 +2980,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 CT",
     "specialty": "神经",
     "modality": "CT",
+    "description": "关于室管膜瘤的CT描述，正确的是",
+    "correctAnswer": "可以种植转移",
+    "options": [
+      "主要发生在第三脑室",
+      "主要发生在两侧脑室",
+      "瘤周水肿常见且明显",
+      "可以种植转移",
+      "不可能发生在脑室外"
+    ],
+    "explanation": "室管膜瘤可发生于脑室系统的任何部位，以第四脑室为最多见；少数肿瘤可发生在脑实质内，幕上室管膜瘤位于脑实质内者占31.3％。室管膜瘤可由于肿瘤细胞脱落或手术种植而转移。肿瘤多居脑室内，一般无瘤周水肿，脑实质内者可有瘤周水肿。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
     "description": "脑动静脉畸形（AVM）的CT征象为",
     "correctAnswer": "以上均正确",
     "options": [
@@ -1520,6 +3011,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均正确"
     ],
     "explanation": "AVM多位于大脑表面，常见于大脑中动脉分布区，脑内血肿常呈团块状不均匀高密度，血肿周围可有轻度脑水肿和占位表现，附近有时可见钙斑和小的软化灶。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "关于烟雾病的正确描述是",
+    "correctAnswer": "主要累及颈内动脉系",
+    "options": [
+      "脑实质病变皆为缺血性",
+      "常常合并脑静脉异常扩张",
+      "脑底异常血管网来自椎-基底动脉系的侧支循环",
+      "脑内单发病灶多见",
+      "主要累及颈内动脉系"
+    ],
+    "explanation": "烟雾病又称颅底动脉环闭塞症，是一组以颈内动脉狭窄或闭塞，脑底出现异常毛细血管网为特点的脑血管病。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1542,6 +3054,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "椎管内血管畸形分为四类：动静脉畸形、海绵状血管瘤、静脉畸形和毛细血管扩张症。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 组织病理学",
+    "specialty": "神经",
+    "modality": "组织病理学",
+    "description": "椎管内神经鞘瘤的X线表现不包括",
+    "correctAnswer": "完全阻塞时，阻塞端呈典型的梭形",
+    "options": [
+      "脊髓造影可见肿瘤侧蛛网膜下隙增宽健侧变窄",
+      "完全阻塞时，阻塞端呈典型的双杯口状",
+      "完全阻塞时，阻塞端呈典型的梭形",
+      "部分阻塞时，可见围绕肿瘤边缘的充盈缺损",
+      "脊髓受压，并向健侧移位"
+    ],
+    "explanation": "椎管内神经鞘瘤平片检查可见椎弓根局限性吸收、破坏，有时可见椎间孔扩大及椎管内病理钙化。脊髓造影可见肿瘤侧蛛网膜下腔增宽，健侧变窄。部分阻塞时，可以显示肿瘤形成的充盈缺损；完全阻塞时，阻塞端呈典型的杯状，脊髓受压并向健侧移位。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1573,6 +3106,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 MRI",
     "specialty": "神经",
     "modality": "MRI",
+    "description": "下列关于脑灰质异位的描述，错误的是",
+    "correctAnswer": "可钙化",
+    "options": [
+      "脑异位灰质与正常灰质密度相同",
+      "可钙化",
+      "无异常强化，同正常灰质强化一致",
+      "病变可表现为带状或结节状",
+      "可伴有其他脑发育异常"
+    ],
+    "explanation": "<p style=\"text-wrap-mode: wrap; line-height: 2em;\"><span style=\"font-weight: 700; color: rgb(54, 96, 247); font-size: 15px; text-shadow: none;\">脑灰质异位</span><span style=\"font-size: 15px; text-shadow: none;\">平扫或增强时CT值均与正常灰质相近。</span></p><p style=\"text-wrap-mode: wrap; line-height: 2em;\"><span style=\"font-size: 15px; text-shadow: none;\">CT或MRI增强扫描均不强化，亦无钙化，往往合并小头畸形等发育异常。</span></p><p style=\"text-wrap-mode: wrap; line-height: 2em;\"><span style=\"font-size: 15px; text-shadow: none;\">异位的脑灰质不见有正常的灰质功能，其影像学表现与正常灰质一样。</span></p>",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
     "description": "关于脑转移瘤的描述，不正确的是",
     "correctAnswer": "肿瘤很少坏死、囊变和出血",
     "options": [
@@ -1583,6 +3137,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "肿瘤很少坏死、囊变和出血"
     ],
     "explanation": "脑转移瘤以幕上多见，肿瘤在T1WI呈低信号，T2WI为高信号，瘤周水肿明显，占位效应明显，肿瘤明显强化，常见坏死、囊变和出血。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
+    "description": "以下关于脑血管畸形的描述，不正确的是",
+    "correctAnswer": "较大的动静脉畸形有占位效应",
+    "options": [
+      "是蛛网膜下腔出血和脑内出血的重要原因",
+      "动静脉畸形常并发出血",
+      "动静脉畸形 MRI特征性所见是流空现象",
+      "较大的动静脉畸形有占位效应",
+      "动静脉畸形的引流静脉比供血动脉粗"
+    ],
+    "explanation": "脑血管畸形是蛛网膜下腔出血和脑内出血的重要原因。动静脉畸形MRI特征性所见是流空现象。动静脉畸形并发出血时有占位效应。动静脉畸形的引流静脉比动脉粗。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1612,6 +3187,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "下列关于骨瘤的描述，不正确的是",
+    "correctAnswer": "鼻窦区发病率高于额、顶、枕骨",
+    "options": [
+      "骨瘤分致密型、松质型、混合型三种",
+      "颅骨外板发病率高于内板",
+      "额、顶、枕骨发病率高于鼻窦区",
+      "鼻窦区发病率高于额、顶、枕骨",
+      "一般在全身骨骼发育成熟后停止生长"
+    ],
+    "explanation": "骨瘤分致密型、松质型及混合型三种类型，发病率颅骨最高，其次好发于鼻窦，其中以额窦最多，筛窦次之。颅骨穹隆部外板发病率高于内板。一般在全身骨骼发育成熟后停止生长，但颞骨乳突部骨瘤25岁以后仍可继续增大。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
@@ -1633,6 +3229,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "眼科 CT",
+    "specialty": "眼科",
+    "modality": "CT",
+    "description": "颈动脉海绵窦瘘影像学表现为",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "海绵窦扩大",
+      "眼球突出",
+      "眼外肌增粗",
+      "眼静脉增粗",
+      "以上均正确"
+    ],
+    "explanation": "颈动脉海绵窦瘘影像学表现为眼上静脉增粗、海绵窦增大、眼球突出、眼外肌增粗及眼睑肿胀。CT增强扫描显示增粗的眼上静脉和增大的海绵窦明显强化。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "神经 CT",
     "specialty": "神经",
     "modality": "CT",
@@ -1646,6 +3263,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "视神经增厚"
     ],
     "explanation": "视神经鞘脑膜瘤可表现为视神经外周不规则增厚变粗，其边缘有条片状或环形钙化，肿瘤可为对比剂明显增强，由于视神经本身保持低密度不强化，横断面上呈路轨征。视神经管腔可扩大，有的亦可见管周围骨质增生，少数病例可伴有神经纤维瘤病。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 CT",
+    "specialty": "骨科",
+    "modality": "CT",
+    "description": "关于慢性化脓性中耳乳突炎单纯型的CT表现，不正确的是",
+    "correctAnswer": "上鼓室、乳突窦入口可见骨壁破坏",
+    "options": [
+      "听小骨部分吸收、破坏",
+      "鼓室黏膜增厚",
+      "乳突窦或较大的气房黏膜增厚",
+      "上鼓室、乳突窦入口可见骨壁破坏",
+      "气房间隔增粗、密度增加"
+    ],
+    "explanation": "单纯型慢性化脓性中耳乳突炎CT表现为：听小骨吸收、破坏，鼓室黏膜增厚，乳突窦或较大的气房黏膜增厚，若有积脓，可出现液平，气房间隔及周围骨质增生，表现为房隔增粗，密度增加，无骨质破坏。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1677,6 +3315,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "关于鼻及鼻窦息肉的描述，正确的是",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "病因为变态反应和鼻黏膜的慢性炎症",
+      "T1WI为等信号",
+      "T2WI为高信号",
+      "出血性息肉T1WI， T2WI均为高信号",
+      "以上均正确"
+    ],
+    "explanation": "鼻息肉为一种常见病，病因多倾向于变态反应和鼻黏膜的慢性炎症。鼻腔或鼻窦息肉T1WI呈中等信号，T2WI为高信号，MRI增强扫描不强化或呈线条状轻度强化；若为出血性息肉则T1WI、T2WI均为高信号，MRI增强扫描有不同程度强化。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "CT",
     "description": "慢性化脓性涎腺炎表现（\t）除外。",
     "correctAnswer": "边界模糊",
@@ -1689,6 +3348,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "慢性化脓性涎腺炎CT表现：腺体明显增大，密度增高，边界清晰，周围结构层次模糊。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "下列关于颈部神经鞘瘤的描述，正确的是",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "由Schwann细胞构成",
+      "有包膜",
+      "含富细胞的Antoni A成分",
+      "含少细胞的Antoni B成分",
+      "以上均正确"
+    ],
+    "explanation": "神经鞘瘤由Schwann细胞构成，无其他神经成分，肿瘤有包膜，边缘清楚，内含富细胞的Antoni A成分及少细胞富脂质的Antoni B成分。神经鞘瘤多为单发，极罕见恶变。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1720,6 +3400,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 影像综合",
     "specialty": "神经",
     "modality": "影像综合",
+    "description": "常累及骨质，有明显骨质增生的是",
+    "correctAnswer": "脑膜瘤",
+    "options": [
+      "胶质瘤",
+      "脑膜瘤",
+      "脂肪瘤",
+      "血管母细胞瘤",
+      "听神经瘤"
+    ],
+    "explanation": "脑膜瘤可以引起骨质增生。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
     "description": "好发于第四脑室的肿瘤是",
     "correctAnswer": "室管膜瘤",
     "options": [
@@ -1730,6 +3431,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "室管膜瘤"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "中年人最常见的颅内肿瘤为",
+    "correctAnswer": "胶质瘤及脑膜瘤",
+    "options": [
+      "脑膜瘤及转移瘤",
+      "血管母细胞瘤及胶质瘤",
+      "胶质瘤及脑膜瘤",
+      "髓母细胞瘤及星形细胞瘤",
+      "脑膜瘤及室管膜瘤"
+    ],
+    "explanation": "中年人最常见的是神经上皮组织肿瘤（过去通称为胶质瘤）和脑膜瘤。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1759,6 +3481,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "Lefort骨折Ⅲ型为",
+    "correctAnswer": "骨折线横行穿过鼻嵴、眼眶内外壁、颧骨上部，直达翼突基底部，常伴有颅底骨折",
+    "options": [
+      "横行不规则骨折线或局限于牙槽突的横行骨折线，经上颌窦底部、鼻中隔，有时可达上颌结节",
+      "上颌窦内下壁、眶壁和筛骨骨折。骨折线从上颌窦外下缘斜行至眼眶底部，另有一横行骨折线穿越鼻嵴和筛骨气房",
+      "上颌窦外下壁、眶壁和筛骨骨折。骨折线从上颌窦外下缘斜行至眼眶底部，有一横行骨折线穿越鼻嵴和筛骨气房",
+      "骨折线横行穿过鼻嵴、眼眶内侧壁、颧骨上部，直达翼突基底部，常伴有颅底骨折",
+      "骨折线横行穿过鼻嵴、眼眶内外壁、颧骨上部，直达翼突基底部，常伴有颅底骨折"
+    ],
+    "explanation": "<p>Lefort骨折按好发部位分为三型。I型：为一横行不规则骨折线或局限于牙槽突的横行骨折线，经上颌窦底部、鼻中隔，有时可达上颌结节。II型：上颌窦外下壁、眶壁和筛骨骨折。骨折线从上颌窦外下缘斜行至眼眶底部，有一横行骨折线穿越鼻嵴和筛骨气房。Ⅲ型：骨折线横行穿过鼻嵴、眼眶内外壁、颧骨上部，直达翼突基底部，常伴有颅底骨折。</p><p><img>",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "神经 CT",
     "specialty": "神经",
     "modality": "CT",
@@ -1772,6 +3515,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "脑脓肿"
     ],
     "explanation": "①成年男性，癫痫； ②脑内多发点状高密度钙化结节，无水肿及占位效应。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 CT",
+    "specialty": "神经",
+    "modality": "CT",
+    "description": "女，42岁，泌乳2个月。平扫CT检查如图，最可能的诊断为",
+    "correctAnswer": "垂体瘤",
+    "options": [
+      "颅咽管瘤",
+      "垂体瘤",
+      "脊索瘤",
+      "脑膜瘤",
+      "正常"
+    ],
+    "explanation": "女性，泌乳。CT图像上蝶鞍区类圆形稍高密度灶，首先考虑垂体腺瘤。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1804,6 +3568,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "MRI",
+    "description": "男性, 36岁,外伤后头痛6天。MRI平扫如图，最可能的诊断为",
+    "correctAnswer": "蛛网膜下腔出血",
+    "options": [
+      "蛛网膜下腔出血",
+      "脑梗死",
+      "脑炎",
+      "脑内血肿",
+      "脑肿瘤"
+    ],
+    "explanation": "临床上有外伤史，MRI图像上沿着左侧外侧裂片状短T1、长T2信号灶，应诊断为亚急性蛛网膜下腔出血。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
     "description": "男， 56岁，搏动性耳鸣1年余。MRI平扫及增强检查图像如下，最可能的诊断为",
     "correctAnswer": "颈静脉球瘤",
     "options": [
@@ -1815,6 +3600,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "冠状位T2WI表现为“盐和胡椒”样哑铃状病变(箭头);(B)轴向T1WI增强肿块增强明显，中央有明显的血流空洞。考虑颈静脉球瘤。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
+    "description": "女性，30岁。发现右颈淋巴结轻度肿大，无压痛，可移动。患者有夜间盗汗、血沉加快。体检：右侧颈部肿大淋巴结。颈部CT增强扫描图像如下，可诊断为",
+    "correctAnswer": "颈淋巴结结核",
+    "options": [
+      "颈淋巴结结核",
+      "淋巴瘤",
+      "神经鞘瘤",
+      "转移瘤",
+      "淋巴管瘤"
+    ],
+    "explanation": "颈淋巴结结核多见于年轻人,一侧或双侧发病,以单侧多见,肿大淋巴结常多发，直径在1～2cm，多位于胸锁乳突肌前、后缘，无痛，可移动。临床上可有盗汗、血沉加快等全身症状。CT上病灶边界清楚，边缘密度高于中心部。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1846,6 +3652,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 MRI",
     "specialty": "神经",
     "modality": "MRI",
+    "description": "女性， 48岁，头痛不适1个多月。查体；神清语利，颅神经（-），四肢活动可。MRI检查如图，最可能的诊断为",
+    "correctAnswer": "蛛网膜囊肿",
+    "options": [
+      "脑积水",
+      "蛛网膜囊肿",
+      "脂肪瘤",
+      "脑萎缩",
+      "正常"
+    ],
+    "explanation": "病变位于后颅窝，边界清晰，呈长T1、长T2脑脊液信号，相应小脑向内移位，符合蛛网膜囊肿。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 MRI",
+    "specialty": "神经",
+    "modality": "MRI",
     "description": "女， 40岁，头痛、头晕半个月。MRI平扫及增强检查图像如下，最可能的诊断为",
     "correctAnswer": "血管母细胞瘤",
     "options": [
@@ -1857,6 +3684,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "血管母细胞瘤（血管网状细胞瘤）是起源不明的良性血管性肿瘤，多见于40～60岁，好发于小脑半球和下蚓部。肿瘤多为囊性，少数为实质性。CT和MRI平扫囊性病灶呈类圆形低密度或长T1、长T2信号，边缘光滑、清晰，常见壁结节，呈等密度或等T1、长T2信号。增强扫描囊性病灶无强化或仅囊壁略强化，壁结节均匀性明显强化。本病与囊性星形细胞瘤的鉴别点为后者发病年龄低（10~20岁）；后者壁结节不规则，强化不如前者明显；后者可有钙化，边界不如前者清楚。本例符合典型血管母细胞瘤表现。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "下列先天性心脏病，肺血减少的是",
+    "correctAnswer": "法洛四联症",
+    "options": [
+      "房间隔缺损",
+      "室间隔缺损",
+      "动脉导管未闭",
+      "艾森曼格综合征",
+      "法洛四联症"
+    ],
+    "explanation": "法洛四联症肺血减少。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -1885,6 +3733,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "肺上叶癌肿容易发生霍纳综合征的是",
+    "correctAnswer": "肺上沟癌",
+    "options": [
+      "肺上沟癌",
+      "纵隔型肺癌",
+      "肺段型肺癌",
+      "瘢痕癌",
+      "肺转移癌"
+    ],
+    "explanation": "肺上沟癌时，交感神经受压可出现Horner（霍纳）综合征。临床表现为单侧性缩瞳（瞳孔缩小）、眼睑下垂（眼裂狭小）及眼球内陷等特征性眼部症状。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 组织病理学",
     "specialty": "胸部",
     "modality": "组织病理学",
@@ -1898,6 +3767,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均不是"
     ],
     "explanation": "左房增大时，左心耳突出呈第三弓。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 X 光",
+    "specialty": "胸部",
+    "modality": "X 光",
+    "description": "中央型肺水肿的典型X线征象是",
+    "correctAnswer": "以肺门为中心的蝶翼状阴影",
+    "options": [
+      "双肺大小不一的弥漫性片状模糊影",
+      "双肺下野可见柯氏A和B线",
+      "肺门阴影轻度大而模糊",
+      "以肺门为中心的蝶翼状阴影",
+      "局部的肺叶实变阴影"
+    ],
+    "explanation": "蝶翼征是中央型肺水肿的典型表现，为肺门周围的大片状密度增高阴影。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1930,6 +3820,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
+    "description": "先天性肺动脉狭窄以哪种类型最多见？",
+    "correctAnswer": "瓣膜狭窄",
+    "options": [
+      "瓣膜狭窄",
+      "漏斗部狭窄",
+      "瓣膜下型狭窄",
+      "瓣膜上型狭窄",
+      "混合型狭窄"
+    ],
+    "explanation": "瓣膜狭窄占70%-80%。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
     "description": "肺炎病程在几周内未全部吸收称为慢性肺炎",
     "correctAnswer": "4周",
     "options": [
@@ -1940,6 +3851,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "5周"
     ],
     "explanation": "肺炎若在病程4周时仍未完全吸收，则称作慢性肺炎。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
+    "description": "肺部CT的应用指征不包括",
+    "correctAnswer": "大范围气胸",
+    "options": [
+      "肺部弥漫性病变",
+      "咯血",
+      "肺气肿",
+      "大范围气胸",
+      "肿瘤分期"
+    ],
+    "explanation": "大范围气胸，胸部平片即可满足诊断。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -1972,6 +3904,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 X 光",
     "specialty": "胸部",
     "modality": "X 光",
+    "description": "X线透视下最易漏诊的肺结核类型是",
+    "correctAnswer": "急性粟粒型肺结核",
+    "options": [
+      "慢性纤维空洞型肺结核",
+      "原发复合征",
+      "急性粟粒型肺结核",
+      "浸润型肺结核",
+      "结核球"
+    ],
+    "explanation": "急性粟粒型肺结核发病初期，X线仅见肺纹理增强，约在2周左右才出现典型的粟粒样结节。X线透视的空间分辨率及密度分辨率都不及胸片，所以更易漏诊。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 X 光",
+    "specialty": "胸部",
+    "modality": "X 光",
     "description": "观察肋骨骨折的胸片应为",
     "correctAnswer": "长时间、低千伏的胸片",
     "options": [
@@ -1982,6 +3935,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "标准侧位胸片"
     ],
     "explanation": "观察肋骨骨折应拍射长时间、低千伏的胸片，摄片时应将外伤处或疼痛明显的部位置于切线位，最好结合正位胸片评价。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "慢性肺源性心脏病心胸比率小于正常的原因是",
+    "correctAnswer": "肺气肿",
+    "options": [
+      "肺纤维化",
+      "肺气肿",
+      "膈肌麻痹",
+      "肺动脉高压",
+      "肺淤血"
+    ],
+    "explanation": "慢性肺源性心脏病，右心室的增大以肥厚为主，心影不大，因同时有肺气肿，故心胸比率不大。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2014,6 +3988,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
+    "description": "下列病变，一般不会发生双肺多发钙化的是",
+    "correctAnswer": "肺癌",
+    "options": [
+      "肺癌",
+      "肺结核",
+      "肺泡蛋白微石症",
+      "骨肉瘤肺转移瘤",
+      "矽肺"
+    ],
+    "explanation": "肺结核、肺泡蛋白微石症、骨肉瘤肺转移瘤及矽肺皆可发生双肺多发钙化。肺癌可有钙化，多为单发，但不常见。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
     "description": "一名年轻患者，原诊断先心病、高位室间隔缺损，肺动脉高压，近出现憋、喘、发绀。应考虑下述何种病症",
     "correctAnswer": "Eisenmenger综合征",
     "options": [
@@ -2025,6 +4020,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "室间隔缺损出现右向左分流时可出现憋、喘、发绀，称为Eisenmenger综合征。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "风湿性二尖瓣狭窄早期的X线表现是",
+    "correctAnswer": "左心房增大",
+    "options": [
+      "左心房增大",
+      "右心室增大",
+      "左心室缩小",
+      "右心房增大",
+      "主动脉结缩小"
+    ],
+    "explanation": "二尖瓣狭窄时，早期表现为左心房的血液进入左心室发生障碍，左心房内压力升高，致左心房增大。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2053,6 +4069,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "Kerley B线常见于哪种疾病",
+    "correctAnswer": "二尖瓣狭窄",
+    "options": [
+      "慢性支气管炎",
+      "周围型肺癌",
+      "肺结核",
+      "室间隔缺损",
+      "二尖瓣狭窄"
+    ],
+    "explanation": "Kerley B线多见于二尖瓣狭窄、慢性左心衰竭所致的间质性肺水肿等。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 X 光",
     "specialty": "胸部",
     "modality": "X 光",
@@ -2066,6 +4103,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "特发性肺间质纤维化"
     ],
     "explanation": "广泛索条、网格状影是肺间质病变的X线征象。弥漫性肺间质病变可见于多种疾病，如胶原性疾病、类风湿、尘肺、慢性支气管炎、淋巴管炎等。肺脓肿急性期X线表现为片絮状密度增高影，可跨叶段分布。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "间质性肺水肿发生水肿液聚积的部位不包括",
+    "correctAnswer": "肺泡导管",
+    "options": [
+      "肺泡间隔",
+      "小叶间隔",
+      "支气管及血管周围结缔组织",
+      "胸膜下结缔组织",
+      "肺泡导管"
+    ],
+    "explanation": "间质性肺水肿累及肺间质，包括肺泡间隔、小叶间隔、支气管及血管周围结缔组织、胸膜下结缔组织；肺泡性肺水肿累及终末气腔，包括肺泡腔、肺泡囊、肺泡导管及呼吸性细支气管。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2088,6 +4146,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "浸润阴影为肺吸虫引起的肺出血及组织破坏所致；单房及多房囊状阴影为肺吸虫在肺内穿行形成的隧道或囊肿；结节影为肉芽组织及纤维增生；硬结及钙化影为病变愈合的表现。肺纹理增多、紊乱是一般影像学征象，无特异性。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "肺叶内型肺隔离症的供血动脉多来自",
+    "correctAnswer": "降主动脉",
+    "options": [
+      "升主动脉",
+      "降主动脉",
+      "腹主动脉",
+      "支气管动脉",
+      "肺动脉"
+    ],
+    "explanation": "肺叶内型肺隔离症供血动脉多来自降主动脉，静脉回流多经肺静脉；肺叶外型肺隔离症供血动脉多来自腹主动脉，静脉回流经下腔静脉、门静脉、奇静脉或半奇静脉。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2119,6 +4198,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 CT",
     "specialty": "胸部",
     "modality": "CT",
+    "description": "侵袭性曲菌病感染早期，CT扫描在肺部结节周边可见较低密度区域环绕，称作“晕轮征”，其病理基础为",
+    "correctAnswer": "肺出血",
+    "options": [
+      "肺不张",
+      "肺出血",
+      "肺水肿",
+      "肺气肿",
+      "阻塞性肺炎"
+    ],
+    "explanation": "“晕轮征”是肺侵袭性曲霉菌感染早期较特征性的表现，表现为环绕结节或肿块周围的磨玻璃样密度，其组织学基础为真菌易侵犯肺小血管引起肺出血，向周围肺组织渗入，从而表现为病变周围的磨玻璃样密度。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
     "description": "女， 67岁，乳癌术后1年。胸部CT示双肺多发结节样病灶，首先应考虑",
     "correctAnswer": "肺转移瘤",
     "options": [
@@ -2130,6 +4230,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胸部CT表现为大小不一的散在、多发结节，是肺转移瘤的典型表现之一。结合本病例的临床情况，支持肺转移瘤的诊断。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 X 光",
+    "specialty": "胸部",
+    "modality": "X 光",
+    "description": "急性粟粒型肺结核的X线表现，不正确的是",
+    "correctAnswer": "大小不等",
+    "options": [
+      "发病初期 X线片阴性",
+      "分布均匀",
+      "大小不等",
+      "大小一致",
+      "密度相近"
+    ],
+    "explanation": "急性粟粒型肺结核由于大量结核杆菌一次或短时间内数次侵入血液循环引起，其特点为病灶分布均匀、大小均匀、密度均匀。发病初期X线片无明显异常，于发病2周左右胸片出现粟粒样结节。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2158,6 +4279,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
+    "description": "下列有关AIDS肺部CT征象的描述，错误的是",
+    "correctAnswer": "以双侧肺门淋巴结肿大为特征",
+    "options": [
+      "以双侧肺门淋巴结肿大为特征",
+      "无特征性征象",
+      "结节及线网状影",
+      "双侧不对称分布的斑片影",
+      "双侧对称的磨玻璃影"
+    ],
+    "explanation": "AIDS肺部CT征象无特征性，出现双侧对称的磨玻璃影，代表肺泡性浸润；双侧不对称分布的斑片影，代表肺泡和间质混合感染；结节及线网状影代表弥漫的间质性肺炎。可以出现淋巴结肿大，但并非对称性，也并非特征性征象。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "MRI",
@@ -2171,6 +4313,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "室壁瘤形成时，局部无运动或反向运动"
     ],
     "explanation": "急性缺血期，因局部心肌的含水量增加， T2WI信号增高；而当心肌纤维化时，局部心肌的信号在T1W1，T2WI均表现为降低。缺血心肌变薄，室壁瘤形成后可见局部无运动或反向运动。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "心肌纤维化后在MRI上表现为",
+    "correctAnswer": "T1WI低信号， T2WI低信号",
+    "options": [
+      "T1WI低信号， T2WI高信号",
+      "T1W高信号， T2WI低信号",
+      "T1WI高信号， T2WI高信号",
+      "T1WI和T2WI混杂信号",
+      "T1WI低信号， T2WI低信号"
+    ],
+    "explanation": "当心肌纤维化时，局部心肌的信号在T1WI和T2WI上均降低。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2203,6 +4366,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 MRI",
     "specialty": "胸部",
     "modality": "MRI",
+    "description": "MRI检查易于显示纵隔淋巴结病变，主要取决于",
+    "correctAnswer": "纵隔中有脂肪组织形成天然对比",
+    "options": [
+      "淋巴结T1WI为低信号， T2WI为高信号",
+      "纵隔中有脂肪组织形成天然对比",
+      "须通过增强扫描提高组织间的对比度",
+      "血管存在流空效应",
+      "软组织对比度好"
+    ],
+    "explanation": "由于正常纵隔内有较多的脂肪组织，在其高信号的背景下，易于显示呈圆形或卵圆形中等信号的淋巴结。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 MRI",
+    "specialty": "胸部",
+    "modality": "MRI",
     "description": "下述肺脓肿的CT、MRI表现特点,错误的是",
     "correctAnswer": "肺脓肿治愈后CT及MRI均可见钙化影",
     "options": [
@@ -2214,6 +4398,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "<p>MRI对钙化不敏感，肺脓肿内的钙化在MRI可无异常信号表现。</p>",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "扩张型心肌病的CT表现为",
+    "correctAnswer": "左心室呈气球样扩张",
+    "options": [
+      "左心室呈气球样扩张",
+      "不伴心肌肥厚",
+      "心室收缩功能正常",
+      "可见附壁血栓呈高密度影",
+      "以上都不对"
+    ],
+    "explanation": "扩张型心肌病CT扫描所见以左心室呈气球样扩张为特征，有时累及右心室或双心室，常伴有不同程度的心肌肥厚，心室收缩功能受损。CT扫描能清晰地显示上述征象，准确测量心脏径线，还能进行心功能定量分析。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2245,6 +4450,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
+    "description": "下列少有累及中纵隔的疾病是",
+    "correctAnswer": "胸腺瘤",
+    "options": [
+      "结节病",
+      "Castleman病",
+      "支气管囊肿",
+      "胸腺瘤",
+      "淋巴瘤"
+    ],
+    "explanation": "结节病的典型表现为双侧肺门淋巴结对称性增大； Castleman病所致的纵隔淋巴结肿大可见于任何部位，前上纵隔多见；支气管囊肿发生于中纵隔；淋巴瘤所致的纵隔淋巴结肿大位于前上纵隔和气管旁。上述各疾病均可累及中纵隔，而胸腺瘤为前纵隔肿瘤，不累及中纵隔。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
     "description": "关于特发性肺间质纤维化的描述，不正确的是",
     "correctAnswer": "为感染性炎性病变",
     "options": [
@@ -2255,6 +4481,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "CT可见小叶中心性肺气肿"
     ],
     "explanation": "特发性肺间质纤维化是一种原因不明的弥漫性纤维性肺泡炎，为肺泡壁受损伤所致的非感染性炎性反应，目前认为是一种免疫性疾病。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "右心房增大对心脏形态的影响不包括",
+    "correctAnswer": "右心房轻度扩张时，右前斜位片心后下缘呈圆形向后下方明显突起",
+    "options": [
+      "右心房增大使右心缘向右突",
+      "若伴右心室增大，引起心脏顺钟向旋转，可使右心缘右突不显著",
+      "右心房扩大可首先表现为右心耳扩大",
+      "右心缘正常高度占主动脉弓至膈的1／2，右心房增大时此段可超过1／2",
+      "右心房轻度扩张时，右前斜位片心后下缘呈圆形向后下方明显突起"
+    ],
+    "explanation": "右心房增大使右心缘向右突，但右心室、左心房或双心室增大均有此现象。右心缘的正常高度占主动脉弓至膈的1/2，右心房增大时此段可超过1/2，但左心房增大也可产生高的右心缘。右心房增大时常有右心室增大，后者引起心脏顺钟向旋转，心脏左移，使本来向右突及增高的右心缘不显著。右心房扩大可首先表现为右心耳扩大，因为它在心脏的前方，需在左前斜位25°～30°时才能观察到此段延长、隆起。只在显著扩张时可在右前斜位上见心后下缘呈圆形向后下方突起。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2286,6 +4533,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "心肌梗死的并发症不包括",
+    "correctAnswer": "以上都不是",
+    "options": [
+      "室壁瘤",
+      "乳头肌梗死",
+      "心脏破裂",
+      "心律失常",
+      "以上都不是"
+    ],
+    "explanation": "心肌梗死的并发症包括室壁瘤、心脏破裂、乳头肌梗死断裂以及心律失常等。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "CT",
     "description": "心包增厚和钙化的CT表现，不正确的是",
     "correctAnswer": "形成一水样密度带环绕心脏，使壁层心包与心脏的距离加大",
@@ -2297,6 +4565,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "CT是检测钙化最敏感的方法，并能准确定位钙化的部位和范围"
     ],
     "explanation": "心包增厚可束缚心脏的膨胀，也可呈局限性增厚，引起两侧心室进行性舒张功能障碍。结核性或放射性心包炎常引起心包增厚，厚度达5～20mm。部分增厚的心包内可出现钙化，常常提示炎症的后期，CT扫描为检查钙化最好的方法，并能准确定位钙化的部位和范围。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "以下疾病，与扩张型心肌病鉴别意义不大的是",
+    "correctAnswer": "房间隔缺损",
+    "options": [
+      "心肌梗死",
+      "心包积液",
+      "风湿性心脏病",
+      "三尖瓣下移",
+      "房间隔缺损"
+    ],
+    "explanation": "扩张型心肌病应与下列疾病鉴别：心肌梗死、心包积液、风湿性心脏病及三尖瓣下移等。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2319,6 +4608,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "目前MRI测量血流速度的方法主要包括两大类，一类是TOF法血流速度测量，一类是相位对比法血流速度测量。TOF 法又包括预饱和团注追踪法和激励团注追踪法；相位对比法又包括相位图法、傅立叶流动成像法和变更方法三种。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "MRI心功能分析包括",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "全心室功能评估",
+      "左或右心室局部功能评估",
+      "室壁压力的测定",
+      "瓣膜狭窄或反流程度评估",
+      "以上均正确"
+    ],
+    "explanation": "心功能评价和定量分析是磁共振心脏检查除形态学检查外的又一主要目的。MRI可通过电影方式或通过一系列图像直接测量心腔径线及室壁厚度，进一步估计心室壁压力及每搏心输出量等心功能相关参数，包括全心室功能评估，左或右心室局部功能评估，室壁压测定，瓣膜狭窄或反流程度和分流量的评估等。心肌标记评价局部心肌舒缩运动、屏气分段采集和回波分配法等提高了磁共振心功能测定的空间及时间分辨率。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2350,6 +4660,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 CT",
     "specialty": "胸部",
     "modality": "CT",
+    "description": "男， 39岁，突发胸痛，胸片未见异常，胸部增强CT如图，应诊断为",
+    "correctAnswer": "肺动脉栓塞",
+    "options": [
+      "中央型肺癌",
+      "肺结核",
+      "肺动脉栓塞",
+      "心肌梗死",
+      "主动脉夹层"
+    ],
+    "explanation": "<p>本例胸部增强CT扫描动脉期，双侧肺动脉主干血管内可见充盈缺损,为肺动脉栓塞的典型表现。</p>",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
     "description": "患者，女， 57岁，咳嗽、咳痰2个月余，3天前咯鲜血一次,约5ml,胸部CT扫描如图，则应诊断为",
     "correctAnswer": "支气管扩张",
     "options": [
@@ -2361,6 +4692,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "本例胸部CT显示了支气管扩张的典型CT表现“印戒征”，结合本例病史,不难诊断。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
+    "description": "男，53岁。腹痛伴发热1周就诊。主动脉CTA检查MPR如图，应考虑为",
+    "correctAnswer": "主动脉瘤并附壁血栓",
+    "options": [
+      "主动脉夹层动脉瘤",
+      "主动脉瘤并附壁血栓",
+      "主动脉血栓形成",
+      "主动脉硬化",
+      "主动脉破裂"
+    ],
+    "explanation": "主动脉瘤的主要CT征象：①主动脉管腔局限性扩张，胸主动脉管径大于4cm，腹主动脉局部管径大于3cm，或大于邻近主动脉管径的1／3即可诊断主动脉瘤。②附壁血栓形成：表现为扩张的管腔周围新月形、环状低密度影，范围大小不等。③周围性瘤壁钙化：表现为主动脉瘤壁周边的斑点状或弧形高密度影。增强扫描可见钙化位于动脉瘤附壁血栓的外周。④主动脉瘤破裂：表现为对比剂外溢。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2389,6 +4741,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 X 光",
+    "specialty": "胸部",
+    "modality": "X 光",
+    "description": "男性，26岁，发育尚可。反复发生上呼吸道感染，近来出现气急、心悸、易疲劳。听诊肺动脉瓣区第二心音亢进，可听到收缩期杂音。胸部X线片如下图。",
+    "correctAnswer": "房间隔缺损",
+    "options": [
+      "右室流出道狭窄",
+      "主动脉瓣关闭不全",
+      "二尖瓣脱垂",
+      "房间隔缺损",
+      "三尖瓣闭锁"
+    ],
+    "explanation": "房间隔缺损时，心脏不同程度增大，呈二尖瓣型，主动脉结缩小或正常，肺动脉段或心腰部膨凸；右心房增大，表现为后前位上右心房心—高比大于50％，右心房弧最凸点上移。右心室增大表现为正位片上心尖圆隆上翘。左心房室不大。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 MRI",
     "specialty": "胸部",
     "modality": "MRI",
@@ -2402,6 +4775,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "主动脉血栓形成"
     ],
     "explanation": "主动脉内见内膜片影，以及真假双腔，真腔血液流动快，呈流空极低信号，假腔血液流动慢，T1WI呈高信号。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "大叶性肺炎可出现",
+    "correctAnswer": "空气支气管征",
+    "options": [
+      "支气管“轨道征”",
+      "空气支气管征",
+      "空气半月征",
+      "垂柳征",
+      "支气管截断征"
+    ],
+    "explanation": "在炎性病变范围内可见充气的支气管影，称为“空气支气管征”。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2434,6 +4828,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 CT",
     "specialty": "胸部",
     "modality": "CT",
+    "description": "扩张的支气管与其伴行动脉的CT影像为",
+    "correctAnswer": "印戒征",
+    "options": [
+      "轨道征",
+      "葡萄状影",
+      "印戒征",
+      "空气半月征",
+      "与血管伴行的柱状高密度影"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
     "description": "与小支气管阻塞引起的炎症或肺不张相对应的CT征象是",
     "correctAnswer": "病灶胸壁侧的小片浸润",
     "options": [
@@ -2444,6 +4859,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "病灶胸壁侧的小片浸润"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "心尖部可闻及舒张中、晚期隆隆样杂音",
+    "correctAnswer": "二尖瓣狭窄",
+    "options": [
+      "房间隔缺损",
+      "室间隔缺损",
+      "动脉导管未闭",
+      "二尖瓣狭窄",
+      "肺动脉瓣狭窄"
+    ],
+    "explanation": "二尖瓣狭窄心尖部S1亢进，呈拍击性，心尖部可闻及舒张中、晚期隆隆样杂音，呈递增性，以左侧卧位，呼吸末及活动后杂音更明显。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2476,6 +4912,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
+    "description": "Stanford A型主动脉夹层是指",
+    "correctAnswer": "夹层累及升主动脉",
+    "options": [
+      "破口位于升主动脉，病变仅局限于升主动脉",
+      "破口位于升主动脉，病变累及升、降和(或)腹主动脉",
+      "破口位于左锁骨下动脉以远，病变仅累及胸主动脉者",
+      "夹层不累及升主动脉",
+      "夹层累及升主动脉"
+    ],
+    "explanation": "Stanford分型较为简单，A型累及升主动脉，相当于DeBakey分型的I型和Ⅱ型，B型不累及升主动脉，相当于DeBakey分型的Ⅲ型。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
     "description": "乳头常有血性溢液",
     "correctAnswer": "导管内乳头状瘤",
     "options": [
@@ -2486,6 +4943,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "导管内乳头状瘤"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "食管静脉曲张不累及下列哪条静脉",
+    "correctAnswer": "脐静脉",
+    "options": [
+      "胃冠状静脉",
+      "脐静脉",
+      "食管下静脉",
+      "奇静脉",
+      "肋间静脉"
+    ],
+    "explanation": "食管和胃底静脉曲张，系门静脉系的胃冠状静脉、胃短静脉和腔静脉系的食管静脉、肋间静脉、奇静脉等的开放沟通。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2508,6 +4986,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胰腺癌表现为胰腺局部增大。肿块形成，肿块远端腺体萎缩、胰管扩张、胆总管扩张，当肿瘤侵犯周围组织时，胰周脂肪消失，侵犯周围脏器，胰周血管受侵时看见血管内癌栓形成。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "关于食管静脉曲张的影像表现不正确的是",
+    "correctAnswer": "重度曲张扩展至中、上段，但不累及全长",
+    "options": [
+      "重度曲张扩展至中、上段，但不累及全长",
+      "低张双重造影较单纯钡餐检查使静脉曲张检出率明显提高",
+      "中度曲张常累及到食管的中段",
+      "静脉曲张最初局限于食管下段",
+      "静脉曲张管壁柔软而伸缩自如，是与食管癌的重要鉴别点"
+    ],
+    "explanation": "重度静脉曲张扩展至中、上段，甚至食管的全长。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2539,6 +5038,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
+    "description": "下列哪项是乙状结肠扭转确诊的检查方法？",
+    "correctAnswer": "钡灌肠检查",
+    "options": [
+      "口服钡餐造影",
+      "X线平片",
+      "血管造影",
+      "CT",
+      "钡灌肠检查"
+    ],
+    "explanation": "乙状结肠扭转确诊的检查方法首选钡灌肠检查。乙状结肠鸟嘴征是闭袢梗阻型乙状结肠扭转在钡剂灌肠相上的特异性x线征。乙状结肠扭时，远侧的结肠处于扩张状态，因此钡剂很易灌入其内。当灌入的钡剂头部逐渐接近扭转所致的狭窄处，钡柱逐渐变窄，并停止上行，形似鸟嘴，故称鸟嘴征。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
     "description": "先天性巨结肠钡灌肠检查，下列正确的是",
     "correctAnswer": "肛管不宜插入过高",
     "options": [
@@ -2550,6 +5070,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "先天性巨结肠做钡灌肠检查，钡剂最好用等渗液配制，肛管不宜插入过高，灌肠时钡剂量不宜过多，检查完毕后抽出钡剂，调制钡剂忌用肥皂水或普通水，以免发生水中毒，而应用等渗盐水进行调制。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "进展期胃癌引起胃窦狭窄、壁僵硬、黏膜皱襞固定，X线分型应属于",
+    "correctAnswer": "浸润型",
+    "options": [
+      "溃疡型",
+      "蕈伞型",
+      "浸润型",
+      "浅表型",
+      "混合型"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2581,6 +5122,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 CT",
     "specialty": "消化",
     "modality": "CT",
+    "description": "下列关于Crohn病的CT表现叙述错误的是",
+    "correctAnswer": "增强扫描时肠系膜出现梳样征（combsign）时提示进入慢性期",
+    "options": [
+      "节段性肠壁增厚是CT的主要表现，一般厚度在15mm以内",
+      "急性期肠壁可显示分层现象，表现为靶征或双晕征",
+      "增强扫描时，处于活动期和慢性期的病变均可强化",
+      "CT对窦道、瘘管等合并症的诊断价值高于钡剂造影",
+      "增强扫描时肠系膜出现梳样征（combsign）时提示进入慢性期"
+    ],
+    "explanation": "Crohn病肠系膜可有多种改变，脂肪增生时，肠系膜变厚，肠间距增大；炎症浸润时肠系膜脂肪密度增高；肠系膜蜂窝组织炎时，表现为混杂密度肿块，界限模糊；肠系膜内局部淋巴结肿大，一般在3～8mm；增强扫描肠系膜血管增多、增粗、扭曲。直小动脉拉长、间隔增宽，沿肠壁梳状排列，成为梳样征(comb sign)，常表明Crohn病是活动期。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
     "description": "患者，男，28岁。腹痛、呕吐。CT示胰腺弥漫性增大，结构不清，胰周有较多渗液，部分包裹，局部可见气泡影。诊断为",
     "correctAnswer": "急性胰腺炎，脓肿形成",
     "options": [
@@ -2592,6 +5154,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "急性胰腺炎CT表现为胰腺体积弥漫性增大，结构不清，胰腺周围脂肪间隙消失，胰腺脓肿形成时病灶区域出现散在的小气泡。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "Caroli病的CT表现错误的是",
+    "correctAnswer": "肝内多个小囊状区域，与肝内胆管不连接",
+    "options": [
+      "肝内胆管扩张，右叶为主",
+      "肝门区中心胆管不扩张",
+      "肝内多个小囊状区域，与肝内胆管不连接",
+      "扩张的肝内胆管可以有小结石.",
+      "可伴有肝硬化表现"
+    ],
+    "explanation": "Caroli病表现为肝内多个小囊状区域，囊肿一般很小，且与扩张的肝内胆管相连接，据此可排除单纯性或先天性肝囊肿。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2613,6 +5196,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胆总管囊肿MRCP表现为胆总管球形或梭形扩张。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "下列征象中，与胰腺病变无关的是",
+    "correctAnswer": "三叶草征",
+    "options": [
+      "结肠切断征",
+      "三叶草征",
+      "反“3”字征",
+      "脐样征、导管征",
+      "双泡征"
+    ],
+    "explanation": "局限性腹膜炎引起的胃、小肠、结肠积气积液为“警卫肠袢”，可引起结肠中段以下不含气，称为“结肠切断”征。消化道造影检查中，胰头癌可出现反“3”字征、异位胰腺可出现脐样或导管征，环状胰腺常可导致十二指肠梗阻，形成双泡征。三叶草征是胃黏膜脱垂消化道造影的表现。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2644,6 +5248,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 CT",
     "specialty": "消化",
     "modality": "CT",
+    "description": "胰头癌时CT影像中出现的“双管征”的原因是",
+    "correctAnswer": "胆总管和胰腺导管同时扩张",
+    "options": [
+      "门静脉和肝动脉同时扩张",
+      "肝内胆管和胆总管同时扩张",
+      "胆总管和胰腺导管同时扩张",
+      "胰导管和肝内胆管同时扩张",
+      "脾静脉和肠系膜上静脉同时扩张"
+    ],
+    "explanation": "胰头癌可压迫胆总管和胰管，使其同时扩张，形成所谓“双管征”。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
     "description": "男性，40岁，CT平扫肝脏密度大片减低，肝内血管清晰呈较高密度，其分布走行规则，应考虑",
     "correctAnswer": "重度脂肪肝",
     "options": [
@@ -2665,6 +5290,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 CT",
     "specialty": "消化",
     "modality": "CT",
+    "description": "患者，男， 50岁， 右上腹痛伴黄疸，超声体检发现腹腔多个液性暗区。腹部CT图像如下，最可能的诊断是",
+    "correctAnswer": "先天性胆管囊肿Ⅳ型",
+    "options": [
+      "腹腔囊肿",
+      "先天性胆管囊肿Ⅳ型",
+      "腹腔皮样囊肿",
+      "肝囊肿",
+      "胰腺囊肿"
+    ],
+    "explanation": "<p>临床有黄疸、腹痛症状。腹部CT示胆总管、肝总管及左右肝管明显扩张，呈囊样，以胆总管尤著，符合胆总管囊肿IV型表现。</p>",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
     "description": "胰岛细胞瘤增强CT扫描的特点为",
     "correctAnswer": "动脉期明显结节样强化病灶",
     "options": [
@@ -2676,6 +5322,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胰岛细胞瘤为富血管性，动态增强扫描动脉期均匀性明显强化，大者可环形强化，且持续时间长。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "男，45岁，无明显外伤史，腹部CT如图所示，最可能的诊断为",
+    "correctAnswer": "脾梗死",
+    "options": [
+      "脾破裂",
+      "脾淋巴瘤",
+      "脾梗死",
+      "脾囊肿",
+      "脾血管瘤"
+    ],
+    "explanation": "脾梗死的典型 CT表现。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2707,6 +5374,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 MRI",
     "specialty": "消化",
     "modality": "MRI",
+    "description": "肝脓肿在T1WI上脓腔周围常有一个信强度介于脓腔和周围肝实质之间的环，此征象称为",
+    "correctAnswer": "晕环征",
+    "options": [
+      "双线征",
+      "晕环征",
+      "靶征",
+      "灯泡征",
+      "花环征"
+    ],
+    "explanation": "肝脓肿于MRI T1WI上脓腔为不均匀性低信号，周围常有一个信号强度介于脓腔和周围肝实质之间的晕环，称晕环征。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 MRI",
+    "specialty": "消化",
+    "modality": "MRI",
     "description": "直肠癌术后随访，应首选哪种影像学检查方法",
     "correctAnswer": "MRI平扫及增强扫描",
     "options": [
@@ -2718,6 +5406,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胃肠道MRI检查以直肠为佳。直肠位置固定，其周围结构不受各种运动的影响，在盆腔脂肪信号的衬托下，直肠与周围组织分界清楚，特别是矢状位成像可清晰显示直肠及其周围结构的解剖关系。高分辨率T2WI对于评估直肠癌肠壁受累程度，判断肿瘤与相邻结构的关系，鉴别肿瘤再发与纤维化均有较高价值。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "肝包虫病与肝脓肿相鉴别的主要影像学征象是前者",
+    "correctAnswer": "病灶周围肝实质无充血水肿",
+    "options": [
+      "病灶周围肝实质充血水肿",
+      "病灶周围肝实质无充血水肿",
+      "病灶呈多囊",
+      "病灶中心有坏死",
+      "病灶内有间隔"
+    ],
+    "explanation": "肝包虫病的囊壁薄，周围肝实质无充血水肿等影像学表现可与肝脓肿鉴别。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2749,6 +5458,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "X 线基础",
     "specialty": "影像基础",
     "modality": "X 光",
+    "description": "下列征象，符合食管癌 X线表现的是",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "黏膜皱襞中断",
+      "管腔狭窄",
+      "腔内充盈缺损",
+      "不规则龛影",
+      "以上均正确"
+    ],
+    "explanation": "A、B、C、D选项都是食管癌的X线表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
     "description": "食管癌腔内型的 X线特点是",
     "correctAnswer": "以上均正确",
     "options": [
@@ -2760,6 +5490,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "以上均为食管癌腔内型的X线特点。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "关于胰腺炎的X线表现，描述不正确的是",
+    "correctAnswer": "十二指肠球呈三叶状变形",
+    "options": [
+      "十二指肠球呈三叶状变形",
+      "Vater壶腹肿大",
+      "十二指肠环变形或扩大",
+      "肠管局限性麻痹性肠梗阻",
+      "胰腺结石及钙化"
+    ],
+    "explanation": "十二指肠球呈三叶状变形为十二指肠溃疡。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2780,6 +5531,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "内囊可分离，悬浮于囊液中"
     ],
     "explanation": "腹部平片示68％～86.7％病灶有钙化，环状、半环状或蛋壳样钙化，提示囊壁钙化或类圆形的低密度囊状病灶，边缘光滑锐利，境界清楚，CT值为 - 14～20HU，同时可见环状、半环状、条索状或结节状钙化。对比增强后囊肿无强化，囊壁一般不显示，除非囊壁钙化。囊内囊为其特征性表现，即于母囊内有大小不一、数目不等的子囊。内、外囊分离表现特殊，分离程度不同，出现所谓“双边征”“水上百合征”“飘带征”，为棘球蚴囊一个可靠征象。泡状棘球蚴病表现境界不清的低密度或高低混合密度区，可见广泛的颗粒或不规则钙化。病灶亦可见坏死液化，对比增强后无增强。棘球蚴病CT肝右叶巨大囊性肿块，边界清楚，边缘光滑，密度均匀，大囊内可见内囊完全分离脱落、表现环状高密度影，呈“飘带征”，对比增强扫描，肿块无强化。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "有关肝硬化的CT表现，不正确的是",
+    "correctAnswer": "肝硬化再生结节CT动态增强扫描无强化",
+    "options": [
+      "肝左叶及尾状叶增大较为常见",
+      "肝实质密度一般与正常肝无明显变化",
+      "肝表面凹凸不平，肝缘变钝",
+      "肝硬化再生结节CT动态增强扫描无强化",
+      "胃底部可见小球形或扭曲的绦虫样影"
+    ],
+    "explanation": "<p><strong>肝硬化再生结节CT动态增强扫描可有中度强化。&nbsp;<span style=\";font-size:15px;font-family:SimSun;color:rgb(0,0,0)\">轻度、中度肝硬化者，</span><span style=\";font-size:15px;font-family:SimSun;color:rgb(0,0,0)\">肝密度可无明显变化。重度肝硬化由于纤维化、结节再生、变性坏 </span><span style=\";font-size:15px;font-family:SimSun;color:rgb(0,0,0)\">死、含铁血黄素沉着和脂肪变性等病理改变常致肝密度高、低不均。</span></strong></p>",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2809,6 +5581,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 组织病理学",
+    "specialty": "胸部",
+    "modality": "组织病理学",
+    "description": "食管癌好发于食管的",
+    "correctAnswer": "中段",
+    "options": [
+      "上段",
+      "中上段",
+      "中段",
+      "胃食管前庭段",
+      "中下段"
+    ],
+    "explanation": "食管从上到下分为三段，50%的食管癌发生于中段食管，上段食管癌占总数的30%，下段食管癌与占总数的20%左右。上中段多为鳞癌，下边有一部分腺癌，因此食管癌的好发部位，依次为食管中段、下段、上段。在此基础上，食管容易出现癌变的部位，是食管的三个生理狭窄处，第一个狭窄位于食管的起端及沿于食管的交界处，相当于环状软骨和第六颈椎体下缘，由环沿肌和环状软骨所围成的。第二个狭窄在食管入口以下七公分处，位于左组织器到跨越食管的部位，相当于胸骨角或第四五胸椎之间的水平，由主动脉弓从其左侧穿过或左支气管从食管前方，越过而形成，该部位是食管异物易存留处。第三个狭窄是食管通过膈肌的裂孔处，该裂孔由右向左呈向上斜行，在行食管钡餐造影时，可见到食管的这三个亚肌，当左心房出现病理性扩大时，第三个亚肌更为显着，这三处生理狭窄，特别是第二 第三处狭窄，为食管疾病的多发部位，如疤痕、挛缩和稀疏等，也经常是食管癌的好发部位。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "消化 组织病理学",
     "specialty": "消化",
     "modality": "组织病理学",
@@ -2823,6 +5616,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胃溃疡的X线表现因溃疡的形状、大小及部位、病理的不同，可有不同的X线表现，但归纳起来可分为两类：即直接征象，代表溃疡本身的改变，间接征象则为溃疡所致的功能性与瘢痕性改变。胃溃疡的直接征象是龛影，是钡剂充填胃壁缺损处的直接投影。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "下列疾病中，不引起食管位置或形态改变的是",
+    "correctAnswer": "胸腺肥大",
+    "options": [
+      "主动脉扩张",
+      "膈疝",
+      "左房增大",
+      "胸腺肥大",
+      "食管癌"
+    ],
+    "explanation": "食管吞钡正位观察，食管位于中线偏左，胸上段更偏左。右前斜位是观察食管的常规位置，在其前缘可见到三个压迹，从上至下为主动脉弓压迹、左主支气管压迹、左心房压迹。A选项中，当主动脉发生严重扩张，延长累及整个动脉，使主动脉的升、弓、降部都有改变时，可累及压迫食管。膈疝以食管裂孔疝发病率最高。左房增大时，食管中段受压移位，轻度增大时食管仅有前壁受压，中度增大时前后壁均受压移位，重度时食管明显后移。食管癌可以直接引起食管形态的改变。胸腺位于前纵膈内，食管位于后纵膈内，即使胸腺发生肥大，也不会造成食管的受压移位。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2851,6 +5665,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "脾肿大的影像学诊断标准是",
+    "correctAnswer": "上下＞15cm，前后＞5个肋单元",
+    "options": [
+      "上下＞12cm，前后＞5个肋单元",
+      "上下＞14cm，前后＞4个肋单元",
+      "上下＞14cm，前后＞6个肋单元",
+      "上下＞15cm，前后＞6个肋单元",
+      "上下＞15cm，前后＞5个肋单元"
+    ],
+    "explanation": "腹部CT横断面上，脾外缘正常为5个以下肋单元，即2个肋骨和3个间隙，或3个肋骨和2个间隙。大于5个肋单元则视为脾脏增大。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
@@ -2864,6 +5699,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "穿透性溃疡"
     ],
     "explanation": "穿孔属于并发症。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "下列征象，不属于胆管结石CT表现的是",
+    "correctAnswer": "扩张的胆管突然中断并见软组织影",
+    "options": [
+      "胆管内环形或圆形致密影",
+      "靶征",
+      "新月征",
+      "以上胆管扩张",
+      "扩张的胆管突然中断并见软组织影"
+    ],
+    "explanation": "胆管结石不会出现软组织块影，胆管突然中断为胆管肿瘤的影像学表现。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2886,6 +5742,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "腹内游离气体常见于胃肠穿孔、腹腔术后或合并感染等。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "关于肠结核影像表现不正确的是",
+    "correctAnswer": "肠结核充盈缺损一般较局限，病变大多不超过回盲瓣",
+    "options": [
+      "肠结核多累及盲肠及回肠末端",
+      "溃疡型结核主要表现肠管张力高，管腔挛缩，可有激惹征象，管腔边缘呈锯齿状，可见斑点状小龛影",
+      "肠结核充盈缺损一般较局限，病变大多不超过回盲瓣",
+      "增殖型结核主要表现是管腔变形，缩短，黏膜紊乱增粗，可呈多个大小不一的充盈缺损，激惹多不明显",
+      "肠结核可有多个尖刺样龛影"
+    ],
+    "explanation": "肠结核充盈缺损一般较为广泛，多累及盲肠及回肠末端，管腔挛缩，有激惹，可有多个尖刺样龛影。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2917,6 +5794,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 X 光",
     "specialty": "消化",
     "modality": "X 光",
+    "description": "下列肠结核的X线征象中，哪一项是不正确的？",
+    "correctAnswer": "肠道运行正常",
+    "options": [
+      "肠道运行正常",
+      "盲肠缩窄、收缩及变形",
+      "回肠病变近侧端可见钡剂滞留，肠管扩张",
+      "回肠末端受侵，黏膜破坏",
+      "回盲部可见跳跃征"
+    ],
+    "explanation": "肠结核时管腔变形，肠管张力高，肠道运行不正常。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
     "description": "患者，男性， 40岁，突发腹痛，腹胀逐渐加重，呈阵发性，查肠鸣音亢进，既往有腹部手术史，立位腹部平片如图所示，最可能的诊断为",
     "correctAnswer": "小肠急性肠梗阻",
     "options": [
@@ -2927,6 +5825,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "急性阑尾炎"
     ],
     "explanation": "小肠急性梗阻的临床表现和常见病因。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "男， 38岁，心前区阵发性绞痛10天。贫血面容，有胃病史。结合上胃肠道X线钡餐造影图像，最可能的诊断为",
+    "correctAnswer": "胃小弯溃疡",
+    "options": [
+      "胃贲门癌",
+      "胃窦癌",
+      "胃小弯溃疡",
+      "胃窦炎",
+      "胃下垂"
+    ],
+    "explanation": "良性胃溃疡的直接征象是龛影，切线位呈乳头状，边缘光滑整齐，密度均匀。龛影口部有一圈黏膜水肿形成的透明带。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -2949,6 +5868,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "典型的急性阑尾炎症状及阑尾周围脓肿早期CT表现。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "男30岁突然发生腹部疼痛临床检查：腹肌紧张有反跳痛需要行X线检查。",
+    "correctAnswer": "腹部站立后前位片",
+    "options": [
+      "腹部仰卧前后位片",
+      "腹部站立后前位片",
+      "胸部站立后前位片",
+      "胃钡餐造影检查",
+      "胃气钡双重造影"
+    ],
+    "explanation": "根据患者的临床表现可初步判断为胃肠道急性穿孔，腹部站立后前位片可明确显示膈下游离气体是最简捷有效的检查方法。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -2980,6 +5920,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
+    "description": "胃恶性溃疡",
+    "correctAnswer": "龛影边缘多个尖角、位于胃轮廓内、半月征、黏膜皱襞中断破坏、胃壁僵硬",
+    "options": [
+      "黏膜皱襞中断消失、管腔狭窄、腔内充盈缺损、管壁僵硬、蠕动消失",
+      "龛影边缘多个尖角、位于胃轮廓内、半月征、黏膜皱襞中断破坏、胃壁僵硬",
+      "龛影边缘光滑整齐、位于胃轮廓外、项圈征、黏膜皱襞向龛口纠集、胃壁柔软",
+      "黏膜皱襞中断消失、管腔狭窄、腔内充盈缺损、管壁柔软、蠕动减弱",
+      "黏膜皱襞增宽迂曲、管腔扩张、腔内充盈缺损、管壁柔软、蠕动减弱"
+    ],
+    "explanation": "胃恶性溃疡钡剂造影表现为龛影边缘多个尖角、位于胃轮廓内、半月征、黏膜皱襞中断破坏、胃壁僵硬。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
     "description": "胰腺癌血行转移以肝脏最常见的原因是",
     "correctAnswer": "胰腺静脉汇入门静脉",
     "options": [
@@ -2991,6 +5952,28 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "胰腺癌占胰腺恶性肿瘤的95%可发生于胰腺的任何部位胰腺静脉汇入门静脉血行转移以肝脏最常见。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "与服用避孕药有关的肿瘤是",
+    "correctAnswer": "肝细胞腺瘤",
+    "options": [
+      "肝血管瘤",
+      "肝细胞腺瘤",
+      "肝局灶性结节增生",
+      "肺癌",
+      "结肠癌",
+      "肝癌"
+    ],
+    "explanation": "肝细胞腺瘤多见于15～45岁女性与口服避孕药有密切关系。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3022,6 +6005,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 MRI",
     "specialty": "消化",
     "modality": "MRI",
+    "description": "MRI增强后壁环形强化及腔内见到无信号气体",
+    "correctAnswer": "肝脓肿",
+    "options": [
+      "肝脓肿",
+      "肝转移瘤",
+      "肝硬化",
+      "肝血管瘤",
+      "肝囊肿"
+    ],
+    "explanation": "肝脓肿Gd—DTPA对比增强后脓肿壁呈环形增强脓肿内可见小气泡影。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 MRI",
+    "specialty": "消化",
+    "modality": "MRI",
     "description": "肝内肿块MRI T1WI呈低信号，T2WI为极高信号，首先考虑为",
     "correctAnswer": "肝海绵状血管瘤",
     "options": [
@@ -3032,6 +6036,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "肝囊肿"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "男性，43岁，腹痛、呕吐停止排便排气1天，行腹部立位X线平片检查如下图。",
+    "correctAnswer": "单纯性肠梗阻",
+    "options": [
+      "麻痹性肠梗阻",
+      "单纯性肠梗阻",
+      "绞窄性肠梗阻",
+      "痉挛性肠梗阻",
+      "乙状结肠扭转"
+    ],
+    "explanation": "该患者小肠积气扩张肠腔内有多个液平面呈阶梯状排列为单纯性小肠梗阻特征性表现。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3061,6 +6086,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "检测尿路阳性结石最常用的影像学方法是",
+    "correctAnswer": "腹部平片",
+    "options": [
+      "B超检查",
+      "腹部平片",
+      "逆行尿路造影",
+      "CT检查",
+      "静脉尿路造影"
+    ],
+    "explanation": "由于近90%的尿路结石为阳性结石，所以临床上仍将腹部X线平片作为诊断尿路结石的首选方法。高度怀疑尿路结石而腹部平片无阳性发现者，则应行泌尿系声像图（USG）或平扫CT检查确诊。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -3075,6 +6121,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "膀胱癌多为移行上皮癌，呈乳头状,可浸润性生长,致膀胱壁局限增厚、僵硬，膀胱变形。而膀胱良性肿瘤无浸润性生长，仅局限在局部，无壁僵硬征象出现。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "下列临床表现，不属于膀胱癌起始症状的是",
+    "correctAnswer": "下腹肿块",
+    "options": [
+      "血尿",
+      "尿频和尿急",
+      "排尿困难",
+      "下腹肿块",
+      "排出肿瘤碎屑"
+    ],
+    "explanation": "当膀胱肿瘤出现下腹部包块时，多半出现了膀胱周围脏器受累及被侵犯，此时膀胱癌已处于晚期，而患者很少以此为首发症状进行就诊。典型的膀胱癌早期症状是无痛性肉眼血尿，常有尿频、尿急和尿痛等膀胱刺激症状，若血块堵塞膀胱出口，则出现排尿困难。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3106,6 +6173,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "有关静脉尿路造影腹部压迫的叙述，错误的是",
+    "correctAnswer": "压迫球呈正八字形放置",
+    "options": [
+      "防止对比剂流入膀胱",
+      "压迫点为脐下方两侧",
+      "压迫球呈正八字形放置",
+      "压力为5.3～8.0kPa",
+      "观察全尿路时解除压迫"
+    ],
+    "explanation": "静脉尿路造影检查时，压迫球应该为倒八字形放置，利于阻断输尿管。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "肾呈分叶状增大,肾盂造影示肾盂肾盏弧形压迫、变狭、拉长、移位，应诊断为",
     "correctAnswer": "肾囊肿",
     "options": [
@@ -3117,6 +6205,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "<section class=\"article135\" style=\"text-wrap-mode: wrap;\"><section class=\"_135editor\"><p style=\"line-height: 2em;\"><span style=\"text-shadow: none; font-size: 15px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;\">本题为祁吉版原版题。</span></p></section></section><p style=\"text-wrap-mode: wrap;\"><img>",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "下列哪项不是逆行肾盂造影的优点",
+    "correctAnswer": "能同时了解肾功能情况",
+    "options": [
+      "对比剂量少，显影清楚",
+      "碘过敏者同样可适用",
+      "禁忌证少",
+      "不通过血液循环，全身反应少",
+      "能同时了解肾功能情况"
+    ],
+    "explanation": "逆行肾盂造影不能了解肾功能情况。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3145,6 +6254,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "前列腺常用的扫描模式和层厚、层距是",
+    "correctAnswer": "软组织扫描模式，层厚、层距5mm",
+    "options": [
+      "高分辨率扫描模式，层厚、层距5mm",
+      "软组织扫描模式，层厚、层距5mm",
+      "标准扫描模式，层厚、层距5mm",
+      "软组织扫描模式，层厚、层距10mm",
+      "标准扫描模式，层厚、层距10mm"
+    ],
+    "explanation": "前列腺常用的扫描采用软组织扫描模式，必要时可用5mm层厚、层距扫描。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "X 线基础",
     "specialty": "影像基础",
     "modality": "X 光",
@@ -3158,6 +6288,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "静脉肾盂造影"
     ],
     "explanation": "泌尿系的阳性结石在平片上表现为边界清楚的高密影。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "下列腹膜后间隙恶性肿瘤中最常见的是",
+    "correctAnswer": "脂肪肉瘤",
+    "options": [
+      "恶性纤维组织肉瘤",
+      "淋巴瘤",
+      "平滑肌肉瘤",
+      "脂肪肉瘤",
+      "类癌"
+    ],
+    "explanation": "腹膜后间隙恶性肿瘤中最常见脂肪肉瘤，其次为平滑肌肉瘤。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3187,6 +6338,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 组织病理学",
+    "specialty": "泌尿",
+    "modality": "组织病理学",
+    "description": "多囊肾的大体病理学上改变为",
+    "correctAnswer": "肾集合管的囊状扩张",
+    "options": [
+      "肾小球的囊状扩张",
+      "肾淋巴结的囊状扩张",
+      "肾集合管的囊状扩张",
+      "肾小盏的囊状扩张",
+      "肾实质内小静脉的囊状扩张"
+    ],
+    "explanation": "多囊肾病理上主要为扩张的充满液体的集合管系统，扩张的管状结构之间是未累及的肾实质或残存压迫萎缩的肾实质。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -3208,6 +6380,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "肾癌发生转移，最常见转移部位见于",
+    "correctAnswer": "肺",
+    "options": [
+      "肝",
+      "淋巴结",
+      "骨",
+      "肺",
+      "对侧肾脏"
+    ],
+    "explanation": "肾癌的转移部位依次是：肺、淋巴结、骨、肝和对侧肾脏。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 CT",
     "specialty": "泌尿",
     "modality": "CT",
@@ -3221,6 +6414,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "逆行尿路造影"
     ],
     "explanation": "肾血管性高血压大部是由于肾动脉狭窄引起，所以上述各项检查中只有肾动脉CTA能够清晰显示肾动脉形态并明确定位定性诊断。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 超声",
+    "specialty": "泌尿",
+    "modality": "超声",
+    "description": "患者男性，66岁。无痛性肉眼血尿伴条状血块2个月，B超可见左肾轻度积水，2次细胞学检查未见癌细胞。为进一步诊治下列检查最有价值的是",
+    "correctAnswer": "尿路平片和排泄性尿路造影",
+    "options": [
+      "膀胱造影",
+      "血尿常规，肝、肾功能",
+      "膀胱镜检查",
+      "尿路平片和排泄性尿路造影",
+      "盆腔MRI"
+    ],
+    "explanation": "对于老年患者，临床表现无痛性肉眼血尿，并且合并有肾积水时，应行尿路平片和排泄性尿路造影。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3253,6 +6467,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "下列哪项是常累及双侧肾上腺的病变？",
+    "correctAnswer": "肾上腺结核",
+    "options": [
+      "肾上腺结核",
+      "肾上腺腺瘤",
+      "神经源性肿瘤",
+      "肾上腺出血",
+      "髓质脂肪瘤"
+    ],
+    "explanation": "肾上腺结核多为两侧性。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "患者无痛性血尿数周，静脉尿路造影示肾盂内不规则充盈缺损，首先考虑以下哪种疾病",
     "correctAnswer": "肾盂癌",
     "options": [
@@ -3263,6 +6498,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "肾腺瘤"
     ],
     "explanation": "肾盂癌常以无痛性血尿为主要临床症状，静脉尿路造影及逆行尿路造影主要显示为肾盂肾盏系统不规则充盈缺损。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "尿路结石多为",
+    "correctAnswer": "阳性（不透X线）结石",
+    "options": [
+      "阴性（透X线）结石",
+      "胆色素结石",
+      "胆固醇结石",
+      "滞积性结石",
+      "阳性（不透X线）结石"
+    ],
+    "explanation": "尿路结石多为草酸盐、磷酸盐等含钙较多的物质构成，密度高，不透X线，故为阳性结石。B、C、D项主要见于胆石症。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3292,6 +6548,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 MRI",
+    "specialty": "泌尿",
+    "modality": "MRI",
+    "description": "膀胱恶性肿瘤的影像学表现，错误的是",
+    "correctAnswer": "T2加权像肿瘤信号强度比肌肉信号低",
+    "options": [
+      "肿瘤侵犯周围脂肪表现为脂肪界面不清并有软组织块",
+      "肿瘤表现为膀胱壁局限性增厚和（或）突入膀胱的肿物",
+      "肿瘤附着处膀胱壁呈低信号说明肿瘤尚未侵及深肌层",
+      "T2加权像肿瘤信号强度比肌肉信号低",
+      "肿瘤侵犯前列腺、尿道表示已为T4期"
+    ],
+    "explanation": "膀胱癌肿瘤的信号在T2WI上多为中等信号，信号强度要显著高于正常膀胱壁。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -3305,6 +6582,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "膀胱侧壁"
     ],
     "explanation": "膀胱癌好发于三角区，其次为两侧壁，表面常凹凸不平，可有溃疡。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "肾上腺髓脂瘤CT表现中，哪项错误",
+    "correctAnswer": "多为双侧性肾上腺肿块",
+    "options": [
+      "肿块呈混杂密度",
+      "多为双侧性肾上腺肿块",
+      "直径多在10cm以下",
+      "肿块呈类圆形或椭圆形",
+      "增强检查肿块的软组织部分发生强化"
+    ],
+    "explanation": "肾上腺髓脂瘤多为单侧，偶为双侧性肾上腺肿块。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3334,6 +6632,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "肾上腺腺瘤与肾上腺囊肿的鉴别要点是",
+    "correctAnswer": "肿块强化与否",
+    "options": [
+      "均匀水样密度肿块",
+      "圆形、类圆形肿块",
+      "肿块大小不同",
+      "肿块强化与否",
+      "肿块内钙化"
+    ],
+    "explanation": "肾上腺腺瘤与肾上腺囊肿的肿瘤密度均为水样低密度肿块，但是肾上腺腺瘤呈均匀性强化，而肾上腺囊肿则无强化，易于鉴别。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 组织病理学",
     "specialty": "泌尿",
     "modality": "组织病理学",
@@ -3355,6 +6674,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "影像学检查中的“海蛇头”所指的是下列疾病中的",
+    "correctAnswer": "输尿管囊肿",
+    "options": [
+      "输尿管下段结石",
+      "输尿管血肿",
+      "输尿管内的气泡",
+      "输尿管囊肿",
+      "输尿管下段癌"
+    ],
+    "explanation": "输尿管囊肿典型尿路造影可见输尿管下端呈“海蛇头”或球状扩张。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 CT",
     "specialty": "胸部",
     "modality": "CT",
@@ -3368,6 +6708,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "嗜铬细胞瘤"
     ],
     "explanation": "嗜铬细胞瘤临床表现为阵发性高血压、头痛、焦虑和心悸等，病灶常为圆形或者椭圆形，一般较大，直径常>3cm，边缘光滑完整。增强扫描，嗜铬细胞瘤多强化,明显且不均匀，对比剂廓清较慢。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "下列征象，可有效鉴别肾上腺腺瘤与嗜铬细胞瘤的是",
+    "correctAnswer": "增强扫描后强化方式",
+    "options": [
+      "肿瘤大小和外形",
+      "肿瘤内密度",
+      "增强扫描后强化方式",
+      "发病年龄",
+      "是否出现临床症状"
+    ],
+    "explanation": "肾上腺腺瘤与嗜铬细胞癌增强扫描后强化方式不同，肾上腺腺瘤增强后快速强化、迅速廓清。嗜铬细胞瘤多强化明显且不均匀，对比剂廓清较慢。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3397,6 +6758,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
+    "description": "先天子宫发育畸形包括",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "重复子宫",
+      "半隔型子宫",
+      "双角子宫",
+      "单角子宫",
+      "以上均正确"
+    ],
+    "explanation": "子宫畸形是苗勒管发育过程中出现异常所致，可分为重复子宫、全隔型及半隔型子宫、单角及双角子宫、弓形子宫等多种畸形。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 MRI",
     "specialty": "泌尿",
     "modality": "MRI",
@@ -3411,6 +6793,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "处于出血亚急性期的出血性肾囊肿，由于病变处于出血后细胞外正铁血红蛋白期，所以病灶在T1和T2加权像均为高信号，提示此诊断。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 MRI",
+    "specialty": "泌尿",
+    "modality": "MRI",
+    "description": "关于输尿管肿瘤的描述，错误的是",
+    "correctAnswer": "肿瘤不易侵犯肾实质及下腔静脉",
+    "options": [
+      "大多数原发性尿路上皮肿瘤均为恶性",
+      "肿瘤不易侵犯肾实质及下腔静脉",
+      "MRI图像上，多表现肾盂内偏心性充盈缺损",
+      "MRI增强扫描间质期，T1WI脂肪抑制扫描肿瘤呈中等高信号",
+      "以移行细胞癌多见"
+    ],
+    "explanation": "大多数原发于尿路上皮的肿瘤都为恶性， 90%以上为移行细胞癌，约8%为鳞状细胞癌，肿瘤可侵及肾盂、输尿管肌层，若侵犯超出肌层可达肾盂内脂肪或肾实质；肿瘤可侵及下腔静脉，并沿静脉蔓延，MRI能清楚显示上述改变。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3439,6 +6842,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 MRI",
+    "specialty": "泌尿",
+    "modality": "MRI",
+    "description": "关于膀胱结石的描述，错误的是",
+    "correctAnswer": "T1WI上呈高信号",
+    "options": [
+      "T1WI上呈高信号",
+      "腹部平片可以显示大部分膀胱结石",
+      "CT检查在膀胱腔内可见致密密度影",
+      "超声检查表现为膀胱腔内伴有声影的强回声光团",
+      "T1WI和T2WI上无信号"
+    ],
+    "explanation": "膀胱结石无论含钙化与否，在MRI上均呈T1WI，T2WI无信号或极低信号。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
@@ -3452,6 +6876,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "胰腺癌"
     ],
     "explanation": "肾上腺转移瘤最常见的原发肿瘤是肺癌，且多为双侧。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
+    "description": "子宫内膜癌中哪种类型最常见",
+    "correctAnswer": "腺癌",
+    "options": [
+      "腺鳞癌",
+      "腺癌",
+      "透明细胞癌",
+      "浆液乳头状癌",
+      "鳞癌"
+    ],
+    "explanation": "子宫内膜癌中，腺癌最多见。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3484,6 +6929,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "妇科 影像综合",
     "specialty": "妇科",
     "modality": "影像综合",
+    "description": "子宫颈癌最常见的组织类型是",
+    "correctAnswer": "鳞状上皮癌",
+    "options": [
+      "腺癌",
+      "鳞状上皮癌",
+      "大细胞癌",
+      "小细胞癌",
+      "未分化癌"
+    ],
+    "explanation": "子宫颈癌以鳞癌占多数（80％～90％），其次是腺癌。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
     "description": "行子宫输卵管碘油造影时，摄第二张片的时间为",
     "correctAnswer": "24小时",
     "options": [
@@ -3494,6 +6960,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "24小时"
     ],
     "explanation": "子宫输卵管碘油造影时，24小时后摄第二张片观察对比剂在盆腔内的弥散情况。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "下列哪种肿瘤转移时原发灶切除后转移灶可自行消失",
+    "correctAnswer": "绒癌",
+    "options": [
+      "乳腺癌",
+      "膀胱癌",
+      "骨肉瘤",
+      "绒癌",
+      "鼻咽癌"
+    ],
+    "explanation": "绒癌转移后，若切除原发灶，转移灶亦可自行消失。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3526,6 +7013,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "前列腺癌的转移，以骨转移最常见，转移部位依次为",
+    "correctAnswer": "骨盆、脊柱、股骨近端",
+    "options": [
+      "骨盆、脊柱、股骨近端",
+      "脊柱、骨盆、股骨近端",
+      "骨盆、股骨近端、脊柱",
+      "脊柱、股骨近端、骨盆",
+      "股骨近端、脊柱、骨盆"
+    ],
+    "explanation": "前列腺癌骨转移以骨盆、腰椎、股骨和肋骨多见。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "关于多囊肾的叙述，不正确的是",
     "correctAnswer": "肾盂肾盏常有侵蚀破坏",
     "options": [
@@ -3537,6 +7045,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "多囊肾肾盂肾盏是拉伸、延长等，不是侵蚀破坏。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "膀胱癌盆腔淋巴转移的诊断标准是淋巴结直径大于",
+    "correctAnswer": "10mm",
+    "options": [
+      "5mm",
+      "10mm",
+      "15mm",
+      "20mm",
+      "25mm"
+    ],
+    "explanation": "膀胱癌时盆腔淋巴结直径›10mm,说明有淋巴结转移。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3565,6 +7094,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "子宫颈癌CT显示向外后侵犯闭孔内肌和梨状肌，其CT分期应属于",
+    "correctAnswer": "ⅢB",
+    "options": [
+      "ⅡA",
+      "ⅡB",
+      "ⅢA",
+      "ⅢB",
+      "Ⅳ"
+    ],
+    "explanation": "子宫颈癌若肿瘤累及阴道下1／3为ⅢA期；肿瘤继续向外生长侵及盆壁，或有肾盂积水者为ⅢB期。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "妇科 CT",
     "specialty": "妇科",
     "modality": "CT",
@@ -3586,6 +7136,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "消化 CT",
+    "specialty": "消化",
+    "modality": "CT",
+    "description": "患者，女性，58岁。胃癌切除术后两个月，腹部CT检查又发现盆腔内双侧卵巢肿块和腹腔积液，最可能的诊断是",
+    "correctAnswer": "Krukenberg 瘤",
+    "options": [
+      "肝硬化，腹腔积液",
+      "Krukenberg 瘤",
+      "卵巢癌",
+      "卵巢囊腺瘤",
+      "卵巢囊肿"
+    ],
+    "explanation": "该患者有明确的胃癌手术病史，胃肠道肿瘤最容易发生种植转移，而种植转移最好发的部位就是卵巢。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "妇科 CT",
     "specialty": "妇科",
     "modality": "CT",
@@ -3599,6 +7170,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "卵巢浆液性囊腺瘤"
     ],
     "explanation": "盆腔巨大囊实性占位，内见分隔较均匀，未见壁结节，提示浆液性囊腺瘤可能性大。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 MRI",
+    "specialty": "胸部",
+    "modality": "MRI",
+    "description": "患者，女性，36岁，因不孕就诊。盆腔MRI图像如下，最可能的诊断为",
+    "correctAnswer": "完全性纵隔子宫",
+    "options": [
+      "双角子宫",
+      "双子宫",
+      "完全性纵隔子宫",
+      "不完全性纵隔子宫",
+      "弓形子宫"
+    ],
+    "explanation": "纵隔子宫患者以不孕、习惯性流产或反复胎儿停止发育来就诊。T2WI可见子宫底至颈部延续的线状低信号，将子宫内膜分为两部分，根据纵隔在宫腔的延续范围是否到达宫颈口水平，分为完全性和不完全性两种。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3628,6 +7220,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "妇科 MRI",
+    "specialty": "妇科",
+    "modality": "MRI",
+    "description": "子宫内膜异位囊性病灶MRI表现为",
+    "correctAnswer": "T1WI呈高信号，T2WI呈高信号",
+    "options": [
+      "T1WI呈低信号，T2WI呈高信号",
+      "T1WI呈高信号，T2WI呈高信号",
+      "T1WI呈高信号，T2WI呈低信号",
+      "T1WI呈等信号，T2WI呈高信号",
+      "T1WI呈低信号，T2WI呈等信号"
+    ],
+    "explanation": "子宫内膜异位囊性病灶在T1WI上呈高信号， T2WI上呈高信号最常见，其信号强度甚至高于脂肪和液体。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "神经 影像综合",
     "specialty": "神经",
     "modality": "影像综合",
@@ -3642,6 +7255,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "神经源性膀胱又称神经源性排尿功能障碍，系由于调节膀胱机能的中枢尤其是脊髓或周围神经受损害，使膀胱正常的排尿反射活动发生阻断，形成膀胱排尿机能紊乱，临床上表现不同程度的尿失禁和尿潴留。据此上述各项均可出现神经源性膀胱改变。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "急性肾盂肾炎的诱因和原因不包括",
+    "correctAnswer": "病毒感染",
+    "options": [
+      "尿路梗阻",
+      "反流",
+      "尿路结石",
+      "糖尿病",
+      "病毒感染"
+    ],
+    "explanation": "急性肾盂肾炎女性多见，是由于下尿路感染逆行累及肾脏引起。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3670,6 +7304,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "在肾上腺疾病影像学检查过程中，CT检查有哪些特点",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "CT是肾上腺疾病最佳影像检查方法",
+      "CT空间分辨力高，可以检出小的功能性病变",
+      "CT平扫可以显示病变的某些组织特征，如脂肪、钙化、液体等",
+      "通过重建可以显示病变的解剖关系",
+      "以上均正确"
+    ],
+    "explanation": "上述说法都正确，比较详细地说明了CT扫描在肾上腺疾病诊断过程中的重要性。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "消化 CT",
     "specialty": "消化",
     "modality": "CT",
@@ -3683,6 +7338,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "常有肾静脉、下腔静脉瘤栓"
     ],
     "explanation": "肾上腺皮质癌也分为功能性和非功能性两种，其肿块较大，形状不规则、分叶，包膜不完整，增强后肿块周边有不规则强化；肿块易出血、坏死及囊变，淋巴结及远处转移出现的早，常有肾静脉、下腔静脉瘤栓形成，腹膜后转移，肝肾易被侵犯。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "关于肾上腺转移瘤的说法，不正确的是",
+    "correctAnswer": "CT可鉴别原发或转移",
+    "options": [
+      "可为单侧或双侧",
+      "中央可出现坏死",
+      "可伴有出血",
+      "CT可鉴别原发或转移",
+      "可无内分泌症状"
+    ],
+    "explanation": "肾上腺转移瘤临床上较为常见，可为单侧或双侧。肿瘤较大时可见坏死、出血或钙化。肿瘤极少造成肾上腺功能改变，临床症状和体征主要为原发瘤表现。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3712,6 +7388,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "下列关于腹膜后淋巴结的描述，不正确的是",
+    "correctAnswer": "T2WI呈等信号（与肌肉信号比）",
+    "options": [
+      "常位于腹主动脉旁和下腔静脉旁",
+      "正常淋巴结横断直径0.3～1.0cm",
+      "T1WI呈等信号（与肌肉信号比）",
+      "T2WI呈等信号（与肌肉信号比）",
+      "单个淋巴结直径＞1.5cm为肿大"
+    ],
+    "explanation": "腹膜后淋巴结在T1WI呈等信号（与肌肉信号比），在T2WI呈等信号（与脂肪信号比），高于肌肉信号。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -3726,6 +7423,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "前列腺癌多发生在外周带，前列腺增生易发生在中央带和移行区。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
+    "description": "子宫输卵管造影如图所示，左输卵管末显影的原因可为",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "输卵管炎",
+      "输卵管结核",
+      "子宫内膜异位症",
+      "盆腔结核",
+      "以上均正确"
+    ],
+    "explanation": "<p>子宫输卵管造影所示右侧输卵管通畅，左侧输卵管未显影，以上所述病因均可造成输卵管或其周围粘连，造成输卵管狭窄或堵塞，可致输卵管不显影。</p>",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3754,6 +7472,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "妇科 CT",
+    "specialty": "妇科",
+    "modality": "CT",
+    "description": "下列关于正常卵巢和输卵管CT横断面解剖的描述，正确的是",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "正常卵巢和输卵管在CT图像上常不能显示",
+      "通常卵巢位于髂外动脉的内侧，输尿管的前方",
+      "卵巢呈软组织密度影",
+      "增强扫描无明显强化",
+      "以上均正确"
+    ],
+    "explanation": "以上描述均为正常卵巢和输卵管的CT表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -3768,6 +7507,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "腹膜假性黏液瘤为转移性肿瘤。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "绒癌可以转移到各种脏器，最常见的顺序是",
+    "correctAnswer": "肺、脑、阴道",
+    "options": [
+      "脑、心脏",
+      "肺、脑、阴道",
+      "肠、肺脏",
+      "心脏、肠",
+      "胃、肠、阴道"
+    ],
+    "explanation": "绒毛膜上皮癌肺部转移多见且发生于早期，转移灶可随原发灶切除而消失，具有一定的特征性，其次是脑转移，可出现头痛及占位性病变，晚期可发现阴道转移。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3799,6 +7559,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "MRI",
+    "description": "男， 70岁，进行性排尿困难，根据所提供的MRI图像，最可能的诊断是",
+    "correctAnswer": "前列腺增生",
+    "options": [
+      "前列腺增生",
+      "前列腺癌",
+      "前列腺钙化",
+      "前列腺囊肿",
+      "以上均不是"
+    ],
+    "explanation": "无。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
     "description": "男性，71岁，排尿困难多年， PSA明显升高。MRI检查图像如下。",
     "correctAnswer": "前列腺癌",
     "options": [
@@ -3810,6 +7591,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "无。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "患者，男，56岁。头晕、头痛4个月，查体：血压增高。舒张压＞120mmHg，腹部可闻及血管杂音。眼底视网膜水肿伴出血。",
+    "correctAnswer": "血管造影",
+    "options": [
+      "MRI",
+      "CT",
+      "超声",
+      "血管造影",
+      "核医学"
+    ],
+    "explanation": "对怀疑肾动脉狭窄患者，先行腹主动脉肾动脉造影，观察双侧肾动脉开口处及腹主动脉情况。疑为肾内动脉病变，再作选择性肾动脉造影。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -3838,6 +7640,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "肾上腺髓质脂肪瘤的CT特点是",
+    "correctAnswer": "肿瘤位于肾上腺单侧，无症状，体积大以脂肪密度为主，CT值-80～-120HU",
+    "options": [
+      "肿瘤位于肾上腺单侧，小于2cm，低密度网格状，CT值 - 35～28HU",
+      "肿瘤位于肾上腺单侧，大于2cm，低密度均匀肿块，CT值35～50HU",
+      "肿瘤位于肾上腺，单侧多见，直径2～20cm，中央坏死，少数伴钙化，强化显著",
+      "肿瘤位于肾上腺单侧，体积大，密度不均多伴钙化，侵犯邻近结构",
+      "肿瘤位于肾上腺单侧，无症状，体积大以脂肪密度为主，CT值-80～-120HU"
+    ],
+    "explanation": "肾上腺髓质脂肪瘤的CT特点是表现为单侧，类圆形或椭圆形，体积多在10cm以下，肿块呈混杂密度，由不等量的低密度脂肪灶和软组织密度灶构成，软组织部分可发生强化。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -3851,6 +7674,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "淋巴转移"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
+    "description": "当肾癌侵犯下腔静脉形成瘤栓而无淋巴结或远处转移时，分期应为",
+    "correctAnswer": "Ⅲa",
+    "options": [
+      "Ⅱ",
+      "Ⅲa",
+      "Ⅲb",
+      "Ⅲc",
+      "Ⅳa"
+    ],
+    "explanation": "当肾癌侵及下腔静脉或肾静脉为Ⅲa期。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3883,6 +7727,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "肾发育不全",
+    "correctAnswer": "输尿管细小，开口异位",
+    "options": [
+      "输尿管短，在肾脏前面下行",
+      "输尿管长度正常，输尿管扭曲",
+      "输尿管长度正常，改变体位时扭曲",
+      "输尿管过短或过长",
+      "输尿管细小，开口异位"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "肾周血肿是",
     "correctAnswer": "血液在肾包膜外吉氏筋膜内",
     "options": [
@@ -3893,6 +7758,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "血液在肾外及肾包膜内呈新月形"
     ],
     "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "双肾CT平扫图像如下，符合下列何种疾病",
+    "correctAnswer": "多囊肾",
+    "options": [
+      "错构瘤",
+      "肾癌",
+      "肾囊肿",
+      "多囊肾",
+      "肾结石"
+    ],
+    "explanation": "<p>双肾形态不规整，肾实质失去正常结构，被大小不等囊样低密度结构占据，属于典型多囊肾表现。</p>",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3914,6 +7800,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "骨质疏松"
     ],
     "explanation": "急性化脓性骨髓炎主要X线表现为不同范围的骨质破坏、骨膜增生和死骨形成，以骨质破坏为主。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 CT",
+    "specialty": "骨科",
+    "modality": "CT",
+    "description": "脊椎结核的影像学检查，CT优于X线平片主要是在于显示",
+    "correctAnswer": "椎管内脓肿",
+    "options": [
+      "骨质破坏",
+      "椎间隙狭窄",
+      "骨质增生",
+      "椎管内脓肿",
+      "钙化"
+    ],
+    "explanation": "CT显示椎体及附件的骨质破坏、死骨和椎旁脓肿等优于X线平片.CT 较之平片的主要优势是显示椎管内硬膜外脓肿。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3946,6 +7853,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
+    "description": "下列有关“椎弓崩裂”描述中，哪项错误？",
+    "correctAnswer": "90%位于第3腰椎",
+    "options": [
+      "90%位于第3腰椎",
+      "多为双侧性",
+      "常有脊椎滑脱",
+      "斜位片价值最高",
+      "椎弓峡部骨质缺损"
+    ],
+    "explanation": "椎弓崩裂又称峡部裂，是指椎弓上下关节突之间的峡部断裂，可造成椎体及上关节突在下位椎体上缘向前滑移即“真性滑脱”，90%发生于第5腰椎。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
     "description": "椎体横突和棘突的二次骨化中心愈合时间大约是",
     "correctAnswer": "25岁",
     "options": [
@@ -3956,6 +7884,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "25岁"
     ],
     "explanation": "脊柱的生长为软骨内化骨，约16岁时，在每个横突上下关节突和棘突的顶端出现第2个继发骨化中心，这些骨化中心逐渐增大，并于25岁左右时与其所附着的结构愈合。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "儿童短骨骨结核最具特征的X线表现为",
+    "correctAnswer": "骨气臌",
+    "options": [
+      "骨质破坏",
+      "骨质增生",
+      "死骨形成",
+      "骨气臌",
+      "以上都是"
+    ],
+    "explanation": "短骨结核多见于5岁以下儿童，好发于近节指（趾）骨、掌（距）骨，常为双侧多发。早期仅见局部软组织肿胀和骨质疏松，继而骨干内出现囊性骨破坏，骨皮质变薄,向外明显膨胀呈梭形,又称“骨气臌\", 此为短骨结核最具特征的表现。病灶内可见残存骨嵴，但死骨很少见，病灶边缘可见层状骨膜增生。本病很少侵及邻近关节。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -3977,6 +7926,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "瘤巢和沙粒样物质"
     ],
     "explanation": "骨样骨瘤由瘤巢和周围硬化两部分组成。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 组织病理学",
+    "specialty": "骨科",
+    "modality": "组织病理学",
+    "description": "关节软骨及骨性关节面被病理组织侵犯，称为",
+    "correctAnswer": "关节破坏",
+    "options": [
+      "关节肿胀",
+      "关节退行性变",
+      "关节脱位",
+      "关节强直",
+      "关节破坏"
+    ],
+    "explanation": "关节破坏是指关节软骨及其下方的骨质为病理组织所侵犯、替代。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4009,6 +7979,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
+    "description": "下列关于骨折断端移位的描述，不正确的是",
+    "correctAnswer": "横向移位为骨折近侧端向侧方或前后方移位",
+    "options": [
+      "横向移位为骨折远侧端向侧方或前后方移位",
+      "重叠移位为断端发生完全性移位后，因肌肉收缩而导致断端重叠，肢体短缩",
+      "断端分离为骨折断端之间距离增大",
+      "横向移位为骨折近侧端向侧方或前后方移位",
+      "断端嵌入为较细的骨干断端嵌入较宽大的干骺端或骨端的松质骨内"
+    ],
+    "explanation": "骨折的横向移位为侧方移位，是以骨折近段为基准，判定远端骨质向前、后、内或外方移位。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
     "description": "骨肿瘤和肿瘤样病变中，骨皮质膨胀呈“吹泡状”多见于",
     "correctAnswer": "动脉瘤样骨囊肿",
     "options": [
@@ -4019,6 +8010,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "孤立性骨囊肿"
     ],
     "explanation": "动脉瘤样骨囊肿好发于10～20岁青少年，多见于长骨（干骺）端，骺软骨板存在时不累及骨骺，60％～75％发病于股骨上端、椎体及附件。病灶呈显著膨胀的囊状透亮区，多起于骨松质或骨髓，也可位于骨膜下，其外侧为由骨膜形成的薄骨壳，囊内有粗细不等的骨小梁分隔或骨嵴，致病变呈吹泡状改变。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 组织病理学",
+    "specialty": "骨科",
+    "modality": "组织病理学",
+    "description": "色素沉着绒毛结节性滑膜炎病理特点为",
+    "correctAnswer": "以上都是",
+    "options": [
+      "关节滑膜明显增生",
+      "绒毛结节形成",
+      "血管翳样团块形成，并自边缘开始侵犯关节软骨，进而侵蚀骨组织",
+      "含铁血黄素沉着",
+      "以上都是"
+    ],
+    "explanation": "色素沉着绒毛结节性滑膜炎的病理特点是：滑膜增殖呈绒毛状或结节状，含铁血黄素沉着于细胞内外。随病程进展，增生的绒毛结节形成血管翳样团块，自关节边缘开始侵犯关节软骨，进而侵蚀骨组织。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4051,6 +8063,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 X 光",
     "specialty": "骨科",
     "modality": "X 光",
+    "description": "X线透视在骨关节疾病诊治中的作用是",
+    "correctAnswer": "金属异物的寻找和定位及外伤性骨折、脱位的整复",
+    "options": [
+      "金属异物的寻找和定位及外伤性骨折、脱位的整复",
+      "显示青枝骨折优于摄片",
+      "对部位厚、层次多的结构显示更佳",
+      "显示骨小梁结构",
+      "显示低密度异物和软组织层次"
+    ],
+    "explanation": "骨与关节的X线检查以摄片为主，透视主要应用于火器伤时金属异物的寻找和定位，以及外伤性骨折与脱位进行复位时。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
     "description": "下列骨肿瘤中，易形成肿瘤软骨的是",
     "correctAnswer": "骨软骨瘤",
     "options": [
@@ -4062,6 +8095,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "骨软骨瘤是最常见的良性骨肿瘤，又称骨软骨性外生骨疣。肿瘤由骨性基底、软骨帽和纤维包膜三部分组成。软骨帽位于骨性基底的顶部，在X线片上不显影，当软骨钙化时则出现斑点状或环形钙化影。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "下列关于尤文肉瘤的表述，错误的是",
+    "correctAnswer": "一般不发生骨骼和肺的转移",
+    "options": [
+      "好发年龄为5～15岁",
+      "20岁以前好发于干骺端和骨干， 20岁以后好发于扁骨",
+      "全身症状类似骨感染，如高热、白细胞增多",
+      "一般不发生骨骼和肺的转移",
+      "肿瘤对放射线极为敏感"
+    ],
+    "explanation": "尤文肉瘤早期即可发生骨骼、肺和其他脏器转移。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4090,6 +8144,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "女,21岁,右膝肿痛1个月,局部皮温增高。结合右股骨正侧位片，最可能的诊断为",
+    "correctAnswer": "骨肉瘤",
+    "options": [
+      "骨巨细胞瘤",
+      "非骨化性纤维瘤",
+      "骨转移瘤",
+      "骨囊肿",
+      "骨肉瘤"
+    ],
+    "explanation": "<p>片示右股骨内侧髁、内上髁及其稍上方可见一大片状成骨性、溶骨性骨质破坏区，边缘模糊，边缘可见骨膜反应，肿瘤突破骨皮质侵犯骨外软组织，形成软组织肿块，境界不清。右膝关节未见异常。本例应首先考虑为右股骨下端骨肉瘤（混合型），依据是青少年发病，膝关节骨端（股骨下干骺端）溶骨性、成骨性破坏。</p>",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 MRI",
     "specialty": "骨科",
     "modality": "MRI",
@@ -4104,6 +8179,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "骨巨细胞瘤又称破骨细胞瘤，起源于骨结缔组织间充质细胞，大部分为良性，少数为恶性。肿瘤主要由单核基质细胞和多核巨细胞构成，根据其特点，可分为三级：I级为良性，II级为过渡类型，III级为恶性。好发于20～40岁成人，多见于四肢长骨骨端和骨突部，股骨下端最常见，次为胫骨上端和桡骨下端。MRI或CT上，肿瘤内信号（密度）不均，坏死区有时可见液—液平面。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 组织病理学",
+    "specialty": "骨科",
+    "modality": "组织病理学",
+    "description": "良性骨肿瘤在X线片上可表现出",
+    "correctAnswer": "病理性骨折",
+    "options": [
+      "日光射线形态",
+      "骨皮质虫蚀样破坏与缺损",
+      "椎弓根破坏",
+      "病理性骨折",
+      "Codman三角"
+    ],
+    "explanation": "良性骨肿瘤在X线片上可表现出病理性骨折，其余在良性骨肿瘤X线表现中均见不到。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4132,6 +8228,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "男， 17岁，右腿酸痛、肿胀2个月余。膝关节平片如下，最可能的诊断为",
+    "correctAnswer": "非骨化性纤维瘤",
+    "options": [
+      "纤维性骨皮质缺损",
+      "非骨化性纤维瘤",
+      "骨化性纤维瘤",
+      "骨样骨瘤",
+      "骨巨细胞瘤"
+    ],
+    "explanation": "本例患者为男性青年，左股骨远侧干骺端见偏心性、多房状骨皮质缺损区，病变膨胀并有骨髓腔侵犯，周围有薄层硬化边，无骨膜反应。病灶大、有症状，符合非骨化性纤维瘤表现。纤维性骨皮质缺损，多见于6～15岁儿童，有家族发病倾向，病变常多发、对称，呈囊状或片状皮质缺损区，髓腔无侵犯，无膨胀性骨壳；多于2～4年内自行消失。骨样骨瘤多发生于骨皮质内，瘤巢较小，长径一般＜2.0cm，瘤巢周围有明显的反应性骨质增生和骨膜反应，局部常有疼痛。骨巨细胞瘤20～40岁多见，多位于骨端，有横向膨胀的倾向，多呈分房状、膨胀性骨质破坏，相邻骨质一般无硬化。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 组织病理学",
     "specialty": "骨科",
     "modality": "组织病理学",
@@ -4146,6 +8263,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "骨髓瘤可见软组织肿块和病理性骨折。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 CT",
+    "specialty": "骨科",
+    "modality": "CT",
+    "description": "以下骨结构或病理改变中，X线或CT上表现为低密度的是",
+    "correctAnswer": "骨髓腔",
+    "options": [
+      "骨皮质",
+      "骨髓腔",
+      "矿物质沉积",
+      "钙化",
+      "死骨"
+    ],
+    "explanation": "骨髓腔在X线或CT上均表现为较低密度。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4174,6 +8312,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "儿童短骨骨结核最具特征的X线表现包括",
+    "correctAnswer": "骨气臌",
+    "options": [
+      "骨气臌",
+      "骨质破坏",
+      "骨质增生",
+      "死骨形成",
+      "葱皮状的骨膜反应"
+    ],
+    "explanation": "儿童短骨结核多发生在掌骨、跖骨、指(趾)骨。常为多发，初期改变为骨质疏松，继而在骨内形成囊性破坏，骨皮质变薄．骨干膨胀，故又有骨囊样结核和“骨气臌”之称。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 组织病理学",
     "specialty": "骨科",
     "modality": "组织病理学",
@@ -4188,6 +8347,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "骨巨细胞瘤可发生病理性骨折，如发生病理性骨折可有骨膜反应，但一般情况下骨膜增生不明显。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "X 线基础",
+    "specialty": "影像基础",
+    "modality": "X 光",
+    "description": "下列属于维生素D缺乏性佝偻病X线表现特点的是",
+    "correctAnswer": "干骺端宽大，中心部凹陷，呈杯口状、毛刷状改变",
+    "options": [
+      "局部骨质密度减低，骨小梁稀疏，正常骨结构消失",
+      "关节端边缘锐利的小囊状或穿凿状圆形或椭圆形骨缺损区",
+      "关节面下骨质硬化，关节间隙变窄",
+      "干骺端宽大，中心部凹陷，呈杯口状、毛刷状改变",
+      "骨膜下骨质吸收，皮质外缘呈花边状毛糙不齐"
+    ],
+    "explanation": "无。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4219,6 +8399,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 MRI",
     "specialty": "骨科",
     "modality": "MRI",
+    "description": "骨髓梗死的MRI诊断，正确的是",
+    "correctAnswer": "以上均正确",
+    "options": [
+      "MRI是诊断骨梗死最敏感的检查方法",
+      "骨梗死发生1周后MRI即可发现",
+      "早期表现为髓腔内局限性不规则形长T2信号区",
+      "病灶边缘出现T1WI蜿蜒走行低信号环， T2WI则为高信号环",
+      "以上均正确"
+    ],
+    "explanation": "MRI是诊断骨梗死最敏感的检查方法。T1WI病灶边缘出现的蜿蜒走行低信号环，T2WI则为高信号环，病理上为反应性水肿或纤维带，此为梗死的特征。T2WI上，高信号环外周可见平行走行的低信号，称为“双线征”，病理上为富血供肉芽组织周边伴有骨质硬化。此征象对于诊断骨梗死具有特异性。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 MRI",
+    "specialty": "骨科",
+    "modality": "MRI",
     "description": "患者，男性，42岁，髋部疼痛，CR及CT图像如下，应诊断为",
     "correctAnswer": "股骨头缺血坏死",
     "options": [
@@ -4230,6 +8431,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "股骨头缺血坏死好发于30～60岁男性。股骨头出现斑片状密度增高区伴周边不规则硬化带、新月征（股骨头皮质下线形或新月形软组织低密度区）及股骨头塌陷而髋关节间隙正常是其典型X线表现，但此时病变已处于中晚期。MRI则对股骨头缺血坏死早期诊断较为敏感和特异，可诊断X线阴性的早期股骨头坏死。股骨头退变性囊肿局限于骨性关节面下方，形态规整，无明显股骨头塌陷。骨岛为孤立的圆形硬化区。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 MRI",
+    "specialty": "骨科",
+    "modality": "MRI",
+    "description": "股骨头缺血坏死时MRI“双线征”特点为",
+    "correctAnswer": "在T2加权像显示最好",
+    "options": [
+      "在T1加权像显示最好",
+      "在质子密度加权像显示最好",
+      "在T2加权像显示最好",
+      "条状低信号代表充血的肉芽组织",
+      "条状高信号代表反应性硬化"
+    ],
+    "explanation": "股骨头缺血坏死早期由于反应性硬化缘， MRI多表现为股骨头内异常条带影， T1WI上为低信号， T2WI亦为低信号。T2WI显示内高外低两条并行信号带，即为双线征，为较特异的诊断征象。其中，外侧低信号带为增生硬化骨质所致，内侧高信号带则代表充血修复的肉芽组织。",
+    "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4261,6 +8483,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 MRI",
     "specialty": "骨科",
     "modality": "MRI",
+    "description": "成骨细胞瘤的MRI表现，错误的是",
+    "correctAnswer": "病灶周围的骨髓和软组织内出现反应性充血水肿，表现为短T1、短T2信号",
+    "options": [
+      "肿瘤内的非钙化、骨化灶在T1WI上为低到中等信号， T2WI上为高信号",
+      "肿瘤内的骨化、钙化灶在各扫描序列上均呈低信号。",
+      "病灶周围的骨髓和软组织内出现反应性充血水肿，表现为短T1、短T2信号",
+      "可清楚显示骨壳中断和局部软组织肿胀",
+      "发生于脊椎的病变如向椎管内扩展，可显示硬膜外肿块和脊髓受压"
+    ],
+    "explanation": "成骨细胞瘤病灶周围的骨髓和软组织内出现反应性充血水肿，MRI应表现为长T1、长T2信号。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 MRI",
+    "specialty": "骨科",
+    "modality": "MRI",
     "description": "MRI诊断膝关节交叉韧带撕裂，错误的表述为",
     "correctAnswer": "横轴位易于显示",
     "options": [
@@ -4272,6 +8515,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "膝关节交叉韧带撕裂时，于MRI矢状位易于显示，而横轴位则主要作为定位像和其他方位扫描的补充。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 MRI",
+    "specialty": "骨科",
+    "modality": "MRI",
+    "description": "男， 37岁，双髋疼痛1个月余，根据MRI片，最可能的诊断为",
+    "correctAnswer": "股骨头缺血性坏死",
+    "options": [
+      "类风湿关节炎",
+      "化脓性关节炎",
+      "髋关节结核",
+      "股骨头缺血性坏死",
+      "退行性骨关节病"
+    ],
+    "explanation": "此例MRI上双侧股骨头均可见斑片状长T1、长T2信号灶，并示条带状长T1、长T2信号灶，双侧髋臼骨质未见异常改变。双髋关节少量积液。综上，此例应诊为双侧股骨头缺血性坏死。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4300,6 +8564,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "X线上出现骨质疏松表现，则提示骨内钙盐至少丢失达",
+    "correctAnswer": "30%～50%",
+    "options": [
+      "80%以上",
+      "10%～30%",
+      "30%～50%",
+      "50%～80%",
+      "5%～10%"
+    ],
+    "explanation": "钙盐至少丢失达30％～50％，才能在X线平片上显示骨质疏松的表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
@@ -4314,6 +8599,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "尤文肉瘤好发年龄5～15岁，非骨化纤维瘤好发年龄8~20岁，骨巨细胞瘤好发年龄20～40岁，骨纤维异常增生症、软骨母细胞瘤、骨肉瘤、内生软骨瘤等好发年龄11～30岁，动脉瘤样骨囊肿好发年龄10~20岁。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "良性骨巨细胞瘤的X线所见，下面描述错误的是",
+    "correctAnswer": "邻近有针样瘤骨",
+    "options": [
+      "早期常呈偏心性骨质破坏",
+      "邻近有针样瘤骨",
+      "周边可见薄层骨壳形成",
+      "典型者呈皂泡样多房性改变",
+      "好发于四肢长骨的骨端"
+    ],
+    "explanation": "骨巨细胞瘤好发于四肢长骨干骺愈合的骨端，多呈膨胀性偏心性骨破坏。骨壳较薄，其轮廓一般完整，其内可见骨嵴，构成分房状。有的肿瘤膨胀很明显甚至可将关节对侧的骨端包绕起来，这是该瘤的特征之一。肿瘤常直达骨性关节面下，以至骨性关节面是肿瘤的部分骨性包壳，此亦为其特征之一。其最大径线常与骨干垂直。典型者呈皂泡样多房性改变骨破坏区与正常骨交界清楚但并不锐利，无硬化边。骨破坏区内无钙化和骨化影，一般无骨膜反应。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4342,6 +8648,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "下列良性骨肿瘤中，不属于软骨组织来源的是",
+    "correctAnswer": "成骨细胞瘤",
+    "options": [
+      "骨软骨瘤",
+      "成软骨细胞瘤",
+      "皮质旁软骨瘤",
+      "甲下骨瘤",
+      "成骨细胞瘤"
+    ],
+    "explanation": "成骨细胞瘤属于骨组织来源的肿瘤。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 X 光",
     "specialty": "骨科",
     "modality": "X 光",
@@ -4356,6 +8683,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "以上选项均为甲状旁腺功能亢进的X线表现，其中全身骨骼广泛性骨质疏松为本病主要X线表现，骨膜下骨吸收为特征性X线表现，好发于中节指桡侧缘，骨干皮质呈鼠咬状或花边样骨缺损，其次为颌骨齿槽硬板。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "妇科 影像综合",
+    "specialty": "妇科",
+    "modality": "影像综合",
+    "description": "下列不属于厌骨性肿瘤的是",
+    "correctAnswer": "肺癌",
+    "options": [
+      "肺癌",
+      "皮肤癌",
+      "胃癌",
+      "子宫内膜癌",
+      "结肠癌"
+    ],
+    "explanation": "身体任何部位的恶性肿瘤都有发生骨转移的可能，其中有一些很少转移至骨，称为厌骨性肿瘤，如皮肤、消化道和子宫的恶性肿瘤等。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4387,6 +8735,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "前列腺癌发生远处转移，不正确的描述是",
+    "correctAnswer": "一般不发生骨转移",
+    "options": [
+      "骨转移最多见",
+      "常为成骨性骨转移",
+      "可为溶骨性骨转移",
+      "一般不发生骨转移",
+      "可发生肺转移"
+    ],
+    "explanation": "前列腺癌易发生骨转移，且多为成骨性骨转移。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "下列哪种为厌骨性肿瘤",
     "correctAnswer": "子宫癌",
     "options": [
@@ -4398,6 +8767,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "前列腺癌、乳癌可发生成骨性转移，肾癌和甲状腺癌多发生溶骨性转移，子宫癌很少发生骨转移。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 MRI",
+    "specialty": "骨科",
+    "modality": "MRI",
+    "description": "有关骨髓病变，下列描述不正确的是",
+    "correctAnswer": "MRI容易区分白血病与正常骨髓增生",
+    "options": [
+      "骨髓浸润病变多按红骨髓形式分布",
+      "白血病骨髓改变最常见的是T1值延长",
+      "白血病骨髓改变T2值有所延长",
+      "MRI容易区分白血病与正常骨髓增生",
+      "白血病的T1值无特异性"
+    ],
+    "explanation": "白血病与正常骨髓增生的MRI表现相似，骨髓均呈长T1、长T2信号改变，两者不易区别。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4426,6 +8816,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "胸部 CT",
+    "specialty": "胸部",
+    "modality": "CT",
+    "description": "患者，男，60岁。贫血、腰背部及胸骨疼痛并慢性肾衰竭2年余。头颅X线平片和胸椎CT显示骨质疏松和多发骨质破坏。",
+    "correctAnswer": "多发性骨髓瘤",
+    "options": [
+      "骨转移瘤",
+      "白血病",
+      "类风湿关节炎",
+      "多发性骨髓瘤",
+      "原发性骨质疏松"
+    ],
+    "explanation": "无。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
@@ -4447,6 +8858,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "腰椎前后斜位片上，腰椎椎体以外的结构（椎弓及附件）投影形似小狗，其对应解剖关系为近片侧上关节突",
+    "correctAnswer": "狗耳",
+    "options": [
+      "狗眼",
+      "狗耳",
+      "狗颈",
+      "前腿",
+      "后腿"
+    ],
+    "explanation": "腰椎斜位片腰椎投影状似小狗，“狗”有关部位与腰椎附件投影的对应解剖关系为：狗眼，近片侧椎弓根断面；狗耳，近片侧上关节突，自狗眼向上的突起；狗嘴，近片侧横突，自狗眼向前走行；狗颈，近片侧椎弓峡部；狗体，两侧椎板重叠投影；前腿，近片侧下关节突；后腿，远片侧下关节突；狗尾，远片侧上关节突，小狗后上方翘起部。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 X 光",
     "specialty": "骨科",
     "modality": "X 光",
@@ -4460,6 +8892,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "Schmorl 结节"
     ],
     "explanation": "急性化脓性骨髓炎死骨较大，呈大块死骨，甚至病骨大部骨干成为死骨。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "Calve线",
+    "correctAnswer": "髂翼的外侧面与股骨颈外侧面的弧形连线",
+    "options": [
+      "髂翼的外侧面与股骨颈外侧面的弧形连线",
+      "上耻骨支的下缘与股骨颈内侧缘的弧形连线",
+      "股骨上干骺端的内侧面与相邻髋臼壁的距离",
+      "经过两侧“Y”形软骨中央的连线",
+      "经过髋臼外侧缘向下的垂线"
+    ],
+    "explanation": "无。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4489,6 +8942,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "骨关节先天畸形的描述，正确的是",
+    "correctAnswer": "范围可局限，但引起临床症状或功能障碍，需治疗",
+    "options": [
+      "范围大，引起临床症状或功能障碍，但不需治疗",
+      "范围小，不引起临床症状或功能障碍但需治疗",
+      "范围小，不引起临床症状或功能障碍不需治疗",
+      "范围小，引起临床症状或功能障碍但不需治疗",
+      "范围可局限，但引起临床症状或功能障碍，需治疗"
+    ],
+    "explanation": "骨关节先天畸形范围可局限，但常引起临床症状或功能障碍，需要治疗。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 MRI",
     "specialty": "骨科",
     "modality": "MRI",
@@ -4503,6 +8977,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "台阶征"
     ],
     "explanation": "液—液平面征是动脉瘤样骨囊肿较常见的CT、MRI征象。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "软组织内恶性肿瘤",
+    "correctAnswer": "软组织内异常增多的结构，分叶团块状，与邻近正常组织分界不清楚",
+    "options": [
+      "局部软组织密度高于邻近正常组织，肌间隙分界不清、层次模糊",
+      "软组织内异常增多的结构，团块状，与邻近正常组织分界清楚",
+      "局部肌肉肿胀，肌间隙模糊，密度正常或减低",
+      "近水样密度，壁厚薄不均，增强环形强化",
+      "软组织内异常增多的结构，分叶团块状，与邻近正常组织分界不清楚"
+    ],
+    "explanation": "无。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4532,6 +9027,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "女, 41岁, 2小时前跌倒后手掌着地,右腕部肿痛。根据左腕关节正侧位片，应诊断为",
+    "correctAnswer": "Colles骨折",
+    "options": [
+      "Colles骨折",
+      "Smith骨折",
+      "Barton骨折",
+      "Monteggia骨折",
+      "Galeazzi骨折"
+    ],
+    "explanation": "本例片示桡骨远端距关节约15mm处横断，断端轻度嵌顿，远断端向桡、背侧移位并向掌侧成角，腕部周围软组织肿胀。符合左Colles骨折。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "骨科 组织病理学",
     "specialty": "骨科",
     "modality": "组织病理学",
@@ -4545,6 +9061,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "非骨化性纤维瘤"
     ],
     "explanation": "片示左肱骨干上段与干骺端移行区髓腔内见一纵行椭圆形透光区，边缘光滑，轻度膨胀，有薄层硬化边。病变段骨皮质变薄，可见病理骨折呈“冰裂”状，断端示有多个碎骨片，并向囊腔内陷入，形成“碎片陷落征”。病灶外侧缘显示线形骨膜反应，局部软组织稍肿胀。肱骨头及骺板未见异常。本例X线特异性征象为“碎片陷落征”，据此可诊断为肱骨上段骨囊肿并病理骨折。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 CT",
+    "specialty": "骨科",
+    "modality": "CT",
+    "description": "男，41岁，后枕部不适1个月余。根据CT平扫片，最可能的诊断",
+    "correctAnswer": "骨纤维异常增殖症",
+    "options": [
+      "脊索瘤",
+      "骨瘤",
+      "骨转移瘤",
+      "骨纤维异常增殖症",
+      "骨嗜酸性肉芽肿"
+    ],
+    "explanation": "本例CT特点为枕骨磨玻璃样改变，骨质膨大，增厚，其内见小囊性改变，符合骨纤维异常增殖症。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4574,6 +9111,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "关于脊髓正常解剖的描述，错误的是",
+    "correctAnswer": "于第2腰椎椎体下缘水平延续为终丝",
+    "options": [
+      "脊髓位于椎管内",
+      "上与延髓相连",
+      "末端变细为脊髓圆锥",
+      "于第2腰椎椎体下缘水平延续为终丝",
+      "终丝止于尾骨的背面"
+    ],
+    "explanation": "脊髓通常于第1腰椎椎体下缘续为无神经组织的细丝，即终丝，止于尾骨的背面。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "影像基础知识",
     "specialty": "影像基础",
     "modality": "影像综合",
@@ -4587,6 +9145,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "尾状核体"
     ],
     "explanation": "屏状核位于岛叶皮质与豆状核之间，屏状核与豆状核之间的白质称外囊，屏状核与岛叶皮质之间的白质称最外囊。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "以下哪一种结构不属于大脑半球",
+    "correctAnswer": "丘脑",
+    "options": [
+      "嗅脑",
+      "岛叶",
+      "苍白球",
+      "海马",
+      "丘脑"
+    ],
+    "explanation": "丘脑属于间脑组织。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4619,6 +9198,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "神经 影像综合",
     "specialty": "神经",
     "modality": "影像综合",
+    "description": "颅底自前向后分为三个颅凹，颅后窝有",
+    "correctAnswer": "枕大孔",
+    "options": [
+      "枕大孔",
+      "视神经孔",
+      "棘孔",
+      "破裂孔",
+      "卵圆孔"
+    ],
+    "explanation": "枕大孔位于颅后窝，破裂孔、卵圆孔、棘孔和视神经孔等位于颅中窝。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
     "description": "有关大脑半球各叶分界的描述，错误的是",
     "correctAnswer": "颞、顶、枕叶的分界为外侧裂与顶枕裂的连线",
     "options": [
@@ -4630,6 +9230,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "颞、顶、枕叶通常是以自顶枕沟至枕前切迹的联机作为枕叶的前界。自此线的中点到外侧沟后端的连线，是顶、颞二叶的分界。",
     "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "半卵圆中心为",
+    "correctAnswer": "皮质下纤维",
+    "options": [
+      "皮质下纤维",
+      "皮质下灰质",
+      "投射纤维",
+      "联合纤维",
+      "弓形纤维"
+    ],
+    "explanation": "髓质占大脑半球的大部分，较厚的皮层下纤维为半卵圆中心。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4650,6 +9271,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "舌回"
     ],
     "explanation": "小脑延髓池位于小脑扁桃体下方、延髓背面、枕鳞下部前方，两侧为小脑半球的后下部，CT上呈三角形低密度影。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "神经 影像综合",
+    "specialty": "神经",
+    "modality": "影像综合",
+    "description": "脑回生理性压迹显示最明显的时期为",
+    "correctAnswer": "2岁左右",
+    "options": [
+      "新生儿",
+      "老年人",
+      "成年人",
+      "2岁左右",
+      "20岁以后"
+    ],
+    "explanation": "在囟门闭合的发育期，脑组织发育较快，脑回压迹较为显著。成年人脑回压迹浅，数目少。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4682,6 +9324,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
+    "description": "肋软骨钙化最早开始于第（  ）肋骨。",
+    "correctAnswer": "1",
+    "options": [
+      "11",
+      "1",
+      "3",
+      "2",
+      "12"
+    ],
+    "explanation": "第1肋软骨最早钙化，第2肋软骨最后钙化。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
     "description": "正常成人人体共由多少块骨组成",
     "correctAnswer": "206块",
     "options": [
@@ -4693,6 +9356,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "成人骨共有206块，内含人体最大的籽骨即髌骨，而不包含其他籽骨和副骨。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "有关骶骨的描述，错误的是",
+    "correctAnswer": "骶骨与腰椎为骨性联合无椎间盘",
+    "options": [
+      "骶骨由5个骶椎融合而成",
+      "骶骨中间部分有4条横线为骶椎融合的痕迹",
+      "骶骨与腰椎为骨性联合无椎间盘",
+      "骶骨背面粗糙，正中的隆起为骶正中脊，由骶椎棘突融合而成",
+      "骶正中脊外侧有四对骶管裂孔"
+    ],
+    "explanation": "骶骨与第5腰椎之间由椎间盘相连，椎间盘属于少动关节。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4714,6 +9398,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "锁骨是上肢带骨，其内侧2/3呈三棱棒形，凸向前；外侧1/3上下扁，凸向后。外侧位于喙突上方，内侧与胸骨柄相关节，外侧端与肩峰相关节。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 X 光",
+    "specialty": "骨科",
+    "modality": "X 光",
+    "description": "X线显示的成人关节间隙包含",
+    "correctAnswer": "关节软骨、关节腔和关节滑液",
+    "options": [
+      "骨端和关节腔",
+      "骨端和关节软骨",
+      "关节软骨和关节滑液",
+      "关节软骨、关节腔和关节滑液",
+      "关节腔和关节滑液"
+    ],
+    "explanation": "正常关节X线解剖。",
+    "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4745,6 +9450,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "骨科 影像综合",
     "specialty": "骨科",
     "modality": "影像综合",
+    "description": "踝关节正常X现表现，以下说法错误的是",
+    "correctAnswer": "侧位片显示内外踝结构最佳",
+    "options": [
+      "正位片可显示踝关节间隙",
+      "正位片可显示胫腓远程关节间隙",
+      "侧位片显示距骨与跟骨最佳",
+      "正侧位片均可显示距舟关节间隙",
+      "侧位片显示内外踝结构最佳"
+    ],
+    "explanation": "踝关节正常X现表现，正位片显示内外踝结构最佳。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
     "description": "构成骨盆的骨骼是",
     "correctAnswer": "以上均正确",
     "options": [
@@ -4755,6 +9481,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "以上均正确"
     ],
     "explanation": "骨盆是由左、右两侧的髋骨和后面的骶骨、尾骨构成，髋骨由髂骨、耻骨和坐骨组成。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "骨科 影像综合",
+    "specialty": "骨科",
+    "modality": "影像综合",
+    "description": "髋关节脱位时，股骨头多脱向",
+    "correctAnswer": "后下方",
+    "options": [
+      "后上方",
+      "后下方",
+      "后方",
+      "前下方",
+      "前上方"
+    ],
+    "explanation": "<p>髋关节囊后下部比较薄弱，故髋关节发生脱位时，股骨头大多脱向后下方。</p>",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4776,6 +9523,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "了解胸水流动性"
     ],
     "explanation": "俯卧位时胸水由于重力作用位置会发生改变，从而了解胸水的流动性。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "下列哪项是上呼吸道与呼吸道的解剖分界？",
+    "correctAnswer": "环状软骨",
+    "options": [
+      "环状软骨",
+      "口咽部",
+      "主支气管",
+      "喉咽部",
+      "甲状软骨"
+    ],
+    "explanation": "呼吸道包括鼻、咽、喉、气管和支气管。鼻、咽、喉称为上呼吸道，气管和支气管称为下呼吸道。上、下呼吸道的解剖分界是环状软骨。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4808,6 +9576,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "胸部 影像综合",
     "specialty": "胸部",
     "modality": "影像综合",
+    "description": "关于肺内支气管与肺动脉的下列描述中错误的是",
+    "correctAnswer": "伴行的支气管可以比相邻肺动脉粗2倍以上",
+    "options": [
+      "肺外围一般可能显示肺动脉分支的断面",
+      "肺内支气管一般与肺动脉分支并行",
+      "肺外围一般不能显示支气管的断面",
+      "二者的管径大致相等",
+      "伴行的支气管可以比相邻肺动脉粗2倍以上"
+    ],
+    "explanation": "伴行支气管与肺动脉管径大致相等，相差2倍以上可诊断支气管扩张。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
     "description": "主肺动脉窗层面不包括哪一解剖结构？",
     "correctAnswer": "头臂静脉",
     "options": [
@@ -4818,6 +9607,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "头臂静脉"
     ],
     "explanation": "主肺动脉窗层面：气管右前方为升主动脉，气管左后方、椎体左缘为降主动脉，升、降主动脉两者之间到纵膈左缘为一低密度空隙，称主肺动脉窗。奇静脉弓自椎体前方绕气管右侧壁前行，连于上腔静脉后壁。气管右侧为上腔静脉，后方为食管。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "胸部 影像综合",
+    "specialty": "胸部",
+    "modality": "影像综合",
+    "description": "右前斜位心脏照片上，心前缘自上而下依次为",
+    "correctAnswer": "升主动脉、主肺动脉干、右心室漏斗部、右心室、左心室",
+    "options": [
+      "升主动脉、上腔静脉、右心室漏斗部、左心室",
+      "上腔静脉、主肺动脉干、右心室漏斗部、左心室",
+      "升主动脉、主肺动脉干、右心室漏斗部、右心室、左心室",
+      "升主动脉、主肺动脉干、左心室漏斗部、左心室",
+      "上腔静脉、主肺动脉干、左心室漏斗部、左心室"
+    ],
+    "explanation": "常规采用45°右前斜位，心前缘自上而下主要为升主动脉、主肺动脉干左前缘、右心室漏斗部、右心室，以及左心室占据膈上的小部分，为心尖部。",
     "difficulty": "Medium",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4849,6 +9659,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
   {
     "category": "影像基础知识",
     "specialty": "影像基础",
+    "modality": "影像综合",
+    "description": "房间沟、后室间沟和冠状沟的交叉处称为",
+    "correctAnswer": "房室交点",
+    "options": [
+      "心房交点",
+      "心室交点",
+      "房室交点",
+      "心房切迹",
+      "以上都不是"
+    ],
+    "explanation": "房间沟、后室间沟和冠状沟的交叉处称为房室交点，是解剖和临床上常用的标志。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
     "modality": "MRI",
     "description": "MRI显示心内膜垫缺损的基本体位是",
     "correctAnswer": "横断位或四腔位",
@@ -4860,6 +9691,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "四腔位或长轴位"
     ],
     "explanation": "MRI显示心内膜垫缺损的基本体位是横断位或四腔位，辅助位为冠状位或长轴位。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "MRI",
+    "description": "显示房间隔的最佳切面是",
+    "correctAnswer": "横断面",
+    "options": [
+      "冠状面",
+      "横断面",
+      "矢状面",
+      "心脏长轴位",
+      "心脏短轴位"
+    ],
+    "explanation": "横断面是心脏大血管MRI扫描的基本层面，可显示不典型的“四腔心”结构，特别是房间隔在横断面显示最佳。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4881,6 +9733,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "胸膜难以显示"
     ],
     "explanation": "气管、支气管内无质子，故在各个序列均无信号，血管因血液流空也表现为低信号，所以MRI有时难以区分二者。由于肺纹理中的肺血管及支气管于各序列分别为无信号或低信号，所以MRI不能显示肺纹理。心包内可有少量液体，呈长T1、长T2信号。正常情况下，胸膜在MRI上难以显示。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "影像基础知识",
+    "specialty": "影像基础",
+    "modality": "CT",
+    "description": "关于冠状动脉超高速CT检查的描述，不正确的为",
+    "correctAnswer": "随着积分的增高，意味着冠状动脉分支横断面狭窄仍不超过75%",
+    "options": [
+      "三维重建技术及仿真内镜技术可很好地显示冠状动脉内腔，测量冠状动脉直径",
+      "三维重建技术可显示粥样斑块",
+      "超高速CT可通过冠状动脉钙化的定量分析反映冠状动脉狭窄程度",
+      "冠状动脉钙化积分由钙化面积乘以CT值的峰值系数而得",
+      "随着积分的增高，意味着冠状动脉分支横断面狭窄仍不超过75%"
+    ],
+    "explanation": "超高速CT的三维重建方法可以较好地显示冠状动脉内腔，直接测量冠状动脉直径，显示粥样斑块。冠状动脉钙化定量积分由钙化面积乘以CT值的峰值系数（100～200HU为1；201～300HU为2；301～400HU 为3）而得。其反映了冠状动脉粥样硬化的程度及冠脉狭窄的程度。随着积分增高，冠心病发病的可能性随之增加，此时意味着至少一处冠脉分支横断面狭窄超过75％。",
     "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4913,6 +9786,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "消化 影像综合",
     "specialty": "消化",
     "modality": "影像综合",
+    "description": "常见钡剂造影胃的形态除外",
+    "correctAnswer": "囊袋型",
+    "options": [
+      "瀑布型",
+      "牛角型",
+      "鱼钩型",
+      "无力型",
+      "囊袋型"
+    ],
+    "explanation": "胃的形态一般分为4种类型：牛角型、无力型、钩型、瀑布型。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
     "description": "大肠全长约",
     "correctAnswer": "1.5",
     "options": [
@@ -4923,6 +9817,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
       "3"
     ],
     "explanation": "<p><img>",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 MRI",
+    "specialty": "消化",
+    "modality": "MRI",
+    "description": "MRI平扫不易显示的正常肝脏结构有",
+    "correctAnswer": "肝动脉",
+    "options": [
+      "门静脉左右分支",
+      "中肝静脉",
+      "肝动脉",
+      "左肝静脉",
+      "右肝静脉"
+    ],
+    "explanation": "肝动脉直径细，流空效应及流入增强不明显， MRI平扫不易显示。",
     "difficulty": "Easy",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
@@ -4955,6 +9870,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
+    "description": "下列肾形态无临床意义的是",
+    "correctAnswer": "驼峰肾",
+    "options": [
+      "马蹄肾",
+      "驼峰肾",
+      "侏儒肾",
+      "海绵肾",
+      "多囊肾"
+    ],
+    "explanation": "马蹄肾为最常见的融合肾，可为两肾的下极或上极相互融合，以下极融合型多见；驼峰肾为肾脏形态的正常变异，通常无症状，多为影像学检查时意外发现；侏儒肾即肾发育不全，较为少见；海绵肾是一种先天性肾髓质囊性病变，表现为双侧肾集合管扩张并细小钙化；多囊肾即多囊性肾病变，系遗传性病变。",
+    "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 影像综合",
+    "specialty": "泌尿",
+    "modality": "影像综合",
     "description": "正常两侧肾脏大小差别不应超过",
     "correctAnswer": "1cm",
     "options": [
@@ -4966,6 +9902,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "无。",
     "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "关于肾脏CT平扫表现，错误的是",
+    "correctAnswer": "能够分辨肾皮、髓质",
+    "options": [
+      "横轴位显示为圆形或椭圆形软组织密度结构",
+      "能够分辨肾皮、髓质",
+      "肾窦呈脂肪性低密度",
+      "肾盂呈水样低密度",
+      "肾门区肾动脉、肾静脉呈软组织密度窄带影"
+    ],
+    "explanation": "CT平扫可以清晰显示肾脏的形态、大小、位置及密度，正常肾实质密度均匀，不能分辨出皮、髓质。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -4994,6 +9951,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "CT扫描，正常前列腺上限一般不超过耻骨联合上缘",
+    "correctAnswer": "10mm",
+    "options": [
+      "10mm",
+      "20mm",
+      "30mm",
+      "40mm",
+      "50mm"
+    ],
+    "explanation": "正常前列腺上限一般不超过耻骨联合上缘的10mm，若超过20mm，为前列腺增大的表现。",
+    "difficulty": "Easy",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "妇科 MRI",
     "specialty": "妇科",
     "modality": "MRI",
@@ -5008,6 +9986,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "子宫内膜正常厚度为3~7mm，随月经周期变化，在T2WI像上为高信号，结合带为低信号，子宫峡部位于子宫颈与宫体交界处。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 X 光",
+    "specialty": "消化",
+    "modality": "X 光",
+    "description": "器官轴型胃扭转的X线表现不正确的是",
+    "correctAnswer": "十二指肠环高于幽门",
+    "options": [
+      "胃大弯上翻构成胃的顶缘",
+      "贲门位置低，食管与胃黏膜纹呈十字交叉",
+      "两个胃泡，两处液平",
+      "十二指肠环高于幽门",
+      "胃形态呈斜置的“大虾”状"
+    ],
+    "explanation": "胃扭转分三型：器官轴型（纵轴扭转型）、网膜轴型（横轴扭转型）及混合型。器官轴型胃扭转最多见，其 X线表现为：贲门部下降，食管腹段延长，胃远程位置升高，胃大弯向右上翻转呈突起的弧形，并向右下方延伸与十二指肠球部及降段相连，胃小弯向下，因而凹面向下，黏膜像可见黏膜皱襞呈螺旋状。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",
@@ -5036,6 +10035,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     "updatedAt": "2026-04-14T00:00:00.000Z"
   },
   {
+    "category": "泌尿 CT",
+    "specialty": "泌尿",
+    "modality": "CT",
+    "description": "关于肾脏的CT增强扫描表现，不正确的有",
+    "correctAnswer": "肾血管显示欠清晰，仅仅依靠CTA方可清晰显示肾动脉",
+    "options": [
+      "肾血管显示欠清晰，仅仅依靠CTA方可清晰显示肾动脉",
+      "皮质期,肾皮质明显强化,髓质强化不 明显",
+      "髓质期，皮、髓质强化程度类似，肾实质密度均匀",
+      "排泄期肾盏和肾盂明显充盈强化，肾实质强化程度减低",
+      "CTA可以清晰、形象地显示肾动脉结构"
+    ],
+    "explanation": "正常肾脏的CT增强扫描，扫描时间不同，肾脏诸结构的密度变化亦不相同。于开始团注对比剂后30秒扫描，即皮质期，可见肾血管及肾皮质明显强化，而髓质强化不明显，仍呈较低密度；2分钟后扫描，即实质期，肾脏皮、髓质强化程度类似；5分钟后扫描，即排泄期，可见肾实质强化程度减低，而肾盏和肾盂被高密度对比剂充填，呈明显强化改变。CTA属于特殊的增强扫描检查方法，它可以清晰、形象地显示肾动脉结构，主要用于肾动脉狭窄的诊断并可以进一步明确病因。",
+    "difficulty": "Hard",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
     "category": "泌尿 影像综合",
     "specialty": "泌尿",
     "modality": "影像综合",
@@ -5050,6 +10070,27 @@ export const IMPORTED_QUESTION_BANK: ImportedQuestionBankEntry[] = [
     ],
     "explanation": "肾动脉由肾门开始进入肾脏，依次分支为：肾动脉—肾段动脉—叶间动脉—弓形动脉—小叶间动脉。",
     "difficulty": "Medium",
+    "sourceName": "题目列表2026-04-14.xls",
+    "sourceUrl": null,
+    "reviewStatus": "approved",
+    "reviewerName": "题库导入初筛",
+    "updatedAt": "2026-04-14T00:00:00.000Z"
+  },
+  {
+    "category": "消化 影像综合",
+    "specialty": "消化",
+    "modality": "影像综合",
+    "description": "关于肝脏的描述，错误的是",
+    "correctAnswer": "胆汁不在肝脏内生成",
+    "options": [
+      "肝脏是消化腺",
+      "肝脏是实质性器官",
+      "肝脏血供丰富",
+      "肝脏的供血血管为肝动脉",
+      "胆汁不在肝脏内生成"
+    ],
+    "explanation": "肝具有分泌胆汁的功能。",
+    "difficulty": "Hard",
     "sourceName": "题目列表2026-04-14.xls",
     "sourceUrl": null,
     "reviewStatus": "approved",

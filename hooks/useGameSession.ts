@@ -95,6 +95,8 @@ export const useGameSession = ({
   const botTimerRef = useRef<number | null>(null);
   const roundEndTimerRef = useRef<number | null>(null);
   const retryTimerRef = useRef<number | null>(null);
+  const sessionTokenRef = useRef(0);
+  const sessionActiveRef = useRef(false);
 
   const gameModeRef = useRef(gameMode);
   const selectedQuestionBankIdRef = useRef(selectedQuestionBankId);
@@ -170,8 +172,21 @@ export const useGameSession = ({
     }
   }
 
-  function startTimers(difficulty: QuestionCase['difficulty'], mode: GameMode) {
+  function isCurrentSession(sessionToken: number) {
+    return sessionActiveRef.current && sessionTokenRef.current === sessionToken;
+  }
+
+  function startTimers(difficulty: QuestionCase['difficulty'], mode: GameMode, sessionToken = sessionTokenRef.current) {
     timerRef.current = window.setInterval(() => {
+      if (!isCurrentSession(sessionToken)) {
+        if (timerRef.current !== null) {
+          window.clearInterval(timerRef.current);
+          timerRef.current = null;
+        }
+
+        return;
+      }
+
       setTimeLeft((prev) => {
         if (prev <= 1) {
           handleTimeUp();
@@ -187,6 +202,10 @@ export const useGameSession = ({
       const reactionTime = Math.random() * (behavior.reactionTimeMax - behavior.reactionTimeMin) + behavior.reactionTimeMin;
 
       botTimerRef.current = window.setTimeout(() => {
+        if (!isCurrentSession(sessionToken)) {
+          return;
+        }
+
         const isCorrect = Math.random() < behavior.accuracy;
         const timeTaken = reactionTime / 1000;
         const score = calculateScore(isCorrect, timeTaken);
@@ -209,11 +228,17 @@ export const useGameSession = ({
     mode = gameModeRef.current,
     round = battleStateRef.current?.round ?? 1,
     cases = dailyChallengeCasesRef.current,
+    sessionToken = sessionTokenRef.current,
   }: {
     mode?: GameMode;
     round?: number;
     cases?: QuestionCase[];
+    sessionToken?: number;
   } = {}) {
+    if (!isCurrentSession(sessionToken)) {
+      return;
+    }
+
     onGameStateChange(GameState.LOADING_ROUND);
     setSelectedOption(null);
     hasAnsweredRef.current = false;
@@ -234,6 +259,10 @@ export const useGameSession = ({
         throw new Error('No case data available for this round.');
       }
 
+      if (!isCurrentSession(sessionToken)) {
+        return;
+      }
+
       currentCaseRef.current = caseData;
       setCurrentCase(caseData);
       setShuffledOptions([...caseData.options].sort(() => Math.random() - 0.5));
@@ -242,24 +271,58 @@ export const useGameSession = ({
       const nextRoundStartTime = Date.now();
       roundStartTimeRef.current = nextRoundStartTime;
       setRoundStartTime(nextRoundStartTime);
-      startTimers(caseData.difficulty, mode);
+      startTimers(caseData.difficulty, mode, sessionToken);
     } catch (error) {
       console.error(error);
+      if (!isCurrentSession(sessionToken)) {
+        return;
+      }
+
       retryTimerRef.current = window.setTimeout(() => {
-        void loadRound({ mode, round, cases });
+        void loadRound({ mode, round, cases, sessionToken });
       }, 1000);
     }
   }
 
+  function startSession() {
+    sessionActiveRef.current = true;
+    sessionTokenRef.current += 1;
+    return sessionTokenRef.current;
+  }
+
+  function endSession() {
+    sessionActiveRef.current = false;
+    sessionTokenRef.current += 1;
+    clearTimers();
+    currentCaseRef.current = null;
+    dailyChallengeCasesRef.current = [];
+    battleStateRef.current = null;
+    hasAnsweredRef.current = false;
+    opponentAnsweredRef.current = false;
+    opponentResultRef.current = null;
+    setCurrentCase(null);
+    setDailyChallengeCases([]);
+    setBattleState(null);
+    setSelectedOption(null);
+    setHasAnswered(false);
+    setOpponentAnswered(false);
+    setOpponentResult(null);
+  }
+
   function checkRoundEnd(playerRes: RoundResult) {
+    const sessionToken = sessionTokenRef.current;
     const activeBattleState = battleStateRef.current;
     const activeCase = currentCaseRef.current;
 
-    if (!activeBattleState || !activeCase) {
+    if (!sessionActiveRef.current || !activeBattleState || !activeCase) {
       return;
     }
 
     const finalize = () => {
+      if (!isCurrentSession(sessionToken)) {
+        return;
+      }
+
       clearTimers();
 
       let finalOpponentRes = opponentResultRef.current;
@@ -319,7 +382,7 @@ export const useGameSession = ({
     const activeCase = currentCaseRef.current;
     const activeBattleState = battleStateRef.current;
 
-    if (hasAnsweredRef.current || !activeCase || !activeBattleState) {
+    if (!sessionActiveRef.current || hasAnsweredRef.current || !activeCase || !activeBattleState) {
       return;
     }
 
@@ -361,6 +424,10 @@ export const useGameSession = ({
   }
 
   function handleTimeUp() {
+    if (!sessionActiveRef.current) {
+      return;
+    }
+
     if (timerRef.current !== null) {
       window.clearInterval(timerRef.current);
       timerRef.current = null;
@@ -372,6 +439,7 @@ export const useGameSession = ({
   }
 
   function startSolo() {
+    const sessionToken = startSession();
     const initialBattleState: BattleState = {
       round: 1,
       totalRounds: 999,
@@ -388,10 +456,11 @@ export const useGameSession = ({
     setGameMode(GameMode.SOLO_STREAK);
     setDailyChallengeCases([]);
     setBattleState(initialBattleState);
-    void loadRound({ mode: GameMode.SOLO_STREAK, round: 1, cases: [] });
+    void loadRound({ mode: GameMode.SOLO_STREAK, round: 1, cases: [], sessionToken });
   }
 
   function startPvP() {
+    startSession();
     const initialBattleState: BattleState = {
       round: 1,
       totalRounds: 5,
@@ -412,7 +481,12 @@ export const useGameSession = ({
   }
 
   async function startDailyChallenge() {
+    const sessionToken = startSession();
     const cases = await fetchDailyChallengeCases(getTodayChallengeDateKey(), 5, selectedQuestionBankIdRef.current);
+    if (!isCurrentSession(sessionToken)) {
+      return;
+    }
+
     const initialBattleState: BattleState = {
       round: 1,
       totalRounds: cases.length,
@@ -429,10 +503,11 @@ export const useGameSession = ({
     setGameMode(GameMode.DAILY_CHALLENGE);
     setDailyChallengeCases(cases);
     setBattleState(initialBattleState);
-    await loadRound({ mode: GameMode.DAILY_CHALLENGE, round: 1, cases });
+    await loadRound({ mode: GameMode.DAILY_CHALLENGE, round: 1, cases, sessionToken });
   }
 
   function startWrongQuestionReview(entry: WrongQuestionEntry) {
+    const sessionToken = startSession();
     const cases = [mapWrongQuestionEntryToCase(entry)];
     const initialBattleState: BattleState = {
       round: 1,
@@ -450,7 +525,7 @@ export const useGameSession = ({
     setGameMode(GameMode.REVIEW_PRACTICE);
     setDailyChallengeCases(cases);
     setBattleState(initialBattleState);
-    void loadRound({ mode: GameMode.REVIEW_PRACTICE, round: 1, cases });
+    void loadRound({ mode: GameMode.REVIEW_PRACTICE, round: 1, cases, sessionToken });
   }
 
   function restartWrongQuestionReview() {
@@ -459,6 +534,7 @@ export const useGameSession = ({
       return;
     }
 
+    const sessionToken = startSession();
     const initialBattleState: BattleState = {
       round: 1,
       totalRounds: cases.length,
@@ -473,14 +549,18 @@ export const useGameSession = ({
     battleStateRef.current = initialBattleState;
     setGameMode(GameMode.REVIEW_PRACTICE);
     setBattleState(initialBattleState);
-    void loadRound({ mode: GameMode.REVIEW_PRACTICE, round: 1, cases });
+    void loadRound({ mode: GameMode.REVIEW_PRACTICE, round: 1, cases, sessionToken });
   }
 
   function onMatchFound() {
-    void loadRound({ mode: GameMode.PVP_BATTLE, round: 1 });
+    void loadRound({ mode: GameMode.PVP_BATTLE, round: 1, sessionToken: sessionTokenRef.current });
   }
 
   function nextRound() {
+    if (!sessionActiveRef.current) {
+      return;
+    }
+
     const activeBattleState = battleStateRef.current;
 
     if (!activeBattleState) {
@@ -571,6 +651,7 @@ export const useGameSession = ({
       mode: gameModeRef.current,
       round: nextRoundNumber,
       cases: dailyChallengeCasesRef.current,
+      sessionToken: sessionTokenRef.current,
     });
   }
 
@@ -588,6 +669,7 @@ export const useGameSession = ({
     startDailyChallenge,
     startWrongQuestionReview,
     restartWrongQuestionReview,
+    endSession,
     onMatchFound,
     submitAnswer,
     nextRound,
